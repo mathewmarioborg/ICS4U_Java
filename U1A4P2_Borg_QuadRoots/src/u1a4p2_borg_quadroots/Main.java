@@ -260,7 +260,7 @@ public class Main extends javax.swing.JFrame {
             answerOutput.setText("Please Enter Numbers Only");
             return;
         }
-        rC.rootCalculations(aInt,bInt,cInt); //Passes the vareables to my RootCalculator method
+        rC.rootCalculations(aInt,bInt,cInt); //Passes the vareables to my rootCalculations method
         
         //Sets the x1 and x2 data from my RootCalculation class to strings
         x1 = Double.toString(rC.x1); 
@@ -268,7 +268,7 @@ public class Main extends javax.swing.JFrame {
 
 
         
-        if (aInt == 0){ // if a in our Root formula = 0 it will display Not A Quadratic Equation
+        if (aInt == 0){ // if input a = 0 it will display Not A Quadratic Equation
             answerOutput.setText("Not A Quadratic Equation");
         }
         else if (rC.discriminant > 0){ // if the discriminant from the RootCalculations class is greater then 0 it will display the x1 and x2 roots

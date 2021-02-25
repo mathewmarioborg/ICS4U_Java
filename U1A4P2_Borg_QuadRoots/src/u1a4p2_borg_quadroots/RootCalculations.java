@@ -11,7 +11,7 @@ package u1a4p2_borg_quadroots;
     Description:This program calculates the  roots of a quadratic equation in the form ax2+bx+c = 0 
  */
 public class RootCalculations {
-    public double x1, x2, discriminant; // Creats a public double var to store x1, and x2 root values in
+    public double x1, x2, discriminant; // Creats a public double var to store x1, x2 and discriminant values in
     
     public void rootCalculations(double a, double b, double c){ //creats a method and varable doubles to use inside of it
         //calculates our discriminant 
