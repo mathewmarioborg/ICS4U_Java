@@ -10,7 +10,7 @@ package u1a4p2_borg_quadroots;
     File Name:	U1A4P1_Borg_QuadRoots
     Programmer:	Mathew Borg
     Date:	2021-02-19
-    Description:This program calculates the  roots of a quadratic equation in the form ax2+bx+c = 0 
+    Description: This program calculates the roots of a quadratic equation in the form ax2+bx+c = 0 
  */
 public class Main extends javax.swing.JFrame {
    
