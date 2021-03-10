@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Mathew Borg
+    File Name:	U1A5P2_Borg_Tri Area
+    Programmer:	Mathew Borg
+    Date:	2021-3-6
+    Description: This program calculates the area of a triangle when all three sides are known.
  */
 public class Main extends javax.swing.JFrame {
+    private int eSideA, eSideB, eSideC; //creats a int for number input
+    private String stringSideA, stringSideB, stringSideC, stringArea; // creats strings to display answers
 
     /**
      * Creates new form Main
@@ -56,6 +54,24 @@ public class Main extends javax.swing.JFrame {
         sideC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         sideC.setText("Enter Side C");
 
+        enterSideA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterSideAActionPerformed(evt);
+            }
+        });
+
+        enterSideB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterSideBActionPerformed(evt);
+            }
+        });
+
+        enterSideC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterSideCActionPerformed(evt);
+            }
+        });
+
         Calculate.setText("Calculate");
         Calculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +81,12 @@ public class Main extends javax.swing.JFrame {
 
         triangleArea.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         triangleArea.setText("Triangle Area:");
+
+        outputTriangleArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                outputTriangleAreaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,30 +100,27 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(94, 94, 94)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(title, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(sideA)
-                                            .addComponent(sideB)
-                                            .addComponent(sideC))
-                                        .addGap(18, 18, 18))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(triangleArea)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(enterSideC)
+                                    .addComponent(sideA)
+                                    .addComponent(sideB)
+                                    .addComponent(sideC))
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(enterSideC, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                                     .addComponent(enterSideB)
-                                    .addComponent(enterSideA)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(outputTriangleArea, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                    .addComponent(enterSideA)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
-                        .addComponent(Calculate)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(triangleArea)
+                            .addComponent(Calculate)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(outputTriangleArea, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,10 +143,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(sideC, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Calculate)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(triangleArea)
-                    .addComponent(outputTriangleArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(triangleArea)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(outputTriangleArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -135,8 +154,74 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateActionPerformed
-        // TODO add your handling code here:
+        /**
+        * Gets the text from our GUI input boxes and sets them to strings
+        */
+        stringSideA = enterSideA.getText();
+        stringSideB = enterSideB.getText();
+        stringSideC = enterSideC.getText();
+        
+        /*
+        * Passes the string data to the vareable ints we created
+        * For Box A
+        */
+        try{ //trys to get number data 
+            eSideA = Integer.parseInt(stringSideA);
+        }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
+            enterSideA.setText("Enter Numbers Only");
+            return;
+        }if (eSideA <= 0){ //if number is negative or 0 display Enter Positive Numbers Only and retry the program
+            enterSideA.setText("Enter Positive Numbers Only");
+            return;
+        }
+        //For Box B
+        try{ //trys to get number data 
+            eSideB = Integer.parseInt(stringSideB);
+        }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
+            enterSideB.setText("Enter Numbers Only");
+            return;
+        }if (eSideB <= 0){ //if number is negative or 0 display Enter Positive Numbers Only and retry the program
+            enterSideB.setText("Enter Positive Numbers Only");
+            return;
+        }
+        //For Box C
+        try{ //trys to get number data 
+            eSideC = Integer.parseInt(stringSideC);
+        }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
+            enterSideC.setText("Enter Numbers Only");
+            return;
+        }if (eSideC <= 0){ //if number is negative or 0 display Enter Positive Numbers Only and retry the program
+            enterSideC.setText("Enter Positive Numbers Only");
+            return;
+        }
+
+        boolean checkSum = AreaCalculations.isValid(eSideA,eSideB,eSideC); //returns true or false based on the input values
+        
+        //if checksum is true run area calculation and setText its value else setText sum of two sides must be greater the third side
+        if (checkSum == true){ 
+            double areaCalculations = AreaCalculations.area(eSideA,eSideB,eSideC);
+            outputTriangleArea.setText("Number = " + areaCalculations);
+        }else{
+            outputTriangleArea.setText("sum of two sides must be greater the third side");
+        }
+
     }//GEN-LAST:event_CalculateActionPerformed
+
+    private void enterSideAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterSideAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterSideAActionPerformed
+
+    private void enterSideBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterSideBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterSideBActionPerformed
+
+    private void enterSideCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterSideCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterSideCActionPerformed
+
+    private void outputTriangleAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputTriangleAreaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_outputTriangleAreaActionPerformed
 
     /**
      * @param args the command line arguments
