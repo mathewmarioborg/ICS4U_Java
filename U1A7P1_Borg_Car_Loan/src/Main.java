@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Mathew Borg
+    File Name:	U1A5P2_Borg_Tri Area
+    Programmer:	Mathew Borg
+    Date:	2021-3-7
+    Description:This program calculates the monthly payment, the total interest paid and the total payback of a car loan.
  */
 public class Main extends javax.swing.JFrame {
-
+    private int eLoanAmount, eAnnualInterestRate, eTimePeriod;
+    private String stringLoanAmount, stringAnnualInterestRate, stringTimePeriod, stringMonthlyPayment, stringTotalIntrestPayed, stringTotalPayback;
     /**
      * Creates new form Main
      */
@@ -194,7 +191,58 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateActionPerformed
-        // TODO add your handling code here:
+        /**
+        * Gets the text from our GUI input boxes and sets them to strings
+        */
+        stringLoanAmount = inputLoanAmount.getText();
+        stringAnnualInterestRate = inputAnnualIntrestRate.getText();
+        stringTimePeriod = inputTimePeriod.getText();
+        
+        /*
+        * Passes the string data to the vareable ints we created
+        * For Box Loan Amount
+        */
+        try{ //trys to get number data 
+            eLoanAmount = Integer.parseInt(stringLoanAmount);
+        }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
+            inputLoanAmount.setText("Enter Numbers Only");
+            return;
+        }if (eLoanAmount <= 0){ //if number is negative or 0 display Positive Numbers Only and retry the program
+            inputLoanAmount.setText("Positive Numbers Only");
+            return;
+        }
+        //For Box Annual Interest Rate
+        try{ //trys to get number data 
+            eAnnualInterestRate = Integer.parseInt(stringAnnualInterestRate);
+        }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
+            inputAnnualIntrestRate.setText("Enter Numbers Only");
+            return;
+        }if (eAnnualInterestRate <= 0){ //if number is negative or 0 display Positive Numbers Only and retry the program
+            inputAnnualIntrestRate.setText("Positive Numbers Only");
+            return;
+        }
+        //For Box Time Period
+        try{ //trys to get number data 
+            eTimePeriod = Integer.parseInt(stringTimePeriod);
+        }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
+            inputTimePeriod.setText("Enter Numbers Only");
+            return;
+        }if (eTimePeriod <= 0){ //if number is negative or 0 display Positive Numbers Only and retry the program
+            inputTimePeriod.setText("Positive Numbers Only");
+            return;
+        }
+        
+        double monthlyPayment = LoanCalculator.monthlyPayment(eLoanAmount,eAnnualInterestRate,eTimePeriod); //returns the value of monthly payment
+        stringMonthlyPayment = Double.toString(monthlyPayment); //sets double value to string
+        outputMonthlyPayment.setText(stringMonthlyPayment); //sets monthly payment box to corasponding value
+        
+        double totalIntrestPayed = LoanCalculator.totalIntrestPayed(eLoanAmount,eAnnualInterestRate,eTimePeriod); //returns the value of Total Intrest Payed
+        stringTotalIntrestPayed = Double.toString(totalIntrestPayed); //sets double value to string
+        outputTotalIntrestPaid.setText(stringTotalIntrestPayed); //sets Total Intrest Payed box to corasponding value
+        
+        double totalPayback = LoanCalculator.totalPayback(eLoanAmount,eAnnualInterestRate,eTimePeriod); //returns the value of Total Payback
+        stringTotalPayback = Double.toString(totalPayback); //sets double value to string
+        outputTotalPayback.setText(stringTotalPayback); //sets Total Payback box to corasponding value
     }//GEN-LAST:event_calculateActionPerformed
 
     private void inputAnnualIntrestRateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputAnnualIntrestRateActionPerformed
