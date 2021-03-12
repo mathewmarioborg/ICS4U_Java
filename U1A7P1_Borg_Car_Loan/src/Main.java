@@ -5,7 +5,7 @@
     Description:This program calculates the monthly payment, the total interest paid and the total payback of a car loan.
  */
 public class Main extends javax.swing.JFrame {
-    private int eLoanAmount, eAnnualInterestRate, eTimePeriod;
+    private double eLoanAmount, eAnnualInterestRate, eTimePeriod;
     private String stringLoanAmount, stringAnnualInterestRate, stringTimePeriod, stringMonthlyPayment, stringTotalIntrestPayed, stringTotalPayback;
     /**
      * Creates new form Main
@@ -209,7 +209,7 @@ public class Main extends javax.swing.JFrame {
         * For Box Loan Amount
         */
         try{ //trys to get number data 
-            eLoanAmount = Integer.parseInt(stringLoanAmount);
+            eLoanAmount = Double.parseDouble(stringLoanAmount);
         }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
             inputLoanAmount.setText("Enter Numbers Only");
             return;
@@ -219,7 +219,7 @@ public class Main extends javax.swing.JFrame {
         }
         //For Box Annual Interest Rate
         try{ //trys to get number data 
-            eAnnualInterestRate = Integer.parseInt(stringAnnualInterestRate);
+            eAnnualInterestRate = Double.parseDouble(stringAnnualInterestRate);
         }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
             inputAnnualIntrestRate.setText("Enter Numbers Only");
             return;
@@ -229,7 +229,7 @@ public class Main extends javax.swing.JFrame {
         }
         //For Box Time Period
         try{ //trys to get number data 
-            eTimePeriod = Integer.parseInt(stringTimePeriod);
+            eTimePeriod = Double.parseDouble(stringTimePeriod);
         }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
             inputTimePeriod.setText("Enter Numbers Only");
             return;
