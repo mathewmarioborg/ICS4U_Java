@@ -52,5 +52,4 @@ public class AreaCalculations {
         double area = (double)Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC)); //calculates area = √(s(s-a)(s-b)(s-c))
         return area; //returns the value of area
     }
-
 }

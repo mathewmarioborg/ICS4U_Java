@@ -109,9 +109,9 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(sideC))
                                 .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(enterSideC, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                                    .addComponent(enterSideA, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                                     .addComponent(enterSideB)
-                                    .addComponent(enterSideA)))))
+                                    .addComponent(enterSideC)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +160,6 @@ public class Main extends javax.swing.JFrame {
         stringSideA = enterSideA.getText();
         stringSideB = enterSideB.getText();
         stringSideC = enterSideC.getText();
-        
         /*
         * Passes the string data to the vareable ints we created
         * For Box A
@@ -170,8 +169,8 @@ public class Main extends javax.swing.JFrame {
         }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
             enterSideA.setText("Enter Numbers Only");
             return;
-        }if (eSideA <= 0){ //if number is negative or 0 display Enter Positive Numbers Only and retry the program
-            enterSideA.setText("Enter Positive Numbers Only");
+        }if (eSideA <= 0){ //if number is negative or 0 display Positive Numbers Only and retry the program
+            enterSideA.setText("Positive Numbers Only");
             return;
         }
         //For Box B
@@ -180,8 +179,8 @@ public class Main extends javax.swing.JFrame {
         }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
             enterSideB.setText("Enter Numbers Only");
             return;
-        }if (eSideB <= 0){ //if number is negative or 0 display Enter Positive Numbers Only and retry the program
-            enterSideB.setText("Enter Positive Numbers Only");
+        }if (eSideB <= 0){ //if number is negative or 0 display Positive Numbers Only and retry the program
+            enterSideB.setText("Positive Numbers Only");
             return;
         }
         //For Box C
@@ -190,8 +189,8 @@ public class Main extends javax.swing.JFrame {
         }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
             enterSideC.setText("Enter Numbers Only");
             return;
-        }if (eSideC <= 0){ //if number is negative or 0 display Enter Positive Numbers Only and retry the program
-            enterSideC.setText("Enter Positive Numbers Only");
+        }if (eSideC <= 0){ //if number is negative or 0 display Positive Numbers Only and retry the program
+            enterSideC.setText("Positive Numbers Only");
             return;
         }
 
