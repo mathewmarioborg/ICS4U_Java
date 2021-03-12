@@ -23,13 +23,192 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="amountTitle" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="annualIntrestRateTitle" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="timePeriodTitle" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="monthlyPaymentTitle" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalInterestPaidTitle" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalPaybackTitle" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Component id="calculate" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="inputLoanAmount" max="32767" attributes="0"/>
+                      <Component id="inputAnnualIntrestRate" alignment="0" max="32767" attributes="0"/>
+                      <Component id="inputTimePeriod" alignment="0" max="32767" attributes="0"/>
+                      <Component id="outputMonthlyPayment" alignment="0" max="32767" attributes="0"/>
+                      <Component id="outputTotalIntrestPaid" alignment="0" max="32767" attributes="0"/>
+                      <Component id="outputTotalPayback" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="60" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="author" min="-2" max="-2" attributes="0"/>
+                          <Component id="title" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="clear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="title" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="author" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="inputLoanAmount" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="amountTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="inputAnnualIntrestRate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="annualIntrestRateTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="inputTimePeriod" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="timePeriodTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="8" max="32767" attributes="0"/>
+              <Component id="calculate" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="monthlyPaymentTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="outputMonthlyPayment" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="totalInterestPaidTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="outputTotalIntrestPaid" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="outputTotalPayback" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalPaybackTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="clear" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="title">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="36" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="32" green="ff" red="a" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Car Loan"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="author">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="By: Mathew Borg"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="amountTitle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Loan Amount ($)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="annualIntrestRateTitle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Annual Intrest Rate (%)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="timePeriodTitle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Time Period (Years)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="monthlyPaymentTitle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Monthly Payment"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="totalInterestPaidTitle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Interest Paid"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="totalPaybackTitle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Payback"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="calculate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Calculate"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="clear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Clear"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputLoanAmount">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputLoanAmountActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputAnnualIntrestRate">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputAnnualIntrestRateActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputTimePeriod">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputTimePeriodActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="outputMonthlyPayment">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="outputMonthlyPaymentActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="outputTotalIntrestPaid">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="outputTotalIntrestPaidActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="outputTotalPayback">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="outputTotalPaybackActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
 </Form>
