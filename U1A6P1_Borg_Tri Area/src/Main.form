@@ -143,16 +143,25 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="enterSideA">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enterSideAActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="enterSideB">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enterSideBActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="enterSideC">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enterSideCActionPerformed"/>
       </Events>
@@ -174,6 +183,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="outputTriangleArea">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="outputTriangleAreaActionPerformed"/>
       </Events>

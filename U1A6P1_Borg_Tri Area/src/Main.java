@@ -54,18 +54,21 @@ public class Main extends javax.swing.JFrame {
         sideC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         sideC.setText("Enter Side C");
 
+        enterSideA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         enterSideA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterSideAActionPerformed(evt);
             }
         });
 
+        enterSideB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         enterSideB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterSideBActionPerformed(evt);
             }
         });
 
+        enterSideC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         enterSideC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterSideCActionPerformed(evt);
@@ -82,6 +85,7 @@ public class Main extends javax.swing.JFrame {
         triangleArea.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         triangleArea.setText("Triangle Area:");
 
+        outputTriangleArea.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         outputTriangleArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 outputTriangleAreaActionPerformed(evt);
@@ -199,7 +203,7 @@ public class Main extends javax.swing.JFrame {
         //if checksum is true run area calculation and setText its value else setText sum of two sides must be greater the third side
         if (checkSum == true){ 
             double areaCalculations = AreaCalculations.area(eSideA,eSideB,eSideC);
-            outputTriangleArea.setText("Number = " + areaCalculations);
+            outputTriangleArea.setText("Total Area = " + areaCalculations);
         }else{
             outputTriangleArea.setText("sum of two sides must be greater the third side");
         }
