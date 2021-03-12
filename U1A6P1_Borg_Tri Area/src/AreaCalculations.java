@@ -50,6 +50,7 @@ public class AreaCalculations {
     public static double area(double sideA, double sideB, double sideC){
         double s = (0.5) * (sideA + sideB + sideC); //calculates s = (a+b+c)/2
         double area = (double)Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC)); //calculates area = √(s(s-a)(s-b)(s-c))
-        return area; //returns the value of area
+        double areaRounded = Math.round(area*100.0)/100.0; // rounds numbers to 2 decimal places
+        return areaRounded; //returns the value of area
     }
 }
