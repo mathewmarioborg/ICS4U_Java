@@ -151,17 +151,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="monthlyPaymentTitle">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Monthly Payment"/>
+        <Property name="text" type="java.lang.String" value="Monthly Payment ($)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="totalInterestPaidTitle">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Total Interest Paid"/>
+        <Property name="text" type="java.lang.String" value="Total Interest Paid (%)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="totalPaybackTitle">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Total Payback"/>
+        <Property name="text" type="java.lang.String" value="Total Payback ($)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="calculate">
@@ -181,31 +181,49 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputLoanAmount">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputLoanAmountActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputAnnualIntrestRate">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputAnnualIntrestRateActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputTimePeriod">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputTimePeriodActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="outputMonthlyPayment">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="outputMonthlyPaymentActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="outputTotalIntrestPaid">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="outputTotalIntrestPaidActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="outputTotalPayback">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="outputTotalPaybackActionPerformed"/>
       </Events>

@@ -55,11 +55,11 @@ public class Main extends javax.swing.JFrame {
 
         timePeriodTitle.setText("Time Period (Years)");
 
-        monthlyPaymentTitle.setText("Monthly Payment");
+        monthlyPaymentTitle.setText("Monthly Payment ($)");
 
-        totalInterestPaidTitle.setText("Total Interest Paid");
+        totalInterestPaidTitle.setText("Total Interest Paid (%)");
 
-        totalPaybackTitle.setText("Total Payback");
+        totalPaybackTitle.setText("Total Payback ($)");
 
         calculate.setText("Calculate");
         calculate.addActionListener(new java.awt.event.ActionListener() {
@@ -75,36 +75,42 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        inputLoanAmount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         inputLoanAmount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputLoanAmountActionPerformed(evt);
             }
         });
 
+        inputAnnualIntrestRate.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         inputAnnualIntrestRate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputAnnualIntrestRateActionPerformed(evt);
             }
         });
 
+        inputTimePeriod.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         inputTimePeriod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputTimePeriodActionPerformed(evt);
             }
         });
 
+        outputMonthlyPayment.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         outputMonthlyPayment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 outputMonthlyPaymentActionPerformed(evt);
             }
         });
 
+        outputTotalIntrestPaid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         outputTotalIntrestPaid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 outputTotalIntrestPaidActionPerformed(evt);
             }
         });
 
+        outputTotalPayback.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         outputTotalPayback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 outputTotalPaybackActionPerformed(evt);
