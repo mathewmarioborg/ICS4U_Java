@@ -5,8 +5,8 @@
     Description: This program calculates the area of a triangle when all three sides are known.
  */
 public class Main extends javax.swing.JFrame {
-    private int eSideA, eSideB, eSideC; //creats a int for number input
-    private String stringSideA, stringSideB, stringSideC, stringArea; // creats strings to display answers
+    private double eSideA, eSideB, eSideC; //creats a int for number input
+    private String stringSideA, stringSideB, stringSideC; // creats strings to display answers
 
     /**
      * Creates new form Main
@@ -169,7 +169,7 @@ public class Main extends javax.swing.JFrame {
         * For Box A
         */
         try{ //trys to get number data 
-            eSideA = Integer.parseInt(stringSideA);
+            eSideA = Double.parseDouble(stringSideA);
         }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
             enterSideA.setText("Enter Numbers Only");
             return;
@@ -179,7 +179,7 @@ public class Main extends javax.swing.JFrame {
         }
         //For Box B
         try{ //trys to get number data 
-            eSideB = Integer.parseInt(stringSideB);
+            eSideB = Double.parseDouble(stringSideB);
         }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
             enterSideB.setText("Enter Numbers Only");
             return;
@@ -189,7 +189,7 @@ public class Main extends javax.swing.JFrame {
         }
         //For Box C
         try{ //trys to get number data 
-            eSideC = Integer.parseInt(stringSideC);
+            eSideC = Double.parseDouble(stringSideC);
         }catch (NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
             enterSideC.setText("Enter Numbers Only");
             return;
