@@ -276,7 +276,13 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_outputTotalPaybackActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        // TODO add your handling code here:
+        //Clear all boxes 
+        inputAnnualIntrestRate.setText("");
+        inputLoanAmount.setText("");
+        inputTimePeriod.setText("");
+        outputMonthlyPayment.setText("");
+        outputTotalIntrestPaid.setText("");
+        outputTotalPayback.setText("");
     }//GEN-LAST:event_clearActionPerformed
 
     /**
