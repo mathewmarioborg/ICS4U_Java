@@ -9,7 +9,13 @@ import java.util.*; //Import Java Utils
 
 public class SumCalculator {
     public int sum; //creats public ints for sum and product
-
+    
+    /*
+    Function: sumCalculator
+    Purpose:  This method calculates the sum of a array of numbers
+    Parameters: ArrayList <Integer> inputSumNum represents a array of numbers     
+    Return: double 
+    */
     public static double sumCalculator(ArrayList <Integer> inputSumNum){ //creats a double method with an ArrayList <Integer> input
         int sum = 0; //sets sum int to 0
         for (int i: inputSumNum){ //creats a for loop to find the average of given arraylist of integers
@@ -18,6 +24,12 @@ public class SumCalculator {
         return sum;//return sum
     }
     
+    /*
+    Function: sumEvenCalculator
+    Purpose:  This method calculates the sum of even numbers in a array
+    Parameters: ArrayList <Integer> inputSumEven represents a array of numbers     
+    Return: double 
+    */
     public static double sumEvenCalculator(ArrayList <Integer> inputSumEven){ //creats a double method with an ArrayList <Integer> input
         ArrayList <Integer> sumEven = new ArrayList(); //creats a array to store the even numbers in
         for (int i=0; i < inputSumEven.size(); i++) { //creats a for loop of the array input
@@ -29,6 +41,12 @@ public class SumCalculator {
         return sum; //returns the sum double
     }
     
+    /*
+    Function: sumOddCalculator
+    Purpose:  This method calculates the sum of odd numbers in a array
+    Parameters: ArrayList <Integer> inputSumOdd represents a array of numbers     
+    Return: double 
+    */
     public static double sumOddCalculator(ArrayList <Integer> inputSumOdd){ //creats a double method with an ArrayList <Integer> input
         ArrayList <Integer> sumOdd = new ArrayList(); //creats a array to store the odd numbers in
         for (int i=0; i <inputSumOdd.size(); i++){ //creats a for loop of the array input
