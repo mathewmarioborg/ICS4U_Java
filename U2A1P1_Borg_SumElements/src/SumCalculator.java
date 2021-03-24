@@ -4,12 +4,9 @@
     Date:	2021-3-20
     Description:This program that has the ability to store and display integer values in an array
  */
-
 import java.util.*; //Import Java Utils
 
-public class SumCalculator {
-    public int sum; //creats public ints for sum and product
-    
+public class SumCalculator {    
     /*
     Function: sumCalculator
     Purpose:  This method calculates the sum of a array of numbers
@@ -25,20 +22,47 @@ public class SumCalculator {
     }
     
     /*
+    Function: findEvenCalculator
+    Purpose:  This method calculates the even numbers of a array 
+    Parameters: ArrayList <Integer> inputFindEven represents a array of numbers     
+    Return: ArrayList <Integer> 
+    */
+    public static ArrayList <Integer> findEvenCalculator(ArrayList <Integer> inputFindEven){ //creats a ArrayList <Integer> method with ArrayList <Integer> input
+        ArrayList <Integer> findEven = new ArrayList(); //creats a array to store the even numbers in
+        for (int i=0; i < inputFindEven.size(); i++) { //creats a for loop of the array input
+            if(inputFindEven.get(i)%2 == 0){ //finds all the even numbers by result of i%2 (if it = 0 the number is even)
+                findEven.add(inputFindEven.get(i)); //adds inputFindEven.get(i) to the findEven Array
+            }
+        }
+        return findEven; //returns findEven array
+    }
+    
+    /*
+    Function: findOddCalculator
+    Purpose:  This method calculates the odd numbers of a array 
+    Parameters: ArrayList <Integer> inputFindOdd represents a array of numbers     
+    Return: ArrayList <Integer> 
+    */
+    public static ArrayList <Integer> findOddCalculator(ArrayList <Integer> inputFindOdd){ //creats a ArrayList <Integer> method with ArrayList <Integer> input
+        ArrayList <Integer> findOdd = new ArrayList(); //creats a array to store the odd numbers in
+        for (int i=0; i <inputFindOdd.size(); i++){ //creats a for loop of the array input
+            if(inputFindOdd.get(i)%2 != 0){ //finds all the odd numbers by result of i%2 (if it != 0 the number is odd)
+                findOdd.add(inputFindOdd.get(i)); //adds inputFindOdd.get(i) to the findOdd Array
+            }
+        }
+        return findOdd;// returns findEven array
+    }
+    
+    /*
     Function: sumEvenCalculator
     Purpose:  This method calculates the sum of even numbers in a array
     Parameters: ArrayList <Integer> inputSumEven represents a array of numbers     
     Return: double 
     */
     public static double sumEvenCalculator(ArrayList <Integer> inputSumEven){ //creats a double method with an ArrayList <Integer> input
-        ArrayList <Integer> sumEven = new ArrayList(); //creats a array to store the even numbers in
-        for (int i=0; i < inputSumEven.size(); i++) { //creats a for loop of the array input
-            if(inputSumEven.get(i)%2 == 0){ //finds all the even numbers by result of i%2 (if it = 0 the number is even)
-                sumEven.add(inputSumEven.get(i)); //adds inputSumEven.get(i) to the sumEven Array
-            }
-        }
-        double sum = sumCalculator(sumEven);//send the sumEven array to sumCalculator function to calculate sum
-        return sum; //returns the sum double
+        ArrayList <Integer> getEven = findEvenCalculator(inputSumEven); //passes inputSumEven array to findEvenCalculator method
+        double getSum = sumCalculator(getEven); //passes getSum array to sumCalcuator method
+        return getSum; //returns getSum
     }
     
     /*
@@ -48,13 +72,8 @@ public class SumCalculator {
     Return: double 
     */
     public static double sumOddCalculator(ArrayList <Integer> inputSumOdd){ //creats a double method with an ArrayList <Integer> input
-        ArrayList <Integer> sumOdd = new ArrayList(); //creats a array to store the odd numbers in
-        for (int i=0; i <inputSumOdd.size(); i++){ //creats a for loop of the array input
-            if(inputSumOdd.get(i)%2 != 0){ //finds all the odd numbers by result of i%2 (if it != 0 the number is odd)
-                sumOdd.add(inputSumOdd.get(i)); //adds inputSumEven.get(i) to the sumOdd Array
-            }
-        }
-        double sum = sumCalculator(sumOdd);//send the sumOdd array to sumCalculator function to calculate sum
-        return sum; //returns the sum double 
+        ArrayList <Integer> getOdd = findOddCalculator(inputSumOdd); //passes inputSumOdd array to findOddCalculator method
+        double getSum = sumCalculator(getOdd); //passes getOdd to sumCalculator method
+        return getSum; //returns getSum
     }
 }
