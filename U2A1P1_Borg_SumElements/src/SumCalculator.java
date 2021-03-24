@@ -11,14 +11,14 @@ public class SumCalculator {
     Function: sumCalculator
     Purpose:  This method calculates the sum of a array of numbers
     Parameters: ArrayList <Integer> inputSumNum represents a array of numbers     
-    Return: double 
+    Return: Integer 
     */
-    public static double sumCalculator(ArrayList <Integer> inputSumNum){ //creats a double method with an ArrayList <Integer> input
+    public static Integer sumCalculator(ArrayList <Integer> inputSumNum){ //creats a Integer method with an ArrayList <Integer> input
         int sum = 0; //sets sum int to 0
-        for (int i: inputSumNum){ //creats a for loop to find the average of given arraylist of integers
+        for (Integer i: inputSumNum){ //creats a for loop to find the average of given arraylist of integers
             sum += i; // adds the i var numbers to the sum var
         }
-        return sum;//return sum
+        return sum;//return sum Integer
     }
     
     /*
@@ -57,23 +57,23 @@ public class SumCalculator {
     Function: sumEvenCalculator
     Purpose:  This method calculates the sum of even numbers in a array
     Parameters: ArrayList <Integer> inputSumEven represents a array of numbers     
-    Return: double 
+    Return: Integer 
     */
-    public static double sumEvenCalculator(ArrayList <Integer> inputSumEven){ //creats a double method with an ArrayList <Integer> input
+    public static Integer sumEvenCalculator(ArrayList <Integer> inputSumEven){ //creats a Integer method with an ArrayList <Integer> input
         ArrayList <Integer> getEven = findEvenCalculator(inputSumEven); //passes inputSumEven array to findEvenCalculator method
-        double getSum = sumCalculator(getEven); //passes getSum array to sumCalcuator method
-        return getSum; //returns getSum
+        Integer getSum = sumCalculator(getEven); //passes getSum array to sumCalcuator method
+        return getSum; //returns getSum Integer
     }
     
     /*
     Function: sumOddCalculator
     Purpose:  This method calculates the sum of odd numbers in a array
     Parameters: ArrayList <Integer> inputSumOdd represents a array of numbers     
-    Return: double 
+    Return: Integer 
     */
-    public static double sumOddCalculator(ArrayList <Integer> inputSumOdd){ //creats a double method with an ArrayList <Integer> input
+    public static Integer sumOddCalculator(ArrayList <Integer> inputSumOdd){ //creats a Integer method with an ArrayList <Integer> input
         ArrayList <Integer> getOdd = findOddCalculator(inputSumOdd); //passes inputSumOdd array to findOddCalculator method
-        double getSum = sumCalculator(getOdd); //passes getOdd to sumCalculator method
-        return getSum; //returns getSum
+        Integer getSum = sumCalculator(getOdd); //passes getOdd to sumCalculator method
+        return getSum; //returns getSum Integer
     }
 }
