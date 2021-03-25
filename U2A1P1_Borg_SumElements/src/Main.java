@@ -238,28 +238,62 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_exitActionPerformed
 
     private void sumAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumAllActionPerformed
-        String sTemp; //creats temp string
+        String sTemp, outputString="", sNumbers; //creats temp, outputString="" and sNumbers string
+        Integer iNumbers; //creats Integer iNumbers
         Integer sumAll = SumCalculator.sumCalculator(numbers); //gets the sum value for all numbers in the string
         
         sTemp = Integer.toString(sumAll); //sets the temp string to the value of the Integer
         outputSum.setText(sTemp); //sets output text feild to the value of sTemp
+        
+        Iterator <Integer> stepper = numbers.iterator(); //creats a iterator 
+        for (int i = 0; i < numbers.size(); i++){ //creats forloop to find how many numbers are in the arraylist
+            iNumbers = (Integer) stepper.next(); //gets a item from arraylist then gets the next item
+            sNumbers = Integer.toString(iNumbers); //converts iNumbers Integer to sNumbers String
+            
+            outputString = outputString + sNumbers +"\n"; //creats output string with sNumbers values and a tab
+        } 
+        outputArray.setText("The ArrayList Values are:" + "\n" + outputString); //outputs The ArrayList Values are:, creats a tab then shows outputString
 
     }//GEN-LAST:event_sumAllActionPerformed
 
     private void sumEvenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumEvenActionPerformed
-        String sTemp; //creats temp string
+        String sTemp, outputString="", sNumbers; //creats temp, outputString="" and sNumbers string
+        Integer iNumbers; //creats Integer iNumbers
         Integer sumEven = SumCalculator.sumEvenCalculator(numbers); //gets the sum value for the even numbers in the string
+        ArrayList <Integer> evenNumbers = SumCalculator.findEvenCalculator(numbers); //sends numbers arraylist to findEvenCaluclator
         
         sTemp = Integer.toString(sumEven); //sets the temp string to the value of the Integer
         outputSum.setText(sTemp); //sets output text feild to the value of sTemp
+        
+        Iterator <Integer> stepper = evenNumbers.iterator(); //creats a iterator 
+        for (int i = 0; i < evenNumbers.size(); i++){ //creats forloop to find how many numbers are in the arraylist
+            iNumbers = (Integer) stepper.next(); //gets a item from arraylist then gets the next item
+            sNumbers = Integer.toString(iNumbers); //converts iNumbers Integer to sNumbers String
+            
+            outputString = outputString + sNumbers +"\n"; //creats output string with sNumbers values and a tab
+        } 
+        outputArray.setText("The Even Values are:" + "\n" + outputString); //outputs The ArrayList Values are:, creats a tab then shows outputString
+        
+        
     }//GEN-LAST:event_sumEvenActionPerformed
 
     private void sumOddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumOddActionPerformed
-        String sTemp; //creats temp string
+        String sTemp, outputString="", sNumbers; //creats temp, outputString="" and sNumbers string
+        Integer iNumbers; //creats Integer iNumbers
         Integer sumOdd = SumCalculator.sumOddCalculator(numbers); //gets the sum value for the odd numbers in the string
+        ArrayList <Integer> oddNumbers = SumCalculator.findOddCalculator(numbers); //sends numbers arraylist to findOddCaluclator
         
         sTemp = Integer.toString(sumOdd); //sets the temp string to the value of the Integer
         outputSum.setText(sTemp); //sets output text feild to the value of sTemp
+        
+        Iterator <Integer> stepper = oddNumbers.iterator(); //creats a iterator 
+        for (int i = 0; i < oddNumbers.size(); i++){ //creats forloop to find how many numbers are in the arraylist
+            iNumbers = (Integer) stepper.next(); //gets a item from arraylist then gets the next item
+            sNumbers = Integer.toString(iNumbers); //converts iNumbers Integer to sNumbers String
+            
+            outputString = outputString + sNumbers +"\n"; //creats output string with sNumbers values and a tab
+        } 
+        outputArray.setText("The Odd Values are:" + "\n" + outputString); //outputs The ArrayList Values are:, creats a tab then shows outputString
         
     }//GEN-LAST:event_sumOddActionPerformed
 
