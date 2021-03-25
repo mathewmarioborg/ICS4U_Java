@@ -2,7 +2,7 @@
     File Name:	U2A1P1_Borg_SumElements
     Programmer:	Mathew Borg
     Date:	2021-3-20
-    Description:This program that has the ability to store and display integer values in an array
+    Description:This program that has the ability to store and display Integer values in an array
  */
 import java.util.*; //Import Java Utils
 
