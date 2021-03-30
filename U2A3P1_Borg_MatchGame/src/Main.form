@@ -148,6 +148,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard2">
       <Properties>
@@ -155,6 +158,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard3">
       <Properties>
@@ -162,6 +168,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard4">
       <Properties>
@@ -169,6 +178,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard5">
       <Properties>
@@ -176,6 +188,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard5ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard6">
       <Properties>
@@ -183,6 +198,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard6ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard7">
       <Properties>
@@ -190,6 +208,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard7ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard8">
       <Properties>
@@ -197,6 +218,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard8ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard9">
       <Properties>
@@ -204,6 +228,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard9ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard10">
       <Properties>
@@ -211,6 +238,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard10ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard11">
       <Properties>
@@ -218,6 +248,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard11ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard12">
       <Properties>
@@ -225,6 +258,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard12ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard13">
       <Properties>
@@ -232,6 +268,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard13ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard14">
       <Properties>
@@ -239,6 +278,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard14ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard15">
       <Properties>
@@ -246,6 +288,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard15ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCard16">
       <Properties>
@@ -253,6 +298,9 @@
           <Image iconType="3" name="/images/cardback.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCard16ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="mainTitle">
       <Properties>

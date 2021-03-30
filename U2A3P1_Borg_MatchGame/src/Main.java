@@ -11,9 +11,11 @@ import java.util.*;
 import javax.swing.ImageIcon;
 
 public class Main extends javax.swing.JFrame {
+    //Creats String Array Lists
     ArrayList <String> cards = new ArrayList();
     ArrayList <String> set = new ArrayList();
     
+    //assigns images to ImageIcon
     ImageIcon a = new ImageIcon("src\\images\\ram.jpg");
     ImageIcon b = new ImageIcon("src\\images\\case.jpg");
     ImageIcon c = new ImageIcon("src\\images\\dvd.jpg");
@@ -25,6 +27,7 @@ public class Main extends javax.swing.JFrame {
     ImageIcon back = new ImageIcon("src\\images\\cardback.jpg");
     ImageIcon done = new ImageIcon("src\\images\\done.jpg");
     
+    //creats Ints and int array
     int count, c1, c2, card1, card2;
     int cardsLeft = 16;
     int[] change = new int [16];
@@ -73,36 +76,116 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnCard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard1ActionPerformed(evt);
+            }
+        });
 
         btnCard2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard2ActionPerformed(evt);
+            }
+        });
 
         btnCard3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard3ActionPerformed(evt);
+            }
+        });
 
         btnCard4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard4ActionPerformed(evt);
+            }
+        });
 
         btnCard5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard5ActionPerformed(evt);
+            }
+        });
 
         btnCard6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard6ActionPerformed(evt);
+            }
+        });
 
         btnCard7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard7ActionPerformed(evt);
+            }
+        });
 
         btnCard8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard8ActionPerformed(evt);
+            }
+        });
 
         btnCard9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard9ActionPerformed(evt);
+            }
+        });
 
         btnCard10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard10ActionPerformed(evt);
+            }
+        });
 
         btnCard11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard11ActionPerformed(evt);
+            }
+        });
 
         btnCard12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard12ActionPerformed(evt);
+            }
+        });
 
         btnCard13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard13ActionPerformed(evt);
+            }
+        });
 
         btnCard14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard14ActionPerformed(evt);
+            }
+        });
 
         btnCard15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard15ActionPerformed(evt);
+            }
+        });
 
         btnCard16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard16ActionPerformed(evt);
+            }
+        });
 
         mainTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         mainTitle.setText("Matching Game");
@@ -238,12 +321,23 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        //set change array
+        //Set the change array. This section sets up the array to check if a match has been made.
         for (int z = 0; z <= 15; z++){
             change[z] = 1;
         }
         
-        //assign cards at randon
+        /*
+        Assign cards at random.
+        The outer loop puts the numbers zero to seven in the set arrayList.
+        The inner loop puts the numbers in two consecutive array entries.
+        The set.add(temp) line puts the entry in the next available position.
+        The double index = Math.floor (Math.random() * (16-x)) creates a random 
+        number and converts it to integer status.
+        The next two lines add the card to the random arrayList cards, remove 
+        them from the original array, then renumber the remaining cards. The 
+        random number is then generated again, but for one less element.
+        */
+        
         String temp;
         for (int x = 0; x <= 7; x++){
             for (int y = 0; y <= 2; y++){
@@ -258,6 +352,631 @@ public class Main extends javax.swing.JFrame {
             set.remove(set.get(index1));
         }
     }//GEN-LAST:event_btnPlayActionPerformed
+
+    private void btnCard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard1ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard1.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard1.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard1.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard1.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard1.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard1.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard1.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard1.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }      
+        
+    }//GEN-LAST:event_btnCard1ActionPerformed
+
+    private void btnCard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard2ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard2.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard2.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard2.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard2.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard2.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard2.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard2.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard2.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }     
+    }//GEN-LAST:event_btnCard2ActionPerformed
+
+    private void btnCard3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard3ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard3.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard3.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard3.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard3.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard3.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard3.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard3.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard3.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard3ActionPerformed
+
+    private void btnCard4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard4ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard4.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard4.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard4.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard4.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard4.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard4.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard4.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard4.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard4ActionPerformed
+
+    private void btnCard5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard5ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard5.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard5.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard5.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard5.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard5.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard5.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard5.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard5.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard5ActionPerformed
+
+    private void btnCard6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard6ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard6.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard6.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard6.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard6.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard6.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard6.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard6.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard6.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard6ActionPerformed
+
+    private void btnCard7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard7ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard7.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard7.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard7.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard7.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard7.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard7.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard7.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard7.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard7ActionPerformed
+
+    private void btnCard8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard8ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard8.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard8.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard8.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard8.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard8.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard8.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard8.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard8.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard8ActionPerformed
+
+    private void btnCard9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard9ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard9.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard9.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard9.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard9.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard9.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard9.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard9.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard9.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard9ActionPerformed
+
+    private void btnCard10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard10ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard10.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard10.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard10.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard10.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard10.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard10.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard10.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard10.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard10ActionPerformed
+
+    private void btnCard11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard11ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard11.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard11.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard11.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard11.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard11.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard11.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard11.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard11.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard11ActionPerformed
+
+    private void btnCard12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard12ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard12.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard12.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard12.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard12.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard12.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard12.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard12.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard12.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard12ActionPerformed
+
+    private void btnCard13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard13ActionPerformed
+        ///checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard3.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard3.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard3.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard3.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard3.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard3.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard3.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard3.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard13ActionPerformed
+
+    private void btnCard14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard14ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard14.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard14.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard14.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard14.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard14.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard14.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard14.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard14.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard14ActionPerformed
+
+    private void btnCard15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard15ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard15.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard15.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard15.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard15.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard15.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard15.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard15.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard15.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard15ActionPerformed
+
+    private void btnCard16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard16ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(1); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard16.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard16.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard16.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard16.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard16.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard16.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard16.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard16.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[1] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[1] = 0;
+        }   
+    }//GEN-LAST:event_btnCard16ActionPerformed
 
     /**
      * @param args the command line arguments
