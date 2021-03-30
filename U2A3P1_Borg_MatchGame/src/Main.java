@@ -1,15 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    programmer: Mathew Borg
+    Date: 2021-03-27
+    Program Name: U2A3P1_Borg_MatchGame
+    Program Discription: This profram uses arrays to simulate a matching game.
+    A grid of cards will be displayed and the user is to select 2 cards at a time
+    looking for a matching card. the goal of this game is to see how quickly
+    the user can find all the matches. 
+*/
+import java.util.*;
+import javax.swing.ImageIcon;
 
-/**
- *
- * @author Mathew Borg
- */
 public class Main extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Main
      */
@@ -26,73 +28,82 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
+        btnCard1 = new javax.swing.JButton();
+        btnCard2 = new javax.swing.JButton();
+        btnCard3 = new javax.swing.JButton();
+        btnCard4 = new javax.swing.JButton();
+        btnCard5 = new javax.swing.JButton();
+        btnCard6 = new javax.swing.JButton();
+        btnCard7 = new javax.swing.JButton();
+        btnCard8 = new javax.swing.JButton();
+        btnCard9 = new javax.swing.JButton();
+        btnCard10 = new javax.swing.JButton();
+        btnCard11 = new javax.swing.JButton();
+        btnCard12 = new javax.swing.JButton();
+        btnCard13 = new javax.swing.JButton();
+        btnCard14 = new javax.swing.JButton();
+        btnCard15 = new javax.swing.JButton();
+        btnCard16 = new javax.swing.JButton();
+        mainTitle = new javax.swing.JLabel();
+        authorTitle = new javax.swing.JLabel();
+        btnPlay = new javax.swing.JButton();
+        btnGuessAgain = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        instructionBox = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Matching Game");
+        mainTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        mainTitle.setText("Matching Game");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setText("By: Mathew Borg");
+        authorTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        authorTitle.setText("By: Mathew Borg");
 
-        jButton17.setText("Play");
+        btnPlay.setText("Play");
 
-        jButton18.setText("Guess Again");
+        btnGuessAgain.setText("Guess Again");
 
-        jButton19.setText("Exit");
+        btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+
+        instructionBox.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        instructionBox.setText("Click the Play button to start. Make sure to click Guess Again after each guess.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,94 +115,103 @@ public class Main extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton14)
+                                .addComponent(btnCard13)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton13)
+                                .addComponent(btnCard14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton15)
+                                .addComponent(btnCard15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton16))
+                                .addComponent(btnCard16))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton10)
+                                .addComponent(btnCard9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton9)
+                                .addComponent(btnCard10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton11)
+                                .addComponent(btnCard11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton12))
+                                .addComponent(btnCard12))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton6)
+                                    .addComponent(btnCard5)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton5)
+                                    .addComponent(btnCard6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton7)
+                                    .addComponent(btnCard7)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton8))
+                                    .addComponent(btnCard8))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton1)
+                                    .addComponent(btnCard1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton2)
+                                    .addComponent(btnCard2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton4)
+                                    .addComponent(btnCard3)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton3)))))
+                                    .addComponent(btnCard4)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(162, 162, 162)
-                        .addComponent(jLabel1))
+                        .addComponent(mainTitle))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(199, 199, 199)
-                        .addComponent(jLabel2))
+                        .addComponent(authorTitle))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(104, 104, 104)
-                        .addComponent(jButton17)
+                        .addComponent(btnPlay)
                         .addGap(83, 83, 83)
-                        .addComponent(jButton18)
+                        .addComponent(btnGuessAgain)
                         .addGap(66, 66, 66)
-                        .addComponent(jButton19)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                        .addComponent(btnExit))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(instructionBox, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(mainTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(authorTitle)
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1)
-                    .addComponent(jButton4))
+                    .addComponent(btnCard4)
+                    .addComponent(btnCard2)
+                    .addComponent(btnCard1)
+                    .addComponent(btnCard3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton8)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7))
+                    .addComponent(btnCard8)
+                    .addComponent(btnCard6)
+                    .addComponent(btnCard5)
+                    .addComponent(btnCard7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton12)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10)
-                    .addComponent(jButton11))
+                    .addComponent(btnCard12)
+                    .addComponent(btnCard10)
+                    .addComponent(btnCard9)
+                    .addComponent(btnCard11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton16)
-                    .addComponent(jButton13)
-                    .addComponent(jButton14)
-                    .addComponent(jButton15))
+                    .addComponent(btnCard16)
+                    .addComponent(btnCard14)
+                    .addComponent(btnCard13)
+                    .addComponent(btnCard15))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton17)
-                    .addComponent(jButton18)
-                    .addComponent(jButton19))
+                    .addComponent(btnPlay)
+                    .addComponent(btnGuessAgain)
+                    .addComponent(btnExit))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(instructionBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0); //exits program
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,26 +249,27 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel authorTitle;
+    private javax.swing.JButton btnCard1;
+    private javax.swing.JButton btnCard10;
+    private javax.swing.JButton btnCard11;
+    private javax.swing.JButton btnCard12;
+    private javax.swing.JButton btnCard13;
+    private javax.swing.JButton btnCard14;
+    private javax.swing.JButton btnCard15;
+    private javax.swing.JButton btnCard16;
+    private javax.swing.JButton btnCard2;
+    private javax.swing.JButton btnCard3;
+    private javax.swing.JButton btnCard4;
+    private javax.swing.JButton btnCard5;
+    private javax.swing.JButton btnCard6;
+    private javax.swing.JButton btnCard7;
+    private javax.swing.JButton btnCard8;
+    private javax.swing.JButton btnCard9;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnGuessAgain;
+    private javax.swing.JButton btnPlay;
+    private javax.swing.JTextField instructionBox;
+    private javax.swing.JLabel mainTitle;
     // End of variables declaration//GEN-END:variables
 }
