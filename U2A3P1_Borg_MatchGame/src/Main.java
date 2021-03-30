@@ -11,6 +11,25 @@ import java.util.*;
 import javax.swing.ImageIcon;
 
 public class Main extends javax.swing.JFrame {
+    ArrayList <String> cards = new ArrayList();
+    ArrayList <String> set = new ArrayList();
+    
+    ImageIcon a = new ImageIcon("src\\images\\ram.jpg");
+    ImageIcon b = new ImageIcon("src\\images\\case.jpg");
+    ImageIcon c = new ImageIcon("src\\images\\dvd.jpg");
+    ImageIcon d = new ImageIcon("src\\images\\harddrive.jpg");
+    ImageIcon e = new ImageIcon("src\\images\\keyboard.jpg");
+    ImageIcon f = new ImageIcon("src\\images\\mice.jpg");
+    ImageIcon g = new ImageIcon("src\\images\\monitor.jpg");
+    ImageIcon h = new ImageIcon("src\\images\\printer.jpg");
+    ImageIcon back = new ImageIcon("src\\images\\cardback.jpg");
+    ImageIcon done = new ImageIcon("src\\images\\done.jpg");
+    
+    int count, c1, c2, card1, card2;
+    int cardsLeft = 16;
+    int[] change = new int [16];
+
+
     
     /**
      * Creates new form Main
