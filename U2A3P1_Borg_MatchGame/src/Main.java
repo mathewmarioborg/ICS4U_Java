@@ -111,6 +111,11 @@ public class Main extends javax.swing.JFrame {
         authorTitle.setText("By: Mathew Borg");
 
         btnPlay.setText("Play");
+        btnPlay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlayActionPerformed(evt);
+            }
+        });
 
         btnGuessAgain.setText("Guess Again");
 
@@ -231,6 +236,28 @@ public class Main extends javax.swing.JFrame {
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0); //exits program
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
+        //set change array
+        for (int z = 0; z <= 15; z++){
+            change[z] = 1;
+        }
+        
+        //assign cards at randon
+        String temp;
+        for (int x = 0; x <= 7; x++){
+            for (int y = 0; y <= 2; y++){
+                temp = Integer.toString(x);
+                set.add(temp);
+            }
+        }
+        for (int x = 0; x <= 15; x++){
+            double index = Math.floor(Math.random()*(16-x));
+            int index1 = (int) index;
+            cards.add(set.get(index1));
+            set.remove(set.get(index1));
+        }
+    }//GEN-LAST:event_btnPlayActionPerformed
 
     /**
      * @param args the command line arguments
