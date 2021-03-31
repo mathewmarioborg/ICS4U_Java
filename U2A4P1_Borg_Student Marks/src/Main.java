@@ -26,17 +26,164 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        textTitle = new javax.swing.JLabel();
+        textAuthor = new javax.swing.JLabel();
+        textFirstName = new javax.swing.JLabel();
+        textLastName = new javax.swing.JLabel();
+        textTest1 = new javax.swing.JLabel();
+        textTest2 = new javax.swing.JLabel();
+        textTest3 = new javax.swing.JLabel();
+        textTest4 = new javax.swing.JLabel();
+        inputFirstName = new javax.swing.JTextField();
+        inputLastName = new javax.swing.JTextField();
+        btnAdd = new javax.swing.JButton();
+        btnList = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        inputTest1 = new javax.swing.JTextField();
+        inputTest2 = new javax.swing.JTextField();
+        inputTest3 = new javax.swing.JTextField();
+        inputTest4 = new javax.swing.JTextField();
+        btnStudentAvarage = new javax.swing.JButton();
+        btnCourseAverage = new javax.swing.JButton();
+        outputList = new javax.swing.JTextArea();
+        outputAverage = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        textTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        textTitle.setForeground(new java.awt.Color(10, 255, 10));
+        textTitle.setText("Student Marks");
+
+        textAuthor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        textAuthor.setText("By: Mathew Borg");
+
+        textFirstName.setText("First Name:");
+
+        textLastName.setText("Last Name:");
+
+        textTest1.setText("Test 1:");
+
+        textTest2.setText("Test 2:");
+
+        textTest3.setText("Test 3:");
+
+        textTest4.setText("Test 4:");
+
+        btnAdd.setText("Add");
+
+        btnList.setText("List");
+
+        btnExit.setText("Exit");
+
+        inputTest1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        inputTest2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        inputTest3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        inputTest4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        btnStudentAvarage.setText("Student Average");
+
+        btnCourseAverage.setText("Course Average");
+
+        outputList.setColumns(20);
+        outputList.setRows(5);
+
+        outputAverage.setColumns(20);
+        outputAverage.setRows(5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textAuthor)
+                .addGap(133, 133, 133))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(outputList)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textTest1)
+                            .addComponent(textLastName)
+                            .addComponent(textTest2)
+                            .addComponent(textTest3)
+                            .addComponent(textTest4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputFirstName)
+                            .addComponent(inputLastName)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(inputTest4, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                                    .addComponent(inputTest2)
+                                    .addComponent(inputTest1)
+                                    .addComponent(inputTest3))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnStudentAvarage, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                    .addComponent(btnCourseAverage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textFirstName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textTitle)
+                        .addGap(0, 80, Short.MAX_VALUE))
+                    .addComponent(outputAverage))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(textTitle)
+                .addGap(1, 1, 1)
+                .addComponent(textAuthor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFirstName)
+                    .addComponent(inputFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textLastName)
+                    .addComponent(inputLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textTest1)
+                    .addComponent(btnAdd)
+                    .addComponent(inputTest1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStudentAvarage))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textTest2)
+                    .addComponent(btnList)
+                    .addComponent(inputTest2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCourseAverage))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textTest3)
+                    .addComponent(inputTest3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textTest4)
+                    .addComponent(btnExit)
+                    .addComponent(inputTest4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(outputList, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(outputAverage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +225,26 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnCourseAverage;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnList;
+    private javax.swing.JButton btnStudentAvarage;
+    private javax.swing.JTextField inputFirstName;
+    private javax.swing.JTextField inputLastName;
+    private javax.swing.JTextField inputTest1;
+    private javax.swing.JTextField inputTest2;
+    private javax.swing.JTextField inputTest3;
+    private javax.swing.JTextField inputTest4;
+    private javax.swing.JTextArea outputAverage;
+    private javax.swing.JTextArea outputList;
+    private javax.swing.JLabel textAuthor;
+    private javax.swing.JLabel textFirstName;
+    private javax.swing.JLabel textLastName;
+    private javax.swing.JLabel textTest1;
+    private javax.swing.JLabel textTest2;
+    private javax.swing.JLabel textTest3;
+    private javax.swing.JLabel textTest4;
+    private javax.swing.JLabel textTitle;
     // End of variables declaration//GEN-END:variables
 }
