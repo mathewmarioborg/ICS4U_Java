@@ -201,6 +201,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         btnGuessAgain.setText("Guess Again");
+        btnGuessAgain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuessAgainActionPerformed(evt);
+            }
+        });
 
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -340,7 +345,7 @@ public class Main extends javax.swing.JFrame {
         
         String temp;
         for (int x = 0; x <= 7; x++){
-            for (int y = 0; y <= 2; y++){
+            for (int y = 1; y <= 2; y++){
                 temp = Integer.toString(x);
                 set.add(temp);
             }
@@ -351,11 +356,14 @@ public class Main extends javax.swing.JFrame {
             cards.add(set.get(index1));
             set.remove(set.get(index1));
         }
+        
+      
     }//GEN-LAST:event_btnPlayActionPerformed
 
     private void btnCard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard1ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        
+        String temp = cards.get(0); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -385,10 +393,10 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[0] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[0] = 0;
         }      
         
     }//GEN-LAST:event_btnCard1ActionPerformed
@@ -434,7 +442,7 @@ public class Main extends javax.swing.JFrame {
 
     private void btnCard3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard3ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(2); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -464,16 +472,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[2] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[2] = 0;
         }   
     }//GEN-LAST:event_btnCard3ActionPerformed
 
     private void btnCard4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard4ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(3); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -503,16 +511,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[3] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[3] = 0;
         }   
     }//GEN-LAST:event_btnCard4ActionPerformed
 
     private void btnCard5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard5ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(4);
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -542,16 +550,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[4] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[4] = 0;
         }   
     }//GEN-LAST:event_btnCard5ActionPerformed
 
     private void btnCard6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard6ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(5); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -581,16 +589,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[5] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[5] = 0;
         }   
     }//GEN-LAST:event_btnCard6ActionPerformed
 
     private void btnCard7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard7ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(6); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -620,16 +628,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[6] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[6] = 0;
         }   
     }//GEN-LAST:event_btnCard7ActionPerformed
 
     private void btnCard8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard8ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(7); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -659,16 +667,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[7] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[7]= 0;
         }   
     }//GEN-LAST:event_btnCard8ActionPerformed
 
     private void btnCard9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard9ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(8);
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -698,16 +706,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[8] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[8] = 0;
         }   
     }//GEN-LAST:event_btnCard9ActionPerformed
 
     private void btnCard10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard10ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(9); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -737,16 +745,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[9] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[9] = 0;
         }   
     }//GEN-LAST:event_btnCard10ActionPerformed
 
     private void btnCard11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard11ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(10); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -776,16 +784,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[10] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[10] = 0;
         }   
     }//GEN-LAST:event_btnCard11ActionPerformed
 
     private void btnCard12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard12ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(11); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -815,35 +823,35 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[11] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[11] = 0;
         }   
     }//GEN-LAST:event_btnCard12ActionPerformed
 
     private void btnCard13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard13ActionPerformed
         ///checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(12); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
             //changes the button icon to the correct picture.
-            btnCard3.setIcon(a);
+            btnCard13.setIcon(a);
         }else if (temp.equals("1")){
-            btnCard3.setIcon(b);
+            btnCard13.setIcon(b);
         }else if (temp.equals("2")){
-            btnCard3.setIcon(c);
+            btnCard13.setIcon(c);
         }else if (temp.equals("3")){
-            btnCard3.setIcon(d);
+            btnCard13.setIcon(d);
         }else if (temp.equals("4")){
-            btnCard3.setIcon(e);
+            btnCard13.setIcon(e);
         }else if (temp.equals("5")){
-            btnCard3.setIcon(f);
+            btnCard13.setIcon(f);
         }else if (temp.equals("6")){
-            btnCard3.setIcon(g);
+            btnCard13.setIcon(g);
         }else if (temp.equals("7")){
-            btnCard3.setIcon(h);
+            btnCard13.setIcon(h);
         }
         
         /*
@@ -854,16 +862,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[12]= 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[12] = 0;
         }   
     }//GEN-LAST:event_btnCard13ActionPerformed
 
     private void btnCard14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard14ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(13); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -893,16 +901,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[13] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[13] = 0;
         }   
     }//GEN-LAST:event_btnCard14ActionPerformed
 
     private void btnCard15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard15ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(14); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -932,16 +940,16 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[14] = 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[14] = 0;
         }   
     }//GEN-LAST:event_btnCard15ActionPerformed
 
     private void btnCard16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard16ActionPerformed
         //checks to see what random picture is placed in the box.
-        String temp = cards.get(1); 
+        String temp = cards.get(15);
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
@@ -971,12 +979,121 @@ public class Main extends javax.swing.JFrame {
         count ++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[15]= 0;
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
-            change[1] = 0;
+            change[15] = 0;
         }   
     }//GEN-LAST:event_btnCard16ActionPerformed
+
+    private void btnGuessAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuessAgainActionPerformed
+        count = 0;
+        if(c1 == c2){
+            for(int y = 1; y <= 2; y++){
+                if(change[0] == 0){
+                    btnCard1.setIcon(done);
+                    change[0] = 2;
+                }else if(change[1] == 0){
+                    btnCard2.setIcon(done);
+                    change[1] = 2;
+                }else if(change[2] == 0){
+                    btnCard3.setIcon(done);
+                    change[2] = 2;
+                }else if(change[3] == 0){
+                    btnCard4.setIcon(done);
+                    change[3] = 2;
+                }else if(change[4] == 0){
+                    btnCard5.setIcon(done);
+                    change[4] = 2;
+                }else if(change[5] == 0){
+                    btnCard6.setIcon(done);
+                    change[5] = 2;
+                }else if(change[6] == 0){
+                    btnCard7.setIcon(done);
+                    change[6] = 2;
+                }else if(change[7] == 0){
+                    btnCard8.setIcon(done);
+                    change[7] = 2;
+                }else if(change[8] == 0){
+                    btnCard9.setIcon(done);
+                    change[8] = 2;
+                }else if(change[9] == 0){
+                    btnCard10.setIcon(done);
+                    change[9] = 2;
+                }else if(change[10] == 0){
+                    btnCard11.setIcon(done);
+                    change[10] = 2;
+                }else if(change[11] == 0){
+                    btnCard12.setIcon(done);
+                    change[11] = 2;
+                }else if(change[12] == 0){
+                    btnCard13.setIcon(done);
+                    change[12] = 2;
+                }else if(change[13] == 0){
+                    btnCard14.setIcon(done);
+                    change[13] = 2;
+                }else if(change[14] == 0){
+                    btnCard15.setIcon(done);
+                    change[14] = 2;
+                }else if(change[15] == 0){
+                    btnCard16.setIcon(done);
+                    change[15] = 2;
+                }
+            }
+        }else{
+            for (int y = 1; y<=2; y++) {
+                 if (change[0] == 0) {
+                     btnCard1.setIcon(back);
+                     change[0] = 1;
+                 }else if(change[1] == 0){
+                     btnCard2.setIcon(back);
+                     change[1] = 1;
+                 }else if(change[2] == 0){
+                     btnCard3.setIcon(back);
+                     change[2] = 1;
+                 }else if(change[3] == 0){
+                     btnCard4.setIcon(back);
+                     change[3] = 1;
+                 }else if(change[4] == 0){
+                     btnCard5.setIcon(back);
+                     change[4] = 1;
+                 }else if(change[5] == 0){
+                     btnCard6.setIcon(back);
+                     change[5] = 1;
+                 }else if(change[6] == 0){
+                     btnCard7.setIcon(back);
+                     change[6] = 1;
+                 }else if(change[7] == 0){
+                     btnCard8.setIcon(back);
+                     change[7] = 1;
+                 }else if(change[8] == 0){
+                     btnCard9.setIcon(back);
+                     change[8] = 1;
+                 }else if(change[9] == 0){
+                     btnCard10.setIcon(back);
+                     change[9] = 1;
+                 }else if(change[10] == 0){
+                     btnCard11.setIcon(back);
+                     change[10] = 1;
+                 }else if(change[11] == 0){
+                     btnCard12.setIcon(back);
+                     change[11] = 1;
+                 }else if(change[12] == 0){
+                     btnCard13.setIcon(back);
+                     change[12] = 1;
+                 }else if(change[13] == 0){
+                     btnCard14.setIcon(back);
+                     change[13] = 1;
+                 }else if(change[14] == 0){
+                     btnCard15.setIcon(back);
+                     change[14] = 1;
+                 }else if(change[15] == 0){
+                     btnCard16.setIcon(back);
+                     change[15] = 1;
+                 }
+            }
+        }
+    }//GEN-LAST:event_btnGuessAgainActionPerformed
 
     /**
      * @param args the command line arguments
