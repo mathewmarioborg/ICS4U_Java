@@ -187,6 +187,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         mainTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        mainTitle.setForeground(new java.awt.Color(255, 10, 10));
         mainTitle.setText("Matching Game");
 
         authorTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
