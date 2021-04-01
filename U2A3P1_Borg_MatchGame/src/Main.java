@@ -32,13 +32,12 @@ public class Main extends javax.swing.JFrame {
     int cardsLeft = 16;
     int[] change = new int [16];
 
-
-    
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
+        
     }
 
     /**
@@ -329,6 +328,7 @@ public class Main extends javax.swing.JFrame {
         //Set the change array. This section sets up the array to check if a match has been made.
         for (int z = 0; z <= 15; z++){
             change[z] = 1;
+            
         }
         
         /*
@@ -350,6 +350,7 @@ public class Main extends javax.swing.JFrame {
                 set.add(temp);
             }
         }
+        
         for (int x = 0; x <= 15; x++){
             double index = Math.floor(Math.random()*(16-x));
             int index1 = (int) index;
@@ -993,51 +994,67 @@ public class Main extends javax.swing.JFrame {
                 if(change[0] == 0){
                     btnCard1.setIcon(done);
                     change[0] = 2;
+                    cardsLeft -= 1;
                 }else if(change[1] == 0){
                     btnCard2.setIcon(done);
                     change[1] = 2;
+                    cardsLeft -= 1;
                 }else if(change[2] == 0){
                     btnCard3.setIcon(done);
                     change[2] = 2;
+                    cardsLeft -= 1;
                 }else if(change[3] == 0){
                     btnCard4.setIcon(done);
                     change[3] = 2;
+                    cardsLeft -= 1;
                 }else if(change[4] == 0){
                     btnCard5.setIcon(done);
                     change[4] = 2;
+                    cardsLeft -= 1;
                 }else if(change[5] == 0){
                     btnCard6.setIcon(done);
                     change[5] = 2;
+                    cardsLeft -= 1;
                 }else if(change[6] == 0){
                     btnCard7.setIcon(done);
                     change[6] = 2;
+                    cardsLeft -= 1;
                 }else if(change[7] == 0){
                     btnCard8.setIcon(done);
                     change[7] = 2;
+                    cardsLeft -= 1;
                 }else if(change[8] == 0){
                     btnCard9.setIcon(done);
                     change[8] = 2;
+                    cardsLeft -= 1;
                 }else if(change[9] == 0){
                     btnCard10.setIcon(done);
                     change[9] = 2;
+                    cardsLeft -= 1;
                 }else if(change[10] == 0){
                     btnCard11.setIcon(done);
                     change[10] = 2;
+                    cardsLeft -= 1;
                 }else if(change[11] == 0){
                     btnCard12.setIcon(done);
                     change[11] = 2;
+                    cardsLeft -= 1;
                 }else if(change[12] == 0){
                     btnCard13.setIcon(done);
                     change[12] = 2;
+                    cardsLeft -= 1;
                 }else if(change[13] == 0){
                     btnCard14.setIcon(done);
                     change[13] = 2;
+                    cardsLeft -= 1;
                 }else if(change[14] == 0){
                     btnCard15.setIcon(done);
                     change[14] = 2;
+                    cardsLeft -= 1;
                 }else if(change[15] == 0){
                     btnCard16.setIcon(done);
                     change[15] = 2;
+                    cardsLeft -= 1;
                 }
             }
         }else{
@@ -1092,6 +1109,11 @@ public class Main extends javax.swing.JFrame {
                      change[15] = 1;
                  }
             }
+        }
+        if(cardsLeft <= 0){
+            instructionBox.setText("Congratulations You Have Beat The Game!! Please Exit The Game");
+        }else{
+            instructionBox.setText("Click the Play button to start. Make sure to click Guess Again after each guess.");
         }
     }//GEN-LAST:event_btnGuessAgainActionPerformed
 
