@@ -71,10 +71,15 @@ public class Main extends javax.swing.JFrame {
         btnGuessAgain = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         instructionBox = new javax.swing.JTextField();
+        btnCard17 = new javax.swing.JButton();
+        btnCard18 = new javax.swing.JButton();
+        btnCard19 = new javax.swing.JButton();
+        btnCard20 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnCard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard1.setToolTipText("");
         btnCard1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCard1ActionPerformed(evt);
@@ -217,66 +222,104 @@ public class Main extends javax.swing.JFrame {
         instructionBox.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         instructionBox.setText("Click the Play button to start. Make sure to click Guess Again after each guess.");
 
+        btnCard17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard17ActionPerformed(evt);
+            }
+        });
+
+        btnCard18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard18ActionPerformed(evt);
+            }
+        });
+
+        btnCard19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard19ActionPerformed(evt);
+            }
+        });
+
+        btnCard20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cardback.jpg"))); // NOI18N
+        btnCard20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCard20ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCard13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCard14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCard15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCard16))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCard9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCard10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCard11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCard12))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnCard5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnCard6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnCard7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnCard8))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(mainTitle)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(btnCard1)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnCard2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnCard3)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnCard4)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(btnPlay)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnGuessAgain)
-                        .addGap(42, 42, 42)
-                        .addComponent(btnExit))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(instructionBox)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(authorTitle)
                 .addGap(156, 156, 156))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnCard13)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnCard14)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnCard15)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnCard16))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnCard9)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnCard10)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnCard11)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnCard12))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnCard5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnCard6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnCard7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnCard8))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(mainTitle)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(btnCard1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnCard2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnCard3)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnCard4)))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(instructionBox)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCard17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCard18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCard19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCard20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(btnPlay)
+                        .addGap(47, 47, 47)
+                        .addComponent(btnGuessAgain)
+                        .addGap(50, 50, 50)
+                        .addComponent(btnExit)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,8 +352,14 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(btnCard14)
                     .addComponent(btnCard13)
                     .addComponent(btnCard15))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCard17)
+                    .addComponent(btnCard18)
+                    .addComponent(btnCard19)
+                    .addComponent(btnCard20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnPlay)
                     .addComponent(btnGuessAgain)
                     .addComponent(btnExit))
@@ -365,7 +414,6 @@ public class Main extends javax.swing.JFrame {
 
     private void btnCard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard1ActionPerformed
         //checks to see what random picture is placed in the box.
-        
         String temp = cards.get(0); 
         
         // checks the card and assigns the proper picture.
@@ -1119,6 +1167,162 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnGuessAgainActionPerformed
 
+    private void btnCard17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard17ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(17); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard15.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard15.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard15.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard15.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard15.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard15.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard15.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard15.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[17] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[17] = 0;
+        }
+    }//GEN-LAST:event_btnCard17ActionPerformed
+
+    private void btnCard18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard18ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(18); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard15.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard15.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard15.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard15.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard15.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard15.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard15.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard15.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[18] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[18] = 0;
+        }
+    }//GEN-LAST:event_btnCard18ActionPerformed
+
+    private void btnCard19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard19ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(19); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard15.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard15.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard15.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard15.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard15.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard15.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard15.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard15.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[19] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[19] = 0;
+        }
+    }//GEN-LAST:event_btnCard19ActionPerformed
+
+    private void btnCard20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard20ActionPerformed
+        //checks to see what random picture is placed in the box.
+        String temp = cards.get(20); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard15.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard15.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard15.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard15.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard15.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard15.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard15.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard15.setIcon(h);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[20] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[20] = 0;
+        }
+    }//GEN-LAST:event_btnCard20ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1164,7 +1368,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btnCard14;
     private javax.swing.JButton btnCard15;
     private javax.swing.JButton btnCard16;
+    private javax.swing.JButton btnCard17;
+    private javax.swing.JButton btnCard18;
+    private javax.swing.JButton btnCard19;
     private javax.swing.JButton btnCard2;
+    private javax.swing.JButton btnCard20;
     private javax.swing.JButton btnCard3;
     private javax.swing.JButton btnCard4;
     private javax.swing.JButton btnCard5;
