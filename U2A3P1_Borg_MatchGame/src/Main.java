@@ -24,13 +24,16 @@ public class Main extends javax.swing.JFrame {
     ImageIcon f = new ImageIcon("src\\images\\PS.jpg");
     ImageIcon g = new ImageIcon("src\\images\\UP.jpg");
     ImageIcon h = new ImageIcon("src\\images\\WS.jpg");
+    ImageIcon i = new ImageIcon("src\\images\\RM.jpg");
+    ImageIcon j = new ImageIcon("src\\images\\LOGO.jpg");
+
     ImageIcon back = new ImageIcon("src\\images\\cardback.jpg");
     ImageIcon done = new ImageIcon("src\\images\\done.jpg");
     
     //creats Ints and int array
     int count, c1, c2, card1, card2;
-    int cardsLeft = 16;
-    int[] change = new int [16];
+    int cardsLeft = 20;
+    int[] change = new int [20];
 
     /**
      * Creates new form Main
@@ -377,7 +380,7 @@ public class Main extends javax.swing.JFrame {
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         //Set the change array. This section sets up the array to check if a match has been made.
-        for (int z = 0; z <= 15; z++){
+        for (int z = 0; z <= 19; z++){
             change[z] = 1;
             
         }
@@ -395,15 +398,15 @@ public class Main extends javax.swing.JFrame {
         */
         
         String temp;
-        for (int x = 0; x <= 7; x++){
+        for (int x = 0; x <= 9; x++){
             for (int y = 1; y <= 2; y++){
                 temp = Integer.toString(x);
                 set.add(temp);
             }
         }
         
-        for (int x = 0; x <= 15; x++){
-            double index = Math.floor(Math.random()*(16-x));
+        for (int x = 0; x <= 19; x++){
+            double index = Math.floor(Math.random()*(20-x));
             int index1 = (int) index;
             cards.add(set.get(index1));
             set.remove(set.get(index1));
@@ -434,6 +437,10 @@ public class Main extends javax.swing.JFrame {
             btnCard1.setIcon(g);
         }else if (temp.equals("7")){
             btnCard1.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard1.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard1.setIcon(j);
         }
         
         /*
@@ -474,6 +481,10 @@ public class Main extends javax.swing.JFrame {
             btnCard2.setIcon(g);
         }else if (temp.equals("7")){
             btnCard2.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard2.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard2.setIcon(j);
         }
         
         /*
@@ -513,6 +524,10 @@ public class Main extends javax.swing.JFrame {
             btnCard3.setIcon(g);
         }else if (temp.equals("7")){
             btnCard3.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard3.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard3.setIcon(j);
         }
         
         /*
@@ -552,6 +567,10 @@ public class Main extends javax.swing.JFrame {
             btnCard4.setIcon(g);
         }else if (temp.equals("7")){
             btnCard4.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard4.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard4.setIcon(j);
         }
         
         /*
@@ -591,6 +610,10 @@ public class Main extends javax.swing.JFrame {
             btnCard5.setIcon(g);
         }else if (temp.equals("7")){
             btnCard5.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard5.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard5.setIcon(j);
         }
         
         /*
@@ -630,6 +653,10 @@ public class Main extends javax.swing.JFrame {
             btnCard6.setIcon(g);
         }else if (temp.equals("7")){
             btnCard6.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard6.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard6.setIcon(j);
         }
         
         /*
@@ -669,6 +696,10 @@ public class Main extends javax.swing.JFrame {
             btnCard7.setIcon(g);
         }else if (temp.equals("7")){
             btnCard7.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard7.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard7.setIcon(j);
         }
         
         /*
@@ -708,6 +739,10 @@ public class Main extends javax.swing.JFrame {
             btnCard8.setIcon(g);
         }else if (temp.equals("7")){
             btnCard8.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard8.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard8.setIcon(j);
         }
         
         /*
@@ -747,6 +782,10 @@ public class Main extends javax.swing.JFrame {
             btnCard9.setIcon(g);
         }else if (temp.equals("7")){
             btnCard9.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard9.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard9.setIcon(j);
         }
         
         /*
@@ -786,6 +825,10 @@ public class Main extends javax.swing.JFrame {
             btnCard10.setIcon(g);
         }else if (temp.equals("7")){
             btnCard10.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard10.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard10.setIcon(j);
         }
         
         /*
@@ -825,6 +868,10 @@ public class Main extends javax.swing.JFrame {
             btnCard11.setIcon(g);
         }else if (temp.equals("7")){
             btnCard11.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard11.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard11.setIcon(j);
         }
         
         /*
@@ -864,6 +911,10 @@ public class Main extends javax.swing.JFrame {
             btnCard12.setIcon(g);
         }else if (temp.equals("7")){
             btnCard12.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard12.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard12.setIcon(j);
         }
         
         /*
@@ -903,6 +954,10 @@ public class Main extends javax.swing.JFrame {
             btnCard13.setIcon(g);
         }else if (temp.equals("7")){
             btnCard13.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard13.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard13.setIcon(j);
         }
         
         /*
@@ -942,6 +997,10 @@ public class Main extends javax.swing.JFrame {
             btnCard14.setIcon(g);
         }else if (temp.equals("7")){
             btnCard14.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard14.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard14.setIcon(j);
         }
         
         /*
@@ -981,6 +1040,10 @@ public class Main extends javax.swing.JFrame {
             btnCard15.setIcon(g);
         }else if (temp.equals("7")){
             btnCard15.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard15.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard15.setIcon(j);
         }
         
         /*
@@ -1020,6 +1083,10 @@ public class Main extends javax.swing.JFrame {
             btnCard16.setIcon(g);
         }else if (temp.equals("7")){
             btnCard16.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard16.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard16.setIcon(j);
         }
         
         /*
@@ -1105,6 +1172,22 @@ public class Main extends javax.swing.JFrame {
                     btnCard16.setIcon(done);
                     change[15] = 2;
                     cardsLeft -= 1;
+                }else if(change[16] == 0){
+                    btnCard17.setIcon(done);
+                    change[16] = 2;
+                    cardsLeft -= 1;
+                }else if(change[17] == 0){
+                    btnCard18.setIcon(done);
+                    change[17] = 2;
+                    cardsLeft -= 1;
+                }else if(change[18] == 0){
+                    btnCard19.setIcon(done);
+                    change[18] = 2;
+                    cardsLeft -= 1;
+                }else if(change[19] == 0){
+                    btnCard20.setIcon(done);
+                    change[19] = 2;
+                    cardsLeft -= 1;
                 }
             }
         }else{
@@ -1157,6 +1240,18 @@ public class Main extends javax.swing.JFrame {
                  }else if(change[15] == 0){
                      btnCard16.setIcon(back);
                      change[15] = 1;
+                 }else if(change[16] == 0){
+                     btnCard17.setIcon(back);
+                     change[16] = 1;
+                 }else if(change[17] == 0){
+                     btnCard18.setIcon(back);
+                     change[17] = 1;
+                 }else if(change[18] == 0){
+                     btnCard19.setIcon(back);
+                     change[18] = 1;
+                 }else if(change[19] == 0){
+                     btnCard20.setIcon(back);
+                     change[19] = 1;
                  }
             }
         }
@@ -1169,26 +1264,73 @@ public class Main extends javax.swing.JFrame {
 
     private void btnCard17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard17ActionPerformed
         //checks to see what random picture is placed in the box.
+        String temp = cards.get(16); 
+        
+        // checks the card and assigns the proper picture.
+        if (temp.equals("0")){
+            //changes the button icon to the correct picture.
+            btnCard17.setIcon(a);
+        }else if (temp.equals("1")){
+            btnCard17.setIcon(b);
+        }else if (temp.equals("2")){
+            btnCard17.setIcon(c);
+        }else if (temp.equals("3")){
+            btnCard17.setIcon(d);
+        }else if (temp.equals("4")){
+            btnCard17.setIcon(e);
+        }else if (temp.equals("5")){
+            btnCard17.setIcon(f);
+        }else if (temp.equals("6")){
+            btnCard17.setIcon(g);
+        }else if (temp.equals("7")){
+            btnCard17.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard17.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard17.setIcon(j);
+        }
+        
+        /*
+        The first line sets the card chosen to one or two so it can be checked 
+        for a match. The if structure sets the appropriate card chosen, and 
+        then sets the change array to show the card icon has been changed.
+        */
+        count ++;
+        if (count == 1) {
+            c1 = Integer.parseInt(temp);
+            change[16] = 0;
+        } else if (count == 2) {
+            c2 = Integer.parseInt(temp);
+            change[16] = 0;
+        }
+    }//GEN-LAST:event_btnCard17ActionPerformed
+
+    private void btnCard18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard18ActionPerformed
+        //checks to see what random picture is placed in the box.
         String temp = cards.get(17); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
             //changes the button icon to the correct picture.
-            btnCard15.setIcon(a);
+            btnCard18.setIcon(a);
         }else if (temp.equals("1")){
-            btnCard15.setIcon(b);
+            btnCard18.setIcon(b);
         }else if (temp.equals("2")){
-            btnCard15.setIcon(c);
+            btnCard18.setIcon(c);
         }else if (temp.equals("3")){
-            btnCard15.setIcon(d);
+            btnCard18.setIcon(d);
         }else if (temp.equals("4")){
-            btnCard15.setIcon(e);
+            btnCard18.setIcon(e);
         }else if (temp.equals("5")){
-            btnCard15.setIcon(f);
+            btnCard18.setIcon(f);
         }else if (temp.equals("6")){
-            btnCard15.setIcon(g);
+            btnCard18.setIcon(g);
         }else if (temp.equals("7")){
-            btnCard15.setIcon(h);
+            btnCard18.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard18.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard18.setIcon(j);
         }
         
         /*
@@ -1204,30 +1346,34 @@ public class Main extends javax.swing.JFrame {
             c2 = Integer.parseInt(temp);
             change[17] = 0;
         }
-    }//GEN-LAST:event_btnCard17ActionPerformed
+    }//GEN-LAST:event_btnCard18ActionPerformed
 
-    private void btnCard18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard18ActionPerformed
+    private void btnCard19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard19ActionPerformed
         //checks to see what random picture is placed in the box.
         String temp = cards.get(18); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
             //changes the button icon to the correct picture.
-            btnCard15.setIcon(a);
+            btnCard19.setIcon(a);
         }else if (temp.equals("1")){
-            btnCard15.setIcon(b);
+            btnCard19.setIcon(b);
         }else if (temp.equals("2")){
-            btnCard15.setIcon(c);
+            btnCard19.setIcon(c);
         }else if (temp.equals("3")){
-            btnCard15.setIcon(d);
+            btnCard19.setIcon(d);
         }else if (temp.equals("4")){
-            btnCard15.setIcon(e);
+            btnCard19.setIcon(e);
         }else if (temp.equals("5")){
-            btnCard15.setIcon(f);
+            btnCard19.setIcon(f);
         }else if (temp.equals("6")){
-            btnCard15.setIcon(g);
+            btnCard19.setIcon(g);
         }else if (temp.equals("7")){
-            btnCard15.setIcon(h);
+            btnCard19.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard19.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard19.setIcon(j);
         }
         
         /*
@@ -1243,30 +1389,34 @@ public class Main extends javax.swing.JFrame {
             c2 = Integer.parseInt(temp);
             change[18] = 0;
         }
-    }//GEN-LAST:event_btnCard18ActionPerformed
+    }//GEN-LAST:event_btnCard19ActionPerformed
 
-    private void btnCard19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard19ActionPerformed
+    private void btnCard20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard20ActionPerformed
         //checks to see what random picture is placed in the box.
         String temp = cards.get(19); 
         
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
             //changes the button icon to the correct picture.
-            btnCard15.setIcon(a);
+            btnCard20.setIcon(a);
         }else if (temp.equals("1")){
-            btnCard15.setIcon(b);
+            btnCard20.setIcon(b);
         }else if (temp.equals("2")){
-            btnCard15.setIcon(c);
+            btnCard20.setIcon(c);
         }else if (temp.equals("3")){
-            btnCard15.setIcon(d);
+            btnCard20.setIcon(d);
         }else if (temp.equals("4")){
-            btnCard15.setIcon(e);
+            btnCard20.setIcon(e);
         }else if (temp.equals("5")){
-            btnCard15.setIcon(f);
+            btnCard20.setIcon(f);
         }else if (temp.equals("6")){
-            btnCard15.setIcon(g);
+            btnCard20.setIcon(g);
         }else if (temp.equals("7")){
-            btnCard15.setIcon(h);
+            btnCard20.setIcon(h);
+        }else if (temp.equals("8")){
+            btnCard20.setIcon(i);
+        }else if (temp.equals("9")){
+            btnCard20.setIcon(j);
         }
         
         /*
@@ -1281,45 +1431,6 @@ public class Main extends javax.swing.JFrame {
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
             change[19] = 0;
-        }
-    }//GEN-LAST:event_btnCard19ActionPerformed
-
-    private void btnCard20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard20ActionPerformed
-        //checks to see what random picture is placed in the box.
-        String temp = cards.get(20); 
-        
-        // checks the card and assigns the proper picture.
-        if (temp.equals("0")){
-            //changes the button icon to the correct picture.
-            btnCard15.setIcon(a);
-        }else if (temp.equals("1")){
-            btnCard15.setIcon(b);
-        }else if (temp.equals("2")){
-            btnCard15.setIcon(c);
-        }else if (temp.equals("3")){
-            btnCard15.setIcon(d);
-        }else if (temp.equals("4")){
-            btnCard15.setIcon(e);
-        }else if (temp.equals("5")){
-            btnCard15.setIcon(f);
-        }else if (temp.equals("6")){
-            btnCard15.setIcon(g);
-        }else if (temp.equals("7")){
-            btnCard15.setIcon(h);
-        }
-        
-        /*
-        The first line sets the card chosen to one or two so it can be checked 
-        for a match. The if structure sets the appropriate card chosen, and 
-        then sets the change array to show the card icon has been changed.
-        */
-        count ++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[20] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[20] = 0;
         }
     }//GEN-LAST:event_btnCard20ActionPerformed
 
