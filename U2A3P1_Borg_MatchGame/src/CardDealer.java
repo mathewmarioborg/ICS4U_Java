@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,7 +12,6 @@ import javax.swing.JTextField;
     looking for a matching card. the goal of this game is to see how quickly
     the user can find all the matches. 
 */
-
 public class CardDealer {
     //Creats String Array Lists
     static ArrayList <String> cards = new ArrayList();
@@ -38,12 +36,17 @@ public class CardDealer {
     static int cardsLeft = 20;
     static int numberOfClicks = 0;
     static int[] change = new int [20];
-
+    
+    /*
+    Function:   deckinit
+    Purpose:    This method initalises all the forloops for the match game
+    Parameters: n/a
+    Return:     void 
+    */
     public static void deckinit(){
         //Set the change array. This section sets up the array to check if a match has been made.
         for (int z = 0; z <= 19; z++){
             change[z] = 1;
-            
         }
         
         /*
@@ -74,8 +77,20 @@ public class CardDealer {
         }
     }
     
-    public static void cardClicked(javax.swing.JButton button, int cardNum){
-        cardNum = cardNum -= 1; //takes one away frim 
+    /*
+    Function:   cardClicked
+    Purpose:    This method checks to see what random picture is placed in the box, 
+                assigns the proper picture then sets the card to a one or two so 
+                it can be determonded as a match or not
+    Parameters: int cardNum for seting Card Number
+                JTextField outputBox to give access to outputBox
+                JButton[] jButtonArray to give access to jButtonArray
+    Return:     void 
+    */
+    public static void cardClicked(int cardNum, JTextField outputBox, JButton[] jButtonArray){
+        try{ //try to run method
+        cardNum = cardNum -= 1; //takes 1 away from cardNum 
+        numberOfClicks = numberOfClicks += 1;
         
         //checks to see what random picture is placed in the box.
         String temp = cards.get(cardNum); 
@@ -83,27 +98,27 @@ public class CardDealer {
         // checks the card and assigns the proper picture.
         if (temp.equals("0")){
             //changes the button icon to the correct picture.
-            button.setIcon(a);
+            jButtonArray[cardNum].setIcon(a);
         }else if (temp.equals("1")){
-            button.setIcon(b);
+            jButtonArray[cardNum].setIcon(b);
         }else if (temp.equals("2")){
-            button.setIcon(c);
+            jButtonArray[cardNum].setIcon(c);
         }else if (temp.equals("3")){
-            button.setIcon(d);
+            jButtonArray[cardNum].setIcon(d);
         }else if (temp.equals("4")){
-            button.setIcon(e);
+            jButtonArray[cardNum].setIcon(e);
         }else if (temp.equals("5")){
-            button.setIcon(f);
+            jButtonArray[cardNum].setIcon(f);
         }else if (temp.equals("6")){
-            button.setIcon(g);
+            jButtonArray[cardNum].setIcon(g);
         }else if (temp.equals("7")){
-            button.setIcon(h);
+            jButtonArray[cardNum].setIcon(h);
         }else if (temp.equals("8")){
-            button.setIcon(i);
+            jButtonArray[cardNum].setIcon(i);
         }else if (temp.equals("9")){
-            button.setIcon(j);
+            jButtonArray[cardNum].setIcon(j);
         }
-        
+      
         /*
         The first line sets the card chosen to one or two so it can be checked 
         for a match. The if structure sets the appropriate card chosen, and 
@@ -116,93 +131,114 @@ public class CardDealer {
         } else if (count == 2) {
             c2 = Integer.parseInt(temp);
             change[cardNum] = 0;
-        }      
+        } 
         
+        //if number of card clicks => 3 change icond back to back, display Please Only Click 2 Cards At A Time and reset number of clicks
+        if(numberOfClicks >= 3){ 
+            jButtonArray[cardNum].setIcon(back);
+            checkPair(outputBox, jButtonArray);
+            numberOfClicks = 0;
+            outputBox.setText("Please Only Click 2 Cards At A Time");
+        }
+        }catch(IndexOutOfBoundsException e){ //catch IndexOutOfBoundsException
+            outputBox.setText("Please Click Play To Start"); // display Please Click Play To Start
+        }
     }
     
-    public static void checkPair(JTextField outPutBox, JButton btn1, JButton btn2, JButton btn3, JButton btn4, JButton btn5, JButton btn6, JButton btn7, JButton btn8, JButton btn9, JButton btn10, JButton btn11, JButton btn12, JButton btn13, JButton btn14, JButton btn15, JButton btn16, JButton btn17, JButton btn18, JButton btn19, JButton btn20){
-        count = 0;
-        if(c1 == c2){
-            numberOfClicks = 0; //resets number of clicks 
+    /*
+    Function:   checkPair
+    Purpose:    This method checks to see if a pair has been made and sets the 
+                paired cards to the done image. It also tells the player when
+                all cards have been matched
+    Parameters: JTextField outputBox to give access to outputBox
+                JButton[] jButtonArray to give access to jButtonArray
+    Return:     void 
+    */
+    public static void checkPair(JTextField outputBox, JButton[] jButtonArray){
+        count = 0; //sets count to =
+        numberOfClicks = 0; //sets numberOfClicks to 0
+        if(c1 == c2){ //if c1 = c2
+            numberOfClicks = 0; //sets numberOfClicks to 0
+            //checks all cards to see if two cards are the same and will set the done image else they will set the cards back to back image
             for(int y = 1; y <= 2; y++){
                 if(change[0] == 0){
-                    btn1.setIcon(done);
+                    jButtonArray[0].setIcon(done);
                     change[0] = 2;
                     cardsLeft -= 1;
                 }else if(change[1] == 0){
-                    btn2.setIcon(done);
+                    jButtonArray[1].setIcon(done);
                     change[1] = 2;
                     cardsLeft -= 1;
                 }else if(change[2] == 0){
-                    btn3.setIcon(done);
+                    jButtonArray[2].setIcon(done);
                     change[2] = 2;
                     cardsLeft -= 1;
                 }else if(change[3] == 0){
-                    btn4.setIcon(done);
+                    jButtonArray[3].setIcon(done);
                     change[3] = 2;
                     cardsLeft -= 1;
                 }else if(change[4] == 0){
-                    btn5.setIcon(done);
+                    jButtonArray[4].setIcon(done);
                     change[4] = 2;
                     cardsLeft -= 1;
                 }else if(change[5] == 0){
-                    btn6.setIcon(done);
+                    jButtonArray[5].setIcon(done);
                     change[5] = 2;
                     cardsLeft -= 1;
                 }else if(change[6] == 0){
-                    btn7.setIcon(done);
+                    jButtonArray[6].setIcon(done);
                     change[6] = 2;
                     cardsLeft -= 1;
                 }else if(change[7] == 0){
-                    btn8.setIcon(done);
+                    jButtonArray[7].setIcon(done);
                     change[7] = 2;
                     cardsLeft -= 1;
                 }else if(change[8] == 0){
-                    btn9.setIcon(done);
+                    jButtonArray[8].setIcon(done);
                     change[8] = 2;
                     cardsLeft -= 1;
                 }else if(change[9] == 0){
-                    btn10.setIcon(done);
+                    jButtonArray[9].setIcon(done);
                     change[9] = 2;
                     cardsLeft -= 1;
                 }else if(change[10] == 0){
-                    btn11.setIcon(done);
+                    jButtonArray[10].setIcon(done);
                     change[10] = 2;
                     cardsLeft -= 1;
                 }else if(change[11] == 0){
-                    btn12.setIcon(done);
+                    jButtonArray[11].setIcon(done);
                     change[11] = 2;
                     cardsLeft -= 1;
                 }else if(change[12] == 0){
-                    btn13.setIcon(done);
+                    jButtonArray[12].setIcon(done);
                     change[12] = 2;
                     cardsLeft -= 1;
                 }else if(change[13] == 0){
-                    btn14.setIcon(done);
+                    jButtonArray[13].setIcon(done);
                     change[13] = 2;
                     cardsLeft -= 1;
                 }else if(change[14] == 0){
-                    btn15.setIcon(done);
+                    jButtonArray[14].setIcon(done);
                     change[14] = 2;
                     cardsLeft -= 1;
                 }else if(change[15] == 0){
-                    btn16.setIcon(done);
+                    jButtonArray[15].setIcon(done);
                     change[15] = 2;
                     cardsLeft -= 1;
                 }else if(change[16] == 0){
-                    btn17.setIcon(done);
+                    jButtonArray[16].setIcon(done);
                     change[16] = 2;
                     cardsLeft -= 1;
                 }else if(change[17] == 0){
-                    btn18.setIcon(done);
+                    jButtonArray[17].setIcon(done);
                     change[17] = 2;
                     cardsLeft -= 1;
                 }else if(change[18] == 0){
-                    btn19.setIcon(done);
+                    jButtonArray[18].setIcon(done);
                     change[18] = 2;
                     cardsLeft -= 1;
                 }else if(change[19] == 0){
-                    btn20.setIcon(done);
+                    jButtonArray[19].setIcon(done);
                     change[19] = 2;
                     cardsLeft -= 1;
                 }
@@ -210,72 +246,75 @@ public class CardDealer {
         }else{
             for (int y = 1; y<=2; y++) {
                  if (change[0] == 0) {
-                     btn1.setIcon(back);
+                     jButtonArray[0].setIcon(back);
                      change[0] = 1;
                  }else if(change[1] == 0){
-                     btn2.setIcon(back);
+                     jButtonArray[1].setIcon(back);
                      change[1] = 1;
                  }else if(change[2] == 0){
-                     btn3.setIcon(back);
+                     jButtonArray[2].setIcon(back);
                      change[2] = 1;
                  }else if(change[3] == 0){
-                     btn4.setIcon(back);
+                     jButtonArray[3].setIcon(back);
                      change[3] = 1;
                  }else if(change[4] == 0){
-                     btn5.setIcon(back);
+                     jButtonArray[4].setIcon(back);
                      change[4] = 1;
                  }else if(change[5] == 0){
-                     btn6.setIcon(back);
+                     jButtonArray[5].setIcon(back);
                      change[5] = 1;
                  }else if(change[6] == 0){
-                     btn7.setIcon(back);
+                     jButtonArray[6].setIcon(back);
                      change[6] = 1;
                  }else if(change[7] == 0){
-                     btn8.setIcon(back);
+                     jButtonArray[7].setIcon(back);
                      change[7] = 1;
                  }else if(change[8] == 0){
-                     btn9.setIcon(back);
+                     jButtonArray[8].setIcon(back);
                      change[8] = 1;
                  }else if(change[9] == 0){
-                     btn10.setIcon(back);
+                     jButtonArray[9].setIcon(back);
                      change[9] = 1;
                  }else if(change[10] == 0){
-                     btn11.setIcon(back);
+                     jButtonArray[10].setIcon(back);
                      change[10] = 1;
                  }else if(change[11] == 0){
-                     btn12.setIcon(back);
+                     jButtonArray[11].setIcon(back);
                      change[11] = 1;
                  }else if(change[12] == 0){
-                     btn13.setIcon(back);
+                     jButtonArray[12].setIcon(back);
                      change[12] = 1;
                  }else if(change[13] == 0){
-                     btn14.setIcon(back);
+                     jButtonArray[13].setIcon(back);
                      change[13] = 1;
                  }else if(change[14] == 0){
-                     btn15.setIcon(back);
+                     jButtonArray[14].setIcon(back);
                      change[14] = 1;
                  }else if(change[15] == 0){
-                     btn16.setIcon(back);
+                     jButtonArray[15].setIcon(back);
                      change[15] = 1;
                  }else if(change[16] == 0){
-                     btn17.setIcon(back);
+                     jButtonArray[16].setIcon(back);
                      change[16] = 1;
                  }else if(change[17] == 0){
-                     btn18.setIcon(back);
+                     jButtonArray[17].setIcon(back);
                      change[17] = 1;
                  }else if(change[18] == 0){
-                     btn19.setIcon(back);
+                     jButtonArray[18].setIcon(back);
                      change[18] = 1;
                  }else if(change[19] == 0){
-                     btn20.setIcon(back);
+                     jButtonArray[19].setIcon(back);
                      change[19] = 1;
                  }
             }
         }
-        if(cardsLeft <= 0){
-            outPutBox.setText("Congratulations You Have Beat The Game!! Please Exit The Game");
-        }else{
-            outPutBox.setText("Click the Play button to start. Make sure to click Guess Again after each guess.");
+        //if cards left = 0 set output box to Congratulations You Have Beat The Game!! Please Exit The Game
+        if(cardsLeft <= 0){ //if cards left = 0 set output box to Congratulations You Have Beat The Game!! Please Exit The Game
+            outputBox.setText("Congratulations You Have Beat The Game!! Please Exit The Game");
+        }
+        //else set the outputBox to Click the Play button to start. Make sure to click Guess Again after each guess.
+        else{
+            outputBox.setText("Click the Play button to start. Make sure to click Guess Again after each guess.");
         }
     } 
 }

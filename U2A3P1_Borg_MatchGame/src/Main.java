@@ -1,3 +1,5 @@
+import javax.swing.JButton;
+
 /*
     programmer: Mathew Borg
     Date: 2021-03-27
@@ -8,11 +10,34 @@
     the user can find all the matches. 
 */
 public class Main extends javax.swing.JFrame {
+    JButton[] btns = new JButton[20]; //creats btn array
+
     /**
      * Creates new form Main
      */
     public Main() { 
         initComponents();
+        //Adds cardbtns to btns array
+        btns[0] = btnCard1; 
+        btns[1] = btnCard2; 
+        btns[2] = btnCard3; 
+        btns[3] = btnCard4; 
+        btns[4] = btnCard5; 
+        btns[5] = btnCard6; 
+        btns[6] = btnCard7;
+        btns[7] = btnCard8;
+        btns[8] = btnCard9;
+        btns[9] = btnCard10;
+        btns[10] = btnCard11;
+        btns[11] = btnCard12;
+        btns[12] = btnCard13;
+        btns[13] = btnCard14;
+        btns[14] = btnCard15;
+        btns[15] = btnCard16;
+        btns[16] = btnCard17;
+        btns[17] = btnCard18;
+        btns[18] = btnCard19;
+        btns[19] = btnCard20; 
     }
 
     @SuppressWarnings("unchecked")
@@ -350,88 +375,88 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPlayActionPerformed
 
     private void btnCard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard1ActionPerformed
-        CardDealer.cardClicked(btnCard1,1); //calls cardClicked method
+        CardDealer.cardClicked(1,instructionBox,btns); //calls cardClicked method  
     }//GEN-LAST:event_btnCard1ActionPerformed
 
     private void btnCard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard2ActionPerformed
-        CardDealer.cardClicked(btnCard2,2); //calls cardClicked method
+        CardDealer.cardClicked(2,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard2ActionPerformed
 
     private void btnCard3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard3ActionPerformed
-        CardDealer.cardClicked(btnCard3,3); //calls cardClicked method
+        CardDealer.cardClicked(3,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard3ActionPerformed
 
     private void btnCard4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard4ActionPerformed
-        CardDealer.cardClicked(btnCard4,4); //calls cardClicked method
+        CardDealer.cardClicked(4,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard4ActionPerformed
 
     private void btnCard5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard5ActionPerformed
-        CardDealer.cardClicked(btnCard5,5); //calls cardClicked method
+        CardDealer.cardClicked(5,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard5ActionPerformed
 
     private void btnCard6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard6ActionPerformed
-        CardDealer.cardClicked(btnCard6,6); //calls cardClicked method
+        CardDealer.cardClicked(6,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard6ActionPerformed
 
     private void btnCard7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard7ActionPerformed
-        CardDealer.cardClicked(btnCard7,7); //calls cardClicked method
+        CardDealer.cardClicked(7,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard7ActionPerformed
 
     private void btnCard8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard8ActionPerformed
-        CardDealer.cardClicked(btnCard8,8); //calls cardClicked method
+        CardDealer.cardClicked(8,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard8ActionPerformed
 
     private void btnCard9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard9ActionPerformed
-        CardDealer.cardClicked(btnCard9,9); //calls cardClicked method
+        CardDealer.cardClicked(9,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard9ActionPerformed
 
     private void btnCard10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard10ActionPerformed
-        CardDealer.cardClicked(btnCard10,10); //calls cardClicked method
+        CardDealer.cardClicked(10,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard10ActionPerformed
 
     private void btnCard11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard11ActionPerformed
-        CardDealer.cardClicked(btnCard11,11); //calls cardClicked method   
+        CardDealer.cardClicked(11,instructionBox,btns); //calls cardClicked method   
     }//GEN-LAST:event_btnCard11ActionPerformed
 
     private void btnCard12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard12ActionPerformed
-        CardDealer.cardClicked(btnCard12,12); //calls cardClicked method   
+        CardDealer.cardClicked(12,instructionBox,btns); //calls cardClicked method   
     }//GEN-LAST:event_btnCard12ActionPerformed
 
     private void btnCard13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard13ActionPerformed
-        CardDealer.cardClicked(btnCard13,13); //calls cardClicked method   
+        CardDealer.cardClicked(13,instructionBox,btns); //calls cardClicked method   
     }//GEN-LAST:event_btnCard13ActionPerformed
 
     private void btnCard14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard14ActionPerformed
-        CardDealer.cardClicked(btnCard14,14); //calls cardClicked method
+        CardDealer.cardClicked(14,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard14ActionPerformed
 
     private void btnCard15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard15ActionPerformed
-        CardDealer.cardClicked(btnCard15,15); //calls cardClicked method
+        CardDealer.cardClicked(15,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard15ActionPerformed
 
     private void btnCard16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard16ActionPerformed
-        CardDealer.cardClicked(btnCard16,16); //calls cardClicked method
+        CardDealer.cardClicked(16,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard16ActionPerformed
 
     private void btnGuessAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuessAgainActionPerformed
         //method to check for card pairs 
-        CardDealer.checkPair(instructionBox, btnCard1, btnCard2, btnCard3, btnCard4, btnCard5, btnCard6, btnCard7, btnCard8, btnCard9, btnCard10, btnCard1, btnCard12, btnCard13, btnCard14, btnCard15, btnCard16, btnCard17, btnCard18, btnCard19, btnCard20); 
+        CardDealer.checkPair(instructionBox,btns); 
     }//GEN-LAST:event_btnGuessAgainActionPerformed
 
     private void btnCard17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard17ActionPerformed
-        CardDealer.cardClicked(btnCard17,17); //calls cardClicked method
+        CardDealer.cardClicked(17,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard17ActionPerformed
 
     private void btnCard18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard18ActionPerformed
-        CardDealer.cardClicked(btnCard18,18); //calls cardClicked method
+        CardDealer.cardClicked(18,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard18ActionPerformed
 
     private void btnCard19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard19ActionPerformed
-        CardDealer.cardClicked(btnCard19,19); //calls cardClicked method
+        CardDealer.cardClicked(19,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard19ActionPerformed
 
     private void btnCard20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard20ActionPerformed
-        CardDealer.cardClicked(btnCard20,20); //calls cardClicked method
+        CardDealer.cardClicked(20,instructionBox,btns); //calls cardClicked method
     }//GEN-LAST:event_btnCard20ActionPerformed
     
     
