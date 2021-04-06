@@ -40,12 +40,25 @@ public class CardDealer {
     /*
     Function:   deckinit
     Purpose:    This method initalises all the forloops for the match game
-    Parameters: n/a
+    Parameters: int deckTotalNum to get the length of the deck
     Return:     void 
     */
-    public static void deckinit(){
+    public static void deckinit(int deckTotalNum){
+        int theDeckTotal, deckHalf; //creats int
+        
+        theDeckTotal =+ deckTotalNum; //adds deckTotalNum to theDeckTotal
+        theDeckTotal -= 1; //takes 1 away from theDeckTotal
+        
+        deckHalf =+ theDeckTotal; //adds theDeckTotal to deckHalf
+        deckHalf /= 2; //devides deckHalf by 2
+        
+        System.out.println(theDeckTotal);
+        System.out.println(deckHalf);
+        System.out.println(deckTotalNum);
+        
+        
         //Set the change array. This section sets up the array to check if a match has been made.
-        for (int z = 0; z <= 19; z++){
+        for (int z = 0; z <= theDeckTotal; z++){
             change[z] = 1;
         }
         
@@ -62,15 +75,15 @@ public class CardDealer {
         */
         
         String temp;
-        for (int x = 0; x <= 9; x++){
+        for (int x = 0; x <= deckHalf; x++){
             for (int y = 1; y <= 2; y++){
                 temp = Integer.toString(x);
                 set.add(temp);
             }
         }
         
-        for (int x = 0; x <= 19; x++){
-            double index = Math.floor(Math.random()*(20-x));
+        for (int x = 0; x <= theDeckTotal; x++){
+            double index = Math.floor(Math.random()*(deckTotalNum-x));
             int index1 = (int) index;
             cards.add(set.get(index1));
             set.remove(set.get(index1));
