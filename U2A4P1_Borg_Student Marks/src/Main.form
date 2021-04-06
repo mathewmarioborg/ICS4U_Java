@@ -193,16 +193,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnList">
       <Properties>
         <Property name="text" type="java.lang.String" value="List"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnExit">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputTest1">
       <Properties>
@@ -228,11 +237,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Student Average"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStudentAvarageActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCourseAverage">
       <Properties>
         <Property name="text" type="java.lang.String" value="Course Average"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCourseAverageActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextArea" name="outputList">
       <Properties>

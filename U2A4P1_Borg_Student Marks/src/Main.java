@@ -8,8 +8,11 @@
  *
  * @author Mathew Borg
  */
-public class Main extends javax.swing.JFrame {
 
+public class Main extends javax.swing.JFrame {
+    
+    String[][] studentNames = new String[15][2];
+    
     /**
      * Creates new form Main
      */
@@ -70,10 +73,25 @@ public class Main extends javax.swing.JFrame {
         textTest4.setText("Test 4:");
 
         btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnList.setText("List");
+        btnList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListActionPerformed(evt);
+            }
+        });
 
         btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         inputTest1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -84,8 +102,18 @@ public class Main extends javax.swing.JFrame {
         inputTest4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         btnStudentAvarage.setText("Student Average");
+        btnStudentAvarage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudentAvarageActionPerformed(evt);
+            }
+        });
 
         btnCourseAverage.setText("Course Average");
+        btnCourseAverage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCourseAverageActionPerformed(evt);
+            }
+        });
 
         outputList.setColumns(20);
         outputList.setRows(5);
@@ -188,6 +216,40 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        String sFirstName, sLastName; //creats strings
+        
+        try{ //trys to get number data 
+            sFirstName = inputFirstName.getText();
+            sLastName = inputFirstName.getText();
+        }catch(NumberFormatException e){ //if there are numbers it will display Please Enter Letters Only
+            outputAverage.setText("Please Enter Letters Only!!!");
+        }
+        
+        for(int i = 0; i <studentNames.length; i++){
+            for(int j = 0; j <studentNames.length; j++){
+                studentNames[i][j] = new String[sFirstName][sLastName];
+            }
+        }  
+                
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnListActionPerformed
+
+    private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnStudentAvarageActionPerformed
+
+    private void btnCourseAverageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseAverageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCourseAverageActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
