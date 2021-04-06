@@ -52,11 +52,6 @@ public class CardDealer {
         deckHalf =+ theDeckTotal; //adds theDeckTotal to deckHalf
         deckHalf /= 2; //devides deckHalf by 2
         
-        System.out.println(theDeckTotal);
-        System.out.println(deckHalf);
-        System.out.println(deckTotalNum);
-        
-        
         //Set the change array. This section sets up the array to check if a match has been made.
         for (int z = 0; z <= theDeckTotal; z++){
             change[z] = 1;
