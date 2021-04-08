@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,8 +13,17 @@
  */
 
 public class Main extends javax.swing.JFrame {
+    ArrayList<ArrayList<String>> studentData = new ArrayList<ArrayList<String>>(); //creats 2d array list
     
-    String[][] studentNames = new String[15][2];
+    String sFirstName, sLastName, sTest1, sTest2, sTest3, sTest4; //creats strings
+
+    //creats arraylist
+    ArrayList<String> firstName = new ArrayList();
+    ArrayList<String> lastName = new ArrayList();
+    ArrayList<String> testOne = new ArrayList();
+    ArrayList<String> testTwo = new ArrayList();
+    ArrayList<String> testThree = new ArrayList();
+    ArrayList<String> testFour = new ArrayList();
     
     /**
      * Creates new form Main
@@ -218,21 +230,34 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        String sFirstName, sLastName; //creats strings
-        
         try{ //trys to get number data 
-            sFirstName = inputFirstName.getText();
+            //sets text input to strings
+            sFirstName = inputFirstName.getText(); 
             sLastName = inputFirstName.getText();
+            sTest1 = inputTest1.getText();
+            sTest2 = inputTest1.getText();
+            sTest3 = inputTest1.getText();
+            sTest4 = inputTest1.getText();
         }catch(NumberFormatException e){ //if there are numbers it will display Please Enter Letters Only
             outputAverage.setText("Please Enter Letters Only!!!");
         }
         
-        for(int i = 0; i <studentNames.length; i++){
-            for(int j = 0; j <studentNames.length; j++){
-                studentNames[i][j] = new String[sFirstName][sLastName];
-            }
-        }  
-                
+        //Adds sStrings to ArrayLists
+        firstName.add(sFirstName);
+        lastName.add(sLastName);
+        testOne.add(sTest1);
+        testTwo.add(sTest2);
+        testThree.add(sTest3);
+        testFour.add(sTest4);
+        
+        //Adds ArrayLists to 2d ArrayLists
+        studentData.add(firstName);
+        studentData.add(lastName);
+        studentData.add(testOne);
+        studentData.add(testTwo);
+        studentData.add(testThree);
+        studentData.add(testFour);
+
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
