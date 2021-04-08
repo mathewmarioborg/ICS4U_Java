@@ -273,7 +273,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCourseAverageActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
+        System.exit(0); // exits program
     }//GEN-LAST:event_btnExitActionPerformed
 
     /**
