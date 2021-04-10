@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 /*
@@ -11,7 +10,6 @@ import java.util.ArrayList;
  *
  * @author Mathew Borg
  */
-
 public class Main extends javax.swing.JFrame {
     ArrayList<ArrayList<String>> studentData = new ArrayList<ArrayList<String>>(); //creats 2d array list
     
@@ -257,11 +255,29 @@ public class Main extends javax.swing.JFrame {
         studentData.add(testTwo);
         studentData.add(testThree);
         studentData.add(testFour);
+        
+        //clears ArrayList 
+        firstName.clear();
+        lastName.clear();
+        testOne.clear();
+        testTwo.clear();
+        testThree.clear();
+        testFour.clear();
+        
+        //System.out.println(studentData);
 
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
-        // TODO add your handling code here:
+        String result = "";
+        for(int i = 0; i < studentData.size(); i++){
+          for(int j = 0; j < studentData.get(i).size(); j++){
+              result += studentData.get(i).get(j);
+          }
+          // System.out.println();
+          result += "\n";
+      }
+        System.out.println(result);
     }//GEN-LAST:event_btnListActionPerformed
 
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
