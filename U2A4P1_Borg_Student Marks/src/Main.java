@@ -126,8 +126,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        outputList.setColumns(20);
-        outputList.setRows(5);
+        outputList.setEditable(false);
+        outputList.setLineWrap(true);
+        outputList.setWrapStyleWord(true);
+        outputList.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         outputAverage.setColumns(20);
         outputAverage.setRows(5);
@@ -178,7 +180,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(textFirstName)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textTitle)
-                        .addGap(0, 80, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(outputAverage))
                 .addContainerGap())
         );
@@ -219,8 +221,8 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(btnExit)
                     .addComponent(inputTest4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(outputList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(152, 152, 152)
+                .addComponent(outputList, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(outputAverage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -268,19 +270,14 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
-        String result = "";
+        String result = " ";
         for (int i = 0; i < studentData.size(); i++) {
             for (int j = 0; j < studentData.get(i).size(); j++) {
-                result += studentData.get(i).get(j);
-                
+                result += studentData.get(i).get(j) + " ";
             }
-            result += "\n";
         }
-        
-        
-        
-        outputList.setText(result);  // outputs to textarea
-//        System.out.println(result);
+        System.out.println(result);
+
     }//GEN-LAST:event_btnListActionPerformed
 
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
