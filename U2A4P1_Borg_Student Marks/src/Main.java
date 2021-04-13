@@ -270,14 +270,12 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
-        String result = " ";
+
         for (int i = 0; i < studentData.size(); i++) {
             for (int j = 0; j < studentData.get(i).size(); j++) {
-                result += studentData.get(i).get(j) + " ";
+                System.out.println(studentData.get(i).get(j));
             }
         }
-        System.out.println(result);
-
     }//GEN-LAST:event_btnListActionPerformed
 
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
