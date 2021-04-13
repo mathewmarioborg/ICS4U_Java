@@ -17,12 +17,7 @@ public class Main extends javax.swing.JFrame {
     ArrayList<ArrayList<String>> studentData = new ArrayList(); //creats 2d array list
     
     //creats arraylist
-    ArrayList<String> firstName = new ArrayList();
-    ArrayList<String> lastName = new ArrayList();
-    ArrayList<String> testOne = new ArrayList();
-    ArrayList<String> testTwo = new ArrayList();
-    ArrayList<String> testThree = new ArrayList();
-    ArrayList<String> testFour = new ArrayList();
+    ArrayList<String> student = new ArrayList();
     
     /**
      * Creates new form Main
@@ -244,29 +239,20 @@ public class Main extends javax.swing.JFrame {
         }
         
         //Adds sStrings to ArrayLists
-        firstName.add(sFirstName);
-        lastName.add(sLastName);
-        testOne.add(sTest1);
-        testTwo.add(sTest2);
-        testThree.add(sTest3);
-        testFour.add(sTest4);
+        student.add(sFirstName);
+        student.add(sLastName);
+        student.add(sTest1);
+        student.add(sTest2);
+        student.add(sTest3);
+        student.add(sTest4);
         
         //Adds ArrayLists to 2d ArrayLists
-        studentData.add(new ArrayList<>(firstName));
-        studentData.add(new ArrayList<>(lastName));
-        studentData.add(new ArrayList<>(testOne));
-        studentData.add(new ArrayList<>(testTwo));
-        studentData.add(new ArrayList<>(testThree));
-        studentData.add(new ArrayList<>(testFour));
+        studentData.add(new ArrayList<>(student));
         
         //clears ArrayList 
-        firstName.clear();
-        lastName.clear();
-        testOne.clear();
-        testTwo.clear();
-        testThree.clear();
-        testFour.clear();
+        student.clear();
         
+        System.out.println(studentData);
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
@@ -281,7 +267,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnListActionPerformed
 
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
-        // TODO add your handling code here:
+        double studenrAverage = MarkCalculator.studentAverage(studentData, "Mathew", "Borg");
     }//GEN-LAST:event_btnStudentAvarageActionPerformed
 
     private void btnCourseAverageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseAverageActionPerformed
