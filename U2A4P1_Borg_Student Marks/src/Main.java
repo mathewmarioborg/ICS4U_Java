@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -218,8 +219,8 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(btnExit)
                     .addComponent(inputTest4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(outputList, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(outputList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(152, 152, 152)
                 .addComponent(outputAverage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -267,14 +268,19 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
-//        String result = "";
-//        for(int i = 0; i < studentData.size(); i++){
-//          for(int j = 0; j < studentData.get(i).size(); j++){
-//              result += studentData.get(i).get(j);
-//          }
-//          result += "\n";
-//      }
-        System.out.println(studentData);
+        String result = "";
+        for (int i = 0; i < studentData.size(); i++) {
+            for (int j = 0; j < studentData.get(i).size(); j++) {
+                result += studentData.get(i).get(j);
+                
+            }
+            result += "\n";
+        }
+        
+        
+        
+        outputList.setText(result);  // outputs to textarea
+//        System.out.println(result);
     }//GEN-LAST:event_btnListActionPerformed
 
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
