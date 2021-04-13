@@ -12,10 +12,10 @@ import java.util.Iterator;
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
-    ArrayList<ArrayList<String>> studentData = new ArrayList<ArrayList<String>>(); //creats 2d array list
-    
     String sFirstName, sLastName, sTest1, sTest2, sTest3, sTest4; //creats strings
 
+    ArrayList<ArrayList<String>> studentData = new ArrayList(); //creats 2d array list
+    
     //creats arraylist
     ArrayList<String> firstName = new ArrayList();
     ArrayList<String> lastName = new ArrayList();
@@ -234,11 +234,11 @@ public class Main extends javax.swing.JFrame {
         try{ //trys to get number data 
             //sets text input to strings
             sFirstName = inputFirstName.getText(); 
-            sLastName = inputFirstName.getText();
+            sLastName = inputLastName.getText();
             sTest1 = inputTest1.getText();
-            sTest2 = inputTest1.getText();
-            sTest3 = inputTest1.getText();
-            sTest4 = inputTest1.getText();
+            sTest2 = inputTest2.getText();
+            sTest3 = inputTest3.getText();
+            sTest4 = inputTest4.getText();
         }catch(NumberFormatException e){ //if there are numbers it will display Please Enter Letters Only
             outputAverage.setText("Please Enter Letters Only!!!");
         }
@@ -270,12 +270,14 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
-
+        String result = "";
         for (int i = 0; i < studentData.size(); i++) {
             for (int j = 0; j < studentData.get(i).size(); j++) {
-                System.out.println(studentData.get(i).get(j));
+                result += studentData.get(i).get(j);
             }
-        }
+            result += "\n";
+        }       
+        System.out.println(result);
     }//GEN-LAST:event_btnListActionPerformed
 
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
