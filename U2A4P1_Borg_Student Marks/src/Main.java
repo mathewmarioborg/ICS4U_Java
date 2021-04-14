@@ -293,11 +293,20 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnListActionPerformed
     
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
-        //double studenrAverage = MarkCalculator.studentAverage(studentData, "Mathew", "Borg");
+        sFirstName = inputFirstName.getText(); //gets text from name feilds 
+        sLastName = inputLastName.getText();
+        
+        double studentAverage = MarkCalculator.studentAverage(studentTestData, studentNameData, sFirstName, sLastName); //sends arrays and strings to method and stores method return value in studentAverage double 
+        
+        String sStudentAverage = Double.toString(studentAverage); //converts double to string
+        outputAverage.setText(sFirstName + " " +sLastName + "'s average is " + sStudentAverage +" %"); //sets outputAverage Text
     }//GEN-LAST:event_btnStudentAvarageActionPerformed
 
     private void btnCourseAverageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseAverageActionPerformed
-        // TODO add your handling code here:
+        double courseAverage = MarkCalculator.courseAverage(studentTestData); //sends arrays and strings to method and stores method return value in courseAverage double 
+        
+        String sCourseAverage = Double.toString(courseAverage); //converts double to string
+        outputAverage.setText("Course average is " + sCourseAverage +" %"); //sets outputAverage Text
     }//GEN-LAST:event_btnCourseAverageActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
