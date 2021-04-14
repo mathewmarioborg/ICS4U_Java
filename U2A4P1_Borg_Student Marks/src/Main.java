@@ -12,12 +12,21 @@ import java.util.Iterator;
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
-    String sFirstName, sLastName, sTest1, sTest2, sTest3, sTest4; //creats strings
+    String sFirstName, sLastName, sTestOne, sTestTwo, sTestThree, sTestFour; //creats strings
+    Double testOne, testTwo, testThree, testFour; //creats doubles
+    
+    //creats 2d array list
+    ArrayList<ArrayList<String>> studentNameData = new ArrayList(); 
+    ArrayList<ArrayList<Double>> studentTestData = new ArrayList(); 
+    //creats 2d array list to store all inputed data
+    ArrayList<ArrayList<String>> allStudentInfo = new ArrayList(); 
 
-    ArrayList<ArrayList<String>> studentData = new ArrayList(); //creats 2d array list
     
     //creats arraylist
-    ArrayList<String> student = new ArrayList();
+    ArrayList<String> studentName = new ArrayList();
+    ArrayList<Double> studentTest = new ArrayList();
+    //for printing all inputed values
+    ArrayList<String> allStudents = new ArrayList();
     
     /**
      * Creates new form Main
@@ -226,48 +235,65 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        try{ //trys to get number data 
-            //sets text input to strings
-            sFirstName = inputFirstName.getText(); 
-            sLastName = inputLastName.getText();
-            sTest1 = inputTest1.getText();
-            sTest2 = inputTest2.getText();
-            sTest3 = inputTest3.getText();
-            sTest4 = inputTest4.getText();
-        }catch(NumberFormatException e){ //if there are numbers it will display Please Enter Letters Only
-            outputAverage.setText("Please Enter Letters Only!!!");
+        sFirstName = inputFirstName.getText(); 
+        sLastName = inputLastName.getText();
+        sTestOne = inputTest1.getText();
+        sTestTwo = inputTest2.getText();
+        sTestThree = inputTest3.getText();
+        sTestFour = inputTest4.getText();              
+        
+        try{ //trys to convert strings to double
+            testOne = Double.parseDouble(sTestOne);
+            testTwo = Double.parseDouble(sTestTwo);
+            testThree = Double.parseDouble(sTestThree);
+            testFour = Double.parseDouble(sTestFour);
+        }catch(NumberFormatException e){ //if there are no numbers it will display Enter Numbers Only and retry the program
+            outputAverage.setText("Enter Numbers Only");
+            return;
         }
         
         //Adds sStrings to ArrayLists
-        student.add(sFirstName);
-        student.add(sLastName);
-        student.add(sTest1);
-        student.add(sTest2);
-        student.add(sTest3);
-        student.add(sTest4);
+        studentName.add(sFirstName);
+        studentName.add(sLastName);
+        studentTest.add(testOne);
+        studentTest.add(testTwo);
+        studentTest.add(testThree);
+        studentTest.add(testFour);
+        
+        //Adds sStrings to all value ArrayLists
+        allStudents.add(sFirstName);
+        allStudents.add(sLastName);
+        allStudents.add(sTestOne);
+        allStudents.add(sTestTwo);
+        allStudents.add(sTestThree);
+        allStudents.add(sTestFour);
         
         //Adds ArrayLists to 2d ArrayLists
-        studentData.add(new ArrayList<>(student));
+        studentNameData.add(new ArrayList<>(studentName));
+        studentTestData.add(new ArrayList<>(studentTest));
+        
+        allStudentInfo.add(new ArrayList<>(allStudents));
         
         //clears ArrayList 
-        student.clear();
+        studentName.clear();
+        studentTest.clear();
+        allStudents.clear();
         
-        System.out.println(studentData);
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
         String result = "";
-        for (int i = 0; i < studentData.size(); i++) {
-            for (int j = 0; j < studentData.get(i).size(); j++) {
-                result += studentData.get(i).get(j);
+        for (int i = 0; i < allStudentInfo.size(); i++) {
+            for (int j = 0; j < allStudentInfo.get(i).size(); j++) {
+                result += allStudentInfo.get(i).get(j);
             }
             result += "\n";
         }       
         System.out.println(result);
     }//GEN-LAST:event_btnListActionPerformed
-
+    
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
-        double studenrAverage = MarkCalculator.studentAverage(studentData, "Mathew", "Borg");
+        //double studenrAverage = MarkCalculator.studentAverage(studentData, "Mathew", "Borg");
     }//GEN-LAST:event_btnStudentAvarageActionPerformed
 
     private void btnCourseAverageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseAverageActionPerformed
