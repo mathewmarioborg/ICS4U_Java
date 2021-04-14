@@ -1,37 +1,32 @@
 import java.util.ArrayList;
 
 public class MarkCalculator {
+    static double dTestOne, dTestTwo, dTestThree, dTestFour;
 
-    public static double studentAverage(ArrayList<ArrayList<String>> studentData, String firstName, String lastName) {
-        double theStudentAverage = 0, firstNameColumn = 0, lastNameColumn = 0, dTestOne, dTestTwo, dTestThree, dTestFour;
-        String sTestOne = "", sTestTwo = "", sTestThree = "", sTestFour = "";
+    public static double studentAverage(ArrayList<ArrayList<Double>> studentTestData, String firstName, String lastName) {
+        double theStudentAverage = 0, firstNameColumn = 0, lastNameColumn = 0; 
         //get FirstName Position
-        for (int i = 0; i < studentData.size(); i++) {
-            for (int j = 0; j < studentData.get(i).size(); j++) {
-                if(studentData.get(i).get(j).equals(firstName)){
+        for (int i = 0; i < studentTestData.size(); i++) {
+            for (int j = 0; j < studentTestData.get(i).size(); j++) {
+                if(studentTestData.get(i).get(j).equals(firstName)){
                     firstNameColumn += i; //adds i to first name column var
                 }
             }
         }
         //get lastNamePosition
-        for (int i = 0; i < studentData.size(); i++) {
-            for (int j = 0; j < studentData.get(i).size(); j++) {
-                if(studentData.get(i).get(j).equals(lastName)){
+        for (int i = 0; i < studentTestData.size(); i++) {
+            for (int j = 0; j < studentTestData.get(i).size(); j++) {
+                if(studentTestData.get(i).get(j).equals(lastName)){
                     lastNameColumn += i; //adds i to first name column var
-                    sTestOne = studentData.get(i).get(2);
-                    sTestTwo = studentData.get(i).get(3);
-                    sTestThree = studentData.get(i).get(4);
-                    sTestFour = studentData.get(i).get(5);
+                    dTestOne = studentTestData.get(i).get(2);
+                    dTestTwo = studentTestData.get(i).get(3);
+                    dTestThree = studentTestData.get(i).get(4);
+                    dTestFour = studentTestData.get(i).get(5);
                 }
             }
         }
         
-        if(firstNameColumn == lastNameColumn){
-            dTestOne = Double.parseDouble(sTestOne);
-            dTestTwo = Double.parseDouble(sTestTwo);
-            dTestThree = Double.parseDouble(sTestThree);
-            dTestFour = Double.parseDouble(sTestFour);
-            
+        if(firstNameColumn == lastNameColumn){    
             theStudentAverage += dTestOne + dTestTwo + dTestThree + dTestFour;
             theStudentAverage /= 4;
         }else{
@@ -42,7 +37,12 @@ public class MarkCalculator {
 
     public static double courseAverage(ArrayList<ArrayList<String>> studentData) {
         double theCourseAverage = 0;
-
+        
+        for (int i = 0; i < studentData.size(); i++) {
+            for (int j = 0; j < studentData.get(i).size(); j++) {
+                
+            }
+        }
         return theCourseAverage;
     }
 }
