@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class MarkCalculator {
-    static double dTestOne, dTestTwo, dTestThree, dTestFour;
+    static double studentTestOne, studentTestTwo, studentTestThree, studentTestFour;
 
     public static double studentAverage(ArrayList<ArrayList<Double>> studentTestData, String firstName, String lastName) {
         double theStudentAverage = 0, firstNameColumn = 0, lastNameColumn = 0; 
@@ -18,16 +18,16 @@ public class MarkCalculator {
             for (int j = 0; j < studentTestData.get(i).size(); j++) {
                 if(studentTestData.get(i).get(j).equals(lastName)){
                     lastNameColumn += i; //adds i to first name column var
-                    dTestOne = studentTestData.get(i).get(2);
-                    dTestTwo = studentTestData.get(i).get(3);
-                    dTestThree = studentTestData.get(i).get(4);
-                    dTestFour = studentTestData.get(i).get(5);
+                    studentTestOne = studentTestData.get(i).get(2);
+                    studentTestTwo = studentTestData.get(i).get(3);
+                    studentTestThree = studentTestData.get(i).get(4);
+                    studentTestFour = studentTestData.get(i).get(5);
                 }
             }
         }
         
         if(firstNameColumn == lastNameColumn){    
-            theStudentAverage += dTestOne + dTestTwo + dTestThree + dTestFour;
+            theStudentAverage += studentTestOne + studentTestTwo + studentTestThree + studentTestFour;
             theStudentAverage /= 4;
         }else{
             
