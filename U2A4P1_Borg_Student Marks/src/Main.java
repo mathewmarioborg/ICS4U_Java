@@ -1,15 +1,13 @@
 import java.util.ArrayList;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Mathew Borg
- */
+    programmer: Mathew Borg
+    Date: 2021-04-5
+    Program Name: U2A4P1_Borg_Student Marks
+    Program Discription: This program is a Student Grades Application that 
+                         simulates a grade book for a class with 15 or more 
+                         students who each have four test scores.
+*/
 public class Main extends javax.swing.JFrame {
     String sFirstName, sLastName, sTestOne, sTestTwo, sTestThree, sTestFour; //creats strings
     Double testOne, testTwo, testThree, testFour; //creats doubles
@@ -243,6 +241,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        //gets text input and stores them all in strings
         sFirstName = inputFirstName.getText(); 
         sLastName = inputLastName.getText();
         sTestOne = inputTest1.getText();
@@ -278,8 +277,7 @@ public class Main extends javax.swing.JFrame {
         
         //Adds ArrayLists to 2d ArrayLists
         studentNameData.add(new ArrayList<>(studentName));
-        studentTestData.add(new ArrayList<>(studentTest));
-        
+        studentTestData.add(new ArrayList<>(studentTest));   
         allStudentInfo.add(new ArrayList<>(allStudents));
         
         //clears ArrayList 
@@ -290,21 +288,23 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
-        String result = "";
+        String result = ""; //creats String
+        //initalises arraylist with 2 for loops
         for (int i = 0; i < allStudentInfo.size(); i++) {
             for (int j = 0; j < allStudentInfo.get(i).size(); j++) {
-                result += allStudentInfo.get(i).get(j) + " ";
+                result += allStudentInfo.get(i).get(j) + " ";// adds allStudentInfo to result with and adds a space
             }
-            result += "\n";
+            result += "\n"; //adds a new line
         }
-        outputList.setText("First Name: Last Name: Test1: Test2: Test3: Test4:" + "\n" + result);
+        outputList.setText("First Name: Last Name: Test1: Test2: Test3: Test4:" + "\n" + result); //prints "First Name: Last Name: Test1: Test2: Test3: Test4:" + "\n" + result to outputList
     }//GEN-LAST:event_btnListActionPerformed
     
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
-        sFirstName = inputFirstName.getText(); //gets text from name feilds 
+        //gets text from name feilds 
+        sFirstName = inputFirstName.getText(); 
         sLastName = inputLastName.getText();
         
-        double studentAverage = MarkCalculator.studentAverage(studentTestData, studentNameData, sFirstName, sLastName, outputAverage); //sends arrays and strings to method and stores method return value in studentAverage double 
+        double studentAverage = MarkCalculator.studentAverage(studentTestData, studentNameData, sFirstName, sLastName); //sends arrays and strings to method and stores method return value in studentAverage double 
         
         studentAverage = Math.round(studentAverage * 100.0) / 100.0; //rounds stundet average to 2 decimal places
         
