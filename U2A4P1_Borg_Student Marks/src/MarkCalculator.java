@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class MarkCalculator {
     static double studentTestOne, studentTestTwo, studentTestThree, studentTestFour;
 
-    public static double studentAverage(ArrayList<ArrayList<Double>> studentTestData, ArrayList<ArrayList<String>> studentNameData, String firstName, String lastName) {
+    public static double studentAverage(ArrayList<ArrayList<Double>> studentTestData, ArrayList<ArrayList<String>> studentNameData, String firstName, String lastName, javax.swing.JTextArea outputAverage) {
         double theStudentAverage = 0, firstNameColumn = 0, lastNameColumn = 0;
         int sumColumn = 0;
         //get FirstName Position
@@ -36,7 +36,7 @@ public class MarkCalculator {
             theStudentAverage += studentTestOne + studentTestTwo + studentTestThree + studentTestFour;
             theStudentAverage /= 4;
         }else{
-            
+            outputAverage.setText("No Student Found");
         }
         return theStudentAverage;
     }

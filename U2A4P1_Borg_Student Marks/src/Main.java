@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -63,8 +62,9 @@ public class Main extends javax.swing.JFrame {
         inputTest4 = new javax.swing.JTextField();
         btnStudentAvarage = new javax.swing.JButton();
         btnCourseAverage = new javax.swing.JButton();
-        outputList = new javax.swing.JTextArea();
         outputAverage = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        outputList = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,13 +79,13 @@ public class Main extends javax.swing.JFrame {
 
         textLastName.setText("Last Name:");
 
-        textTest1.setText("Test 1:");
+        textTest1.setText("(%) Test 1:");
 
-        textTest2.setText("Test 2:");
+        textTest2.setText("(%) Test 2:");
 
-        textTest3.setText("Test 3:");
+        textTest3.setText("(%) Test 3:");
 
-        textTest4.setText("Test 4:");
+        textTest4.setText("(%) Test 4:");
 
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -130,62 +130,68 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        outputList.setEditable(false);
-        outputList.setLineWrap(true);
-        outputList.setWrapStyleWord(true);
-        outputList.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
+        outputAverage.setEditable(false);
         outputAverage.setColumns(20);
         outputAverage.setRows(5);
+
+        outputList.setEditable(false);
+        outputList.setColumns(20);
+        outputList.setRows(5);
+        outputList.setOpaque(false);
+        jScrollPane1.setViewportView(outputList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(textAuthor)
-                .addGap(133, 133, 133))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(outputList)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textTest1)
-                            .addComponent(textLastName)
-                            .addComponent(textTest2)
-                            .addComponent(textTest3)
-                            .addComponent(textTest4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputFirstName)
-                            .addComponent(inputLastName)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(inputTest4, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
-                                    .addComponent(inputTest2)
-                                    .addComponent(inputTest1)
-                                    .addComponent(inputTest3))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(5, 5, 5)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(textTest1)
+                                    .addComponent(textLastName)
+                                    .addComponent(textTest2)
+                                    .addComponent(textTest3)
+                                    .addComponent(textTest4))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnStudentAvarage, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                                    .addComponent(btnCourseAverage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(inputFirstName)
+                                    .addComponent(inputLastName)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(inputTest4, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                                            .addComponent(inputTest2)
+                                            .addComponent(inputTest1)
+                                            .addComponent(inputTest3))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(5, 5, 5)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(btnList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(btnStudentAvarage, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                            .addComponent(btnCourseAverage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addComponent(outputAverage)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textFirstName)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textTitle)
+                                .addGap(0, 58, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(textFirstName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textTitle)
+                        .addGap(109, 109, 109)
+                        .addComponent(textAuthor)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(outputAverage))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -193,9 +199,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(textTitle)
-                .addGap(1, 1, 1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textAuthor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textFirstName)
                     .addComponent(inputFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -225,11 +231,13 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(btnExit)
                     .addComponent(inputTest4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(outputList, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(outputAverage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
+
+        outputAverage.getAccessibleContext().setAccessibleParent(jScrollPane1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -285,18 +293,20 @@ public class Main extends javax.swing.JFrame {
         String result = "";
         for (int i = 0; i < allStudentInfo.size(); i++) {
             for (int j = 0; j < allStudentInfo.get(i).size(); j++) {
-                result += allStudentInfo.get(i).get(j);
+                result += allStudentInfo.get(i).get(j) + " ";
             }
             result += "\n";
-        }       
-        System.out.println(result);
+        }
+        outputList.setText("First Name: Last Name: Test1: Test2: Test3: Test4:" + "\n" + result);
     }//GEN-LAST:event_btnListActionPerformed
     
     private void btnStudentAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAvarageActionPerformed
         sFirstName = inputFirstName.getText(); //gets text from name feilds 
         sLastName = inputLastName.getText();
         
-        double studentAverage = MarkCalculator.studentAverage(studentTestData, studentNameData, sFirstName, sLastName); //sends arrays and strings to method and stores method return value in studentAverage double 
+        double studentAverage = MarkCalculator.studentAverage(studentTestData, studentNameData, sFirstName, sLastName, outputAverage); //sends arrays and strings to method and stores method return value in studentAverage double 
+        
+        studentAverage = Math.round(studentAverage * 100.0) / 100.0; //rounds stundet average to 2 decimal places
         
         String sStudentAverage = Double.toString(studentAverage); //converts double to string
         outputAverage.setText(sFirstName + " " +sLastName + "'s average is " + sStudentAverage +" %"); //sets outputAverage Text
@@ -304,6 +314,7 @@ public class Main extends javax.swing.JFrame {
 
     private void btnCourseAverageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseAverageActionPerformed
         double courseAverage = MarkCalculator.courseAverage(studentTestData); //sends arrays and strings to method and stores method return value in courseAverage double 
+        courseAverage = Math.round(courseAverage * 100.0) / 100.0; //Rounds course average to 2 decimal places 
         
         String sCourseAverage = Double.toString(courseAverage); //converts double to string
         outputAverage.setText("Course average is " + sCourseAverage +" %"); //sets outputAverage Text
@@ -360,6 +371,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField inputTest2;
     private javax.swing.JTextField inputTest3;
     private javax.swing.JTextField inputTest4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea outputAverage;
     private javax.swing.JTextArea outputList;
     private javax.swing.JLabel textAuthor;
