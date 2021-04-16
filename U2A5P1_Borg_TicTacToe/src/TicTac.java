@@ -12,6 +12,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class TicTac extends JFrame {
+    TicTacEvent tictac = new TicTacEvent(this); //joins the two programs to work with each other
 
     JPanel row1 = new JPanel(); //creats outline box
     JButton[][] boxes = new JButton[3][3]; // creates nine buttons in a 2D array that is 3 x 3.
@@ -47,6 +48,14 @@ public class TicTac extends JFrame {
         row1.add(play);
         row1.add(blank2);
         add(row1); //adds the GridLayout to the FlowLayout.
+        
+        //makes the program ready to handle mouse clicks.
+        play.addActionListener(tictac); 
+        for (int x=0; x<=2; x++){
+            for (int y=0; y<=2; y++){
+                boxes[x][y].addActionListener(tictac);
+            }
+        }
 
         setVisible(true); // shows the FlowLayout on the screen
     }
