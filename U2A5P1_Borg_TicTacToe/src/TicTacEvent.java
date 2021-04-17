@@ -15,8 +15,8 @@ import java.awt.*;
 public class TicTacEvent implements ItemListener, ActionListener, Runnable { //creates a class that responds to mouse and keyboard input by “listening.”
     TicTac gui; //associates the game board with the event.
     Thread playing;
-    ImageIcon a = new ImageIcon("x.jpg"); //creats imageicon
-    ImageIcon b = new ImageIcon("o.jpg"); //creats imageicon
+    ImageIcon a = new ImageIcon("src//images//X.jpg"); //creats imageicon
+    ImageIcon b = new ImageIcon("src//images//O.jpg"); //creats imageicon
     //created to check for a winner.
     int clicks = 0;
     int win = 0;
@@ -76,7 +76,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             gui.boxes[0][0].setIcon(b);
             check[0][0] = 2;
         }
-        //winner();
+        winner();
 
     }
     void b2() {
@@ -88,7 +88,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             gui.boxes[0][1].setIcon(b);
             check[0][1] = 2;
         }
-        //winner();
+        winner();
     }
     void b3() {
         clicks = clicks + 1;
@@ -99,7 +99,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             gui.boxes[0][2].setIcon(b);
             check[0][2] = 2;
         }
-        //winner();
+        winner();
     }
     void b4() {
         clicks = clicks + 1;
@@ -110,7 +110,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             gui.boxes[1][0].setIcon(b);
             check[1][0] = 2;
         }
-        //winner();
+        winner();
     }
     void b5() {
         clicks = clicks + 1;
@@ -121,7 +121,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             gui.boxes[1][1].setIcon(b);
             check[1][1] = 2;
         }
-        //winner();
+        winner();
     }
     void b6() {
         clicks = clicks + 1;
@@ -132,7 +132,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             gui.boxes[1][2].setIcon(b);
             check[1][2] = 2;
         }
-        //winner();
+        winner();
     }
     void b7() {
         clicks = clicks + 1;
@@ -143,7 +143,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             gui.boxes[2][0].setIcon(b);
             check[2][0] = 2;
         }
-        //winner();
+        winner();
     }
     void b8() {
         clicks = clicks + 1;
@@ -154,7 +154,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             gui.boxes[2][1].setIcon(b);
             check[2][1] = 2;
         }
-        //winner();
+        winner();
     }
     void b9() {
         clicks = clicks + 1;
@@ -165,13 +165,66 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             gui.boxes[2][2].setIcon(b);
             check[2][2] = 2;
         }
-        //winner();
+        winner();
     }
     
     void startPlaying() {
         playing = new Thread(this); //the execution of the program. (this – within an instance method or a constructor, this is a reference to the current object.)
         playing.start(); //starts the game
         gui.play.setEnabled(false); //disables the play button
+    }
+    
+    void winner() {
+        /** Check rows for winner */
+        
+        for (int x=0; x<=2; x++){ //for loop checks eatch row
+            //if statements  checks to see if all entries are X, or all entries are O
+            if ((check[x][0]==check[x][1])&&(check[x][0]==check[x][2])) {
+                if (check[x][0]==1) {
+                    JOptionPane.showMessageDialog(null, "X is the winner"); // creates a pop up box declaring a winner
+                    win = 1;
+                } else if (check[x][0]==2){
+                    JOptionPane.showMessageDialog(null, "O is the winner"); //  creates a pop up box declaring a winner.
+                    win = 1;
+                }
+            }
+        }
+
+        /** Check columns for winner */
+        for (int x=0; x<=2; x++){ //for loop checks each row
+            //if statements  checks to see if all entries are X, or all entries are O
+            if ((check[0][x]==check[1][x])&&(check[0][x]==check[2][x])) {
+                if (check[0][x]==1) {
+                    JOptionPane.showMessageDialog(null, "X is the winner"); // creates a pop up box declaring a winner
+                    win = 1;
+                } else if (check[0][x]==2) {
+                    JOptionPane.showMessageDialog(null, "O is the winner"); //  creates a pop up box declaring a winner.
+                    win = 1;
+                }
+            }
+        }
+
+        /** Check diagonals for winner */
+        if (((check[0][0]==check[1][1])&&(check[0][0]==check[2][2]))|| 
+                ((check[2][0]==check[1][1])&&(check[1][1]==check[0][2]))){ // checks for diagonal matches
+            if (check[1][1]==1) { //checks for X or O winner.
+                JOptionPane.showMessageDialog(null, "X is the winner"); //creates a pop up box declaring a winner.
+                win = 1;
+            } else if (check[1][1]==2) {
+                JOptionPane.showMessageDialog(null, "O is the winner"); //creates a pop up box declaring a winner.
+                win = 1;
+            }
+
+        }
+
+        /** 
+         * Checks if the game is a tie 
+         * This structure checks to see if nine boxes have been 
+         * chosen (clicks) and that a winner has not been declared (win == 0).
+         */
+        if ((clicks==9) && (win==0)) {
+            JOptionPane.showMessageDialog(null, "The game is a tie");
+        }
     }
     
     public void itemStateChanged(ItemEvent e) {

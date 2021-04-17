@@ -20,7 +20,7 @@ public class TicTac extends JFrame {
     JTextField blank1 = new JTextField(); //creats jtextfeild blank1
     JTextField blank2 = new JTextField(); //creats jtextfeild blank2
     JOptionPane win = new JOptionPane("Winner"); //creats joptionpane win
-    ImageIcon back = new ImageIcon("src//images//cardback.jpg "); //creats new image icon with cardback.jpg
+    ImageIcon back = new ImageIcon("src//images//cardback.jpg"); //creats new image icon with cardback.jpg
 
     public TicTac() { //method to draw game borard
         super("Tic Tac Toe"); //creates the outer frame with the title
