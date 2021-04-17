@@ -17,7 +17,7 @@ public class TicTac extends JFrame {
     TicTacEvent tictac = new TicTacEvent(this); //joins the two programs to work with each other
 
     final JPanel row1 = new JPanel(); //creats outline box
-    final JButton[][] boxes = new JButton[3][3]; // creates nine buttons in a 2D array that is 3 x 3.
+    public static final JButton[][] boxes = new JButton[3][3]; //creates nine buttons in a 2D array that is 3 x 3.
     final JButton play = new JButton("Play"); //creats play btn
     final JButton reset = new JButton("Reset"); //creats reset btn
     public static JTextField displayXWin = new JTextField(); //creats jtextfeild displayXWin
@@ -67,7 +67,6 @@ public class TicTac extends JFrame {
         }
 
         setVisible(true); // shows the FlowLayout on the screen
-     
     }
 
     public static void main(String[] arguments) {

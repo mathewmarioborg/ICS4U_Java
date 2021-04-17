@@ -16,8 +16,10 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     Thread playing;
     ImageIcon a = new ImageIcon("src//images//X.jpg"); //creats imageicon
     ImageIcon b = new ImageIcon("src//images//O.jpg"); //creats imageicon
+        final ImageIcon back = new ImageIcon("src//images//cardback.jpg"); //creats new image icon with cardback.jpg
+
     //created to check for a winner.
-    int clicks = 0, win = 0, xWins = 0, oWins = 0, catGames = 0; //creats ints
+    int clicks = 0, win = 0, xWins = 0, oWins = 0, catGames = 0, run = 0; //creats ints
     int[][] check = new int[3][3]; //creats a 2d int list
     
     
@@ -39,50 +41,54 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     Return:     void 
     */
     @Override
-    public void actionPerformed (ActionEvent event) { //tells the program what to do when a button is clicked.
-       String command = event.getActionCommand(); //takes the button name as input from the button that is clicked.
-       
-       //checks the command variable and calls the appropriate method.
-       if (command.equals("Play")) {
-           startPlaying();
-       }
-       if (command.equals("1")) {
-           btn(0,0);
-       }
-       if (command.equals("2")) {
-           btn(0,1);
-       }
-       if (command.equals("3")) {
-           btn(0,2);
-       }
-       if (command.equals("4")) {
-           btn(1,0);
-       }
-       if (command.equals("5")) {
-           btn(1,1);
-       }
-       if (command.equals("6")) {
-           btn(1,2);
-       }
-       if (command.equals("7")) {
-           btn(2,0);
-       }
-       if (command.equals("8")) {
-           btn(2,1);
-       }
-       if (command.equals("9")) {
-           btn(2,2);
-       }
-       
-        //Converts ints to strings
-        String sXWins = Integer.toString(xWins);
-        String sOWins = Integer.toString(oWins);
-        String sCatGames = Integer.toString(catGames);
+    public void actionPerformed(ActionEvent event) { //tells the program what to do when a button is clicked.
+        String command = event.getActionCommand(); //takes the button name as input from the button that is clicked.    
         
-        //sets text feilds
-        TicTac.blank1.setText("x Wins = " + sXWins);
-        TicTac.blank2.setText("o Wins = " + sOWins);
-        //blank1.setText("Cat Games = " + sCatGames);
+        //Converts ints to strings
+            String sXWins = Integer.toString(xWins);
+            String sOWins = Integer.toString(oWins);
+            String sCatGames = Integer.toString(catGames);
+
+            //sets text feilds
+            TicTac.displayXWin.setText("x Wins = " + sXWins);
+            TicTac.displayOWin.setText("o Wins = " + sOWins);
+            TicTac.displayCatWin.setText("Cat Games = " + sCatGames);
+        //checks the command variable and calls the appropriate method.
+        if (command.equals("Play")) {
+            startPlaying();
+        }
+        if (run == 1) {
+
+            if (command.equals("1")) {
+                btn(0, 0);
+            }
+            if (command.equals("2")) {
+                btn(0, 1);
+            }
+            if (command.equals("3")) {
+                btn(0, 2);
+            }
+            if (command.equals("4")) {
+                btn(1, 0);
+            }
+            if (command.equals("5")) {
+                btn(1, 1);
+            }
+            if (command.equals("6")) {
+                btn(1, 2);
+            }
+            if (command.equals("7")) {
+                btn(2, 0);
+            }
+            if (command.equals("8")) {
+                btn(2, 1);
+            }
+            if (command.equals("9")) {
+                btn(2, 2);
+            }
+        } else {
+            System.out.println("Hit Start");
+        }
     }
     /*
     Function:   btn
@@ -131,12 +137,12 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             if ((check[x][0]==check[x][1])&&(check[x][0]==check[x][2])) {
                 if (check[x][0]==1) {
                     JOptionPane.showMessageDialog(null, "X is the winner"); // creates a pop up box declaring a winner
-                    xWins += 1; //adds 1 to x Wins
                     win = 1;
+                    xWins = setWinVars(xWins);//calls setWinVars method
                 } else if (check[x][0]==2){
                     JOptionPane.showMessageDialog(null, "O is the winner"); //  creates a pop up box declaring a winner.
-                    oWins += 1; //adds 1 to o Wins
                     win = 1;
+                    oWins = setWinVars(oWins);//calls setWinVars method
                 }
             }
         }
@@ -147,12 +153,12 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             if ((check[0][x]==check[1][x])&&(check[0][x]==check[2][x])) {
                 if (check[0][x]==1) {
                     JOptionPane.showMessageDialog(null, "X is the winner"); // creates a pop up box declaring a winner
-                    xWins += 1; //adds 1 to x Wins
                     win = 1;
+                    xWins = setWinVars(xWins);//calls setWinVars method
                 } else if (check[0][x]==2) {
                     JOptionPane.showMessageDialog(null, "O is the winner"); //  creates a pop up box declaring a winner.
-                    oWins += 1; //adds 1 to o Wins
                     win = 1;
+                    oWins = setWinVars(oWins);//calls setWinVars method
                 }
             }
         }
@@ -162,12 +168,12 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
                 ((check[2][0]==check[1][1])&&(check[1][1]==check[0][2]))){ // checks for diagonal matches
             if (check[1][1]==1) { //checks for X or O winner.
                 JOptionPane.showMessageDialog(null, "X is the winner"); //creates a pop up box declaring a winner.
-                xWins += 1; //adds 1 to x Wins
                 win = 1;
+                xWins = setWinVars(xWins);//calls setWinVars method
             } else if (check[1][1]==2) {
                 JOptionPane.showMessageDialog(null, "O is the winner"); //creates a pop up box declaring a winner.
-                oWins += 1; //adds 1 to oWins
                 win = 1;
+                oWins = setWinVars(oWins);//calls setWinVars method
             }
 
         }
@@ -179,8 +185,22 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
          */
         if ((clicks==9) && (win==0)) {
             JOptionPane.showMessageDialog(null, "The game is a tie");
-            catGames += 1; //adds 1 to catGames
+            catGames = setWinVars(catGames); //calls setWinVars method
         }
+    }
+    /*
+    Function:   setWinVars
+    Purpose:    to set vars every time there is a win
+    Parameters: N/A         
+    Return:     int 
+    */
+    int setWinVars(int winVar) {
+        winVar += 1; //adds 1 to x winVar
+        System.out.println(xWins);
+        run = 0; //sets run to 0
+        gui.play.setEnabled(true);
+        
+        return winVar;
     }
     
     /*
@@ -202,6 +222,13 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     */
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        run = 1;
+        clicks = 0;
+        for (int x = 0; x < gui.boxes.length; x++) {
+            for (int y = 0; y < gui.boxes[x].length; y++) {
+                gui.boxes[x][y].setIcon(back);
+                check[x][y]=0;
+            }
+        }
     }
 }
