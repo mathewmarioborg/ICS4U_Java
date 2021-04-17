@@ -17,7 +17,7 @@ public class TicTac extends JFrame {
     TicTacEvent tictac = new TicTacEvent(this); //joins the two programs to work with each other
 
     final JPanel row1 = new JPanel(); //creats outline box
-    public static final JButton[][] boxes = new JButton[3][3]; //creates nine buttons in a 2D array that is 3 x 3.
+    public static final JButton[][] boxes = new JButton[4][4]; //creates nine buttons in a 2D array that is 3 x 3.
     final JButton play = new JButton("Play"); //creats play btn
     final JButton reset = new JButton("Reset"); //creats reset btn
     public static JTextField displayXWin = new JTextField(); //creats jtextfeild displayXWin
@@ -29,14 +29,14 @@ public class TicTac extends JFrame {
 
     public TicTac() { //method to draw game borard
         super("Tic Tac Toe"); //creates the outer frame with the title
-        setSize(500, 600); //sets the size of the outer frame.
+        setSize(700, 800); //sets the size of the outer frame.
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //sets the program to quit running when the window is closed
         FlowLayout layout = new FlowLayout(); //arranges components from left to right, centering components horizontally with a five pixel gap between them.
         setLayout(layout);
         int name = 0; //creats int name
         String newname; //creats string newname
 
-        GridLayout layout1 = new GridLayout(5, 3, 10, 10); //arranges the components in a rectangular grid, where all cells are of equal size.
+        GridLayout layout1 = new GridLayout(6, 4, 10, 10); //arranges the components in a rectangular grid, where all cells are of equal size.
         row1.setLayout(layout1);
         //creates and adds the buttons to the GridLayout's first three rows
         for (int x = 0; x < boxes.length; x++) {
