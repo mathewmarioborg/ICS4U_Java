@@ -44,18 +44,13 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     public void actionPerformed(ActionEvent event) { //tells the program what to do when a button is clicked.
         String command = event.getActionCommand(); //takes the button name as input from the button that is clicked.    
         
-        //Converts ints to strings
-            String sXWins = Integer.toString(xWins);
-            String sOWins = Integer.toString(oWins);
-            String sCatGames = Integer.toString(catGames);
-
-            //sets text feilds
-            TicTac.displayXWin.setText("x Wins = " + sXWins);
-            TicTac.displayOWin.setText("o Wins = " + sOWins);
-            TicTac.displayCatWin.setText("Cat Games = " + sCatGames);
+        
         //checks the command variable and calls the appropriate method.
         if (command.equals("Play")) {
             startPlaying();
+        }
+        if (command.equals("Reset")) {
+            resetGame();
         }
         if (run == 1) {
 
@@ -107,22 +102,9 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             check[twoDArrayX][twoDArrayY] = 2;
         }
         winner(); //run winner method
-        
-        
+  
     }
-    
-    /*
-    Function:   startPlaying
-    Purpose:    to start playing the game
-    Parameters: N/A         
-    Return:     void 
-    */
-    void startPlaying() {
-        playing = new Thread(this); //the execution of the program. (this – within an instance method or a constructor, this is a reference to the current object.)
-        playing.start(); //starts the game
-        gui.play.setEnabled(false); //disables the play button
-    }
-    
+ 
     /*
     Function:   winner
     Purpose:    to check who wone of if there is a tie
@@ -188,6 +170,40 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             catGames = setWinVars(catGames); //calls setWinVars method
         }
     }
+    
+    /*
+    Function:   outPrint
+    Purpose:    to print all our data
+    Parameters: N/A         
+    Return:     void 
+    */
+    void outPrint(){
+        //Converts ints to strings
+        String sXWins = Integer.toString(xWins);
+        String sOWins = Integer.toString(oWins);
+        String sCatGames = Integer.toString(catGames);
+
+        //sets text feilds
+        TicTac.displayXWin.setText("x Wins = " + sXWins);
+        TicTac.displayOWin.setText("o Wins = " + sOWins);
+        TicTac.displayCatWin.setText("Cat Games = " + sCatGames);
+    }
+    
+    /*
+    Function:   clearCards
+    Purpose:    to set all cars back to defult 
+    Parameters: N/A         
+    Return:     void 
+    */
+    void clearCards(){
+        for (int x = 0; x < gui.boxes.length; x++) {
+            for (int y = 0; y < gui.boxes[x].length; y++) {
+                gui.boxes[x][y].setIcon(back);
+                check[x][y]=0;
+            }
+        }
+    }
+    
     /*
     Function:   setWinVars
     Purpose:    to set vars every time there is a win
@@ -198,9 +214,36 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
         winVar += 1; //adds 1 to x winVar
         System.out.println(xWins);
         run = 0; //sets run to 0
+        gui.play.setEnabled(true); //enables play btn
+        return winVar; //returns winVar
+    }
+    
+    /*
+    Function:   startPlaying
+    Purpose:    to start playing the game
+    Parameters: N/A         
+    Return:     void 
+    */
+    void startPlaying() {
+        playing = new Thread(this); //the execution of the program. (this – within an instance method or a constructor, this is a reference to the current object.)
+        playing.start(); //starts the game
+        gui.play.setEnabled(false); //disables the play button
+    }
+    
+    /*
+    Function:   resetGame
+    Purpose:    reset all stored game data
+    Parameters: N/A         
+    Return:     void 
+    */
+    void resetGame() {
+        xWins = 0; //sets ints to 0
+        oWins = 0;
+        catGames = 0;
+        run = 0;
         gui.play.setEnabled(true);
-        
-        return winVar;
+        clearCards();
+        outPrint();
     }
     
     /*
@@ -209,6 +252,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     Parameters: N/A         
     Return:     void 
     */
+    
     @Override
     public void itemStateChanged(ItemEvent e) {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -224,11 +268,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     public void run() {
         run = 1;
         clicks = 0;
-        for (int x = 0; x < gui.boxes.length; x++) {
-            for (int y = 0; y < gui.boxes[x].length; y++) {
-                gui.boxes[x][y].setIcon(back);
-                check[x][y]=0;
-            }
-        }
+        clearCards();
+        outPrint();
     }
 }

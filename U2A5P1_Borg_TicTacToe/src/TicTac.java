@@ -60,6 +60,7 @@ public class TicTac extends JFrame {
         
         //makes the program ready to handle mouse clicks.
         play.addActionListener(tictac); 
+        reset.addActionListener(tictac); 
         for (int x=0; x < boxes.length; x++){
             for (int y=0; y < boxes[x].length; y++){
                 boxes[x][y].addActionListener(tictac);
