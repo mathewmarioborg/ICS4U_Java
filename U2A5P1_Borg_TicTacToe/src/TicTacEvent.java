@@ -40,132 +40,44 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
            startPlaying();
        }
        if (command.equals("1")) {
-           b1();
+           btn(0,0);
        }
        if (command.equals("2")) {
-           b2();
+           btn(0,1);
        }
        if (command.equals("3")) {
-           b3();
+           btn(0,2);
        }
        if (command.equals("4")) {
-           b4();
+           btn(1,0);
        }
        if (command.equals("5")) {
-           b5();
+           btn(1,1);
        }
        if (command.equals("6")) {
-           b6();
+           btn(1,2);
        }
        if (command.equals("7")) {
-           b7();
+           btn(2,0);
        }
        if (command.equals("8")) {
-           b8();
+           btn(2,1);
        }
        if (command.equals("9")) {
-           b9();
+           btn(2,2);
        }
     }
-     void b1() {
+    
+    void btn(int twoDArrayX, int twoDArrayY) {
         clicks = clicks + 1; //keeps track of the number of boxes chosen
-        if ((clicks%2)==1){ //puts an X on the board and declares that square to be taken.
-            gui.boxes[0][0].setIcon(a);
-            check[0][0] = 1;
+        if ((clicks % 2) == 1) { //puts an X on the board and declares that square to be taken.
+            gui.boxes[twoDArrayX][twoDArrayY].setIcon(a);
+            check[twoDArrayX][twoDArrayY] = 1;
         } else { //puts an O on the board and declares that square to be taken.
-            gui.boxes[0][0].setIcon(b);
-            check[0][0] = 2;
+            gui.boxes[twoDArrayX][twoDArrayY].setIcon(b);
+            check[twoDArrayX][twoDArrayY] = 2;
         }
-        winner();
-
-    }
-    void b2() {
-        clicks = clicks + 1;
-        if ((clicks%2)==1){
-            gui.boxes[0][1].setIcon(a);
-            check[0][1] = 1;
-        } else {
-            gui.boxes[0][1].setIcon(b);
-            check[0][1] = 2;
-        }
-        winner();
-    }
-    void b3() {
-        clicks = clicks + 1;
-        if ((clicks%2)==1){
-            gui.boxes[0][2].setIcon(a);
-            check[0][2] = 1;
-        } else {
-            gui.boxes[0][2].setIcon(b);
-            check[0][2] = 2;
-        }
-        winner();
-    }
-    void b4() {
-        clicks = clicks + 1;
-        if ((clicks%2)==1){
-            gui.boxes[1][0].setIcon(a);
-            check[1][0] = 1;
-        } else {
-            gui.boxes[1][0].setIcon(b);
-            check[1][0] = 2;
-        }
-        winner();
-    }
-    void b5() {
-        clicks = clicks + 1;
-        if ((clicks%2)==1){
-            gui.boxes[1][1].setIcon(a);
-            check[1][1] = 1;
-        } else {
-            gui.boxes[1][1].setIcon(b);
-            check[1][1] = 2;
-        }
-        winner();
-    }
-    void b6() {
-        clicks = clicks + 1;
-        if ((clicks%2)==1){
-            gui.boxes[1][2].setIcon(a);
-            check[1][2] = 1;
-        } else {
-            gui.boxes[1][2].setIcon(b);
-            check[1][2] = 2;
-        }
-        winner();
-    }
-    void b7() {
-        clicks = clicks + 1;
-        if ((clicks%2)==1){
-            gui.boxes[2][0].setIcon(a);
-            check[2][0] = 1;
-        } else {
-            gui.boxes[2][0].setIcon(b);
-            check[2][0] = 2;
-        }
-        winner();
-    }
-    void b8() {
-        clicks = clicks + 1;
-        if ((clicks%2)==1){
-            gui.boxes[2][1].setIcon(a);
-            check[2][1] = 1;
-        } else {
-            gui.boxes[2][1].setIcon(b);
-            check[2][1] = 2;
-        }
-        winner();
-    }
-    void b9() {
-        clicks = clicks + 1;
-        if ((clicks%2)==1){
-            gui.boxes[2][2].setIcon(a);
-            check[2][2] = 1;
-        } else {
-            gui.boxes[2][2].setIcon(b);
-            check[2][2] = 2;
-        }
-        winner();
+        winner(); //run winner method
     }
     
     void startPlaying() {
