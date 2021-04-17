@@ -1,26 +1,28 @@
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Mathew Borg
- */
-import java.awt.*;
-import javax.swing.*;
-
+    programmer: Mathew Borg
+    Date: 2021-04-8
+    Program Name: U2A4P1_Borg_TicTacToe
+    Program Discription: This program is a virtual TicTacToe board Game
+*/
 public class TicTac extends JFrame {
     TicTacEvent tictac = new TicTacEvent(this); //joins the two programs to work with each other
 
-    JPanel row1 = new JPanel(); //creats outline box
-    JButton[][] boxes = new JButton[3][3]; // creates nine buttons in a 2D array that is 3 x 3.
-    JButton play = new JButton("Play"); //creats play btn
-    JTextField blank1 = new JTextField(); //creats jtextfeild blank1
-    JTextField blank2 = new JTextField(); //creats jtextfeild blank2
-    JOptionPane win = new JOptionPane("Winner"); //creats joptionpane win
-    ImageIcon back = new ImageIcon("src//images//cardback.jpg"); //creats new image icon with cardback.jpg
+    final JPanel row1 = new JPanel(); //creats outline box
+    final JButton[][] boxes = new JButton[3][3]; // creates nine buttons in a 2D array that is 3 x 3.
+    final JButton play = new JButton("Play"); //creats play btn
+    final JTextField blank1 = new JTextField(); //creats jtextfeild blank1
+    final JTextField blank2 = new JTextField(); //creats jtextfeild blank2
+    final JOptionPane win = new JOptionPane("Winner"); //creats joptionpane win
+    final ImageIcon back = new ImageIcon("src//images//cardback.jpg"); //creats new image icon with cardback.jpg
 
     public TicTac() { //method to draw game borard
         super("Tic Tac Toe"); //creates the outer frame with the title

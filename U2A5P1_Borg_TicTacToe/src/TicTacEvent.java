@@ -1,17 +1,16 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Mathew Borg
- */
-import javax.swing.*;
-import java.awt.event.*;
-import java.awt.*;
-
+    programmer: Mathew Borg
+    Date: 2021-04-8
+    Program Name: U2A4P1_Borg_TicTacToe
+    Program Discription: This program is a virtual TicTacToe board Game
+*/
 public class TicTacEvent implements ItemListener, ActionListener, Runnable { //creates a class that responds to mouse and keyboard input by “listening.”
     TicTac gui; //associates the game board with the event.
     Thread playing;
@@ -31,7 +30,13 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
            }
        }
     }
-
+    /*
+    Function:   actionPerformed
+    Purpose:    This method checks the command Variables and calls the approperate method 
+    Parameters: ActionEvent event to detect an action event 
+    Return:     void 
+    */
+    @Override
     public void actionPerformed (ActionEvent event) { //tells the program what to do when a button is clicked.
        String command = event.getActionCommand(); //takes the button name as input from the button that is clicked.
        
@@ -67,7 +72,13 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
            btn(2,2);
        }
     }
-    
+    /*
+    Function:   btn
+    Purpose:    to put ether an x or o on the bord when a tile is clicked
+    Parameters: int twoDArrayX to add the 2d array x value
+                int twoDArrayY to add the 2d array y value
+    Return:     void 
+    */
     void btn(int twoDArrayX, int twoDArrayY) {
         clicks = clicks + 1; //keeps track of the number of boxes chosen
         if ((clicks % 2) == 1) { //puts an X on the board and declares that square to be taken.
@@ -80,12 +91,24 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
         winner(); //run winner method
     }
     
+    /*
+    Function:   startPlaying
+    Purpose:    to start palying the game
+    Parameters: N/A         
+    Return:     void 
+    */
     void startPlaying() {
         playing = new Thread(this); //the execution of the program. (this – within an instance method or a constructor, this is a reference to the current object.)
         playing.start(); //starts the game
         gui.play.setEnabled(false); //disables the play button
     }
     
+    /*
+    Function:   winner
+    Purpose:    to check who wone of if there is a tie
+    Parameters: N/A         
+    Return:     void 
+    */
     void winner() {
         /** Check rows for winner */
         
@@ -139,10 +162,22 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
         }
     }
     
+    /*
+    Function:   itemStateChanged
+    Purpose:    to throw error
+    Parameters: N/A         
+    Return:     void 
+    */
     public void itemStateChanged(ItemEvent e) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
+    
+    /*
+    Function:   run
+    Purpose:    to throw error
+    Parameters: N/A         
+    Return:     void 
+    */
     public void run() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
