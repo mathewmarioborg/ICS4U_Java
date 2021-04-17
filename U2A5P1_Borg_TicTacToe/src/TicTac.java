@@ -19,8 +19,9 @@ public class TicTac extends JFrame {
     final JPanel row1 = new JPanel(); //creats outline box
     final JButton[][] boxes = new JButton[3][3]; // creates nine buttons in a 2D array that is 3 x 3.
     final JButton play = new JButton("Play"); //creats play btn
-    final JTextField blank1 = new JTextField(); //creats jtextfeild blank1
-    final JTextField blank2 = new JTextField(); //creats jtextfeild blank2
+    public static JTextField blank1 = new JTextField(); //creats jtextfeild blank1
+    public static JTextField blank2 = new JTextField(); //creats jtextfeild blank2
+    public static JTextField blank3 = new JTextField(); //creats jtextfeild blank3
     final JOptionPane win = new JOptionPane("Winner"); //creats joptionpane win
     final ImageIcon back = new ImageIcon("src//images//cardback.jpg"); //creats new image icon with cardback.jpg
 
@@ -49,6 +50,8 @@ public class TicTac extends JFrame {
         row1.add(blank1);
         row1.add(play);
         row1.add(blank2);
+//        row1.add(blank3);
+//        row1.add(reset);
         add(row1); //adds the GridLayout to the FlowLayout.
         
         //makes the program ready to handle mouse clicks.
@@ -60,6 +63,7 @@ public class TicTac extends JFrame {
         }
 
         setVisible(true); // shows the FlowLayout on the screen
+     
     }
 
     public static void main(String[] arguments) {
