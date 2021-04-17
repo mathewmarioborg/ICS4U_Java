@@ -19,9 +19,11 @@ public class TicTac extends JFrame {
     final JPanel row1 = new JPanel(); //creats outline box
     final JButton[][] boxes = new JButton[3][3]; // creates nine buttons in a 2D array that is 3 x 3.
     final JButton play = new JButton("Play"); //creats play btn
+    final JButton reset = new JButton("Reset"); //creats reset btn
+    public static JTextField displayXWin = new JTextField(); //creats jtextfeild displayXWin
+    public static JTextField displayOWin = new JTextField(); //creats jtextfeild displayOWin
+    public static JTextField displayCatWin = new JTextField(); //creats jtextfeild displayCatWin
     public static JTextField blank1 = new JTextField(); //creats jtextfeild blank1
-    public static JTextField blank2 = new JTextField(); //creats jtextfeild blank2
-    public static JTextField blank3 = new JTextField(); //creats jtextfeild blank3
     final JOptionPane win = new JOptionPane("Winner"); //creats joptionpane win
     final ImageIcon back = new ImageIcon("src//images//cardback.jpg"); //creats new image icon with cardback.jpg
 
@@ -34,11 +36,11 @@ public class TicTac extends JFrame {
         int name = 0; //creats int name
         String newname; //creats string newname
 
-        GridLayout layout1 = new GridLayout(4, 3, 10, 10); //arranges the components in a rectangular grid, where all cells are of equal size.
+        GridLayout layout1 = new GridLayout(5, 3, 10, 10); //arranges the components in a rectangular grid, where all cells are of equal size.
         row1.setLayout(layout1);
         //creates and adds the buttons to the GridLayout's first three rows
-        for (int x = 0; x <= 2; x++) {
-            for (int y = 0; y <= 2; y++) {
+        for (int x = 0; x < boxes.length; x++) {
+            for (int y = 0; y < boxes[x].length; y++) {
                 name = name + 1;
                 newname = Integer.toString(name);
                 boxes[x][y] = new JButton(newname);
@@ -47,17 +49,19 @@ public class TicTac extends JFrame {
             }
         }
         //adds remaining components to the GridLayout.
-        row1.add(blank1);
+        row1.add(displayXWin);
         row1.add(play);
-        row1.add(blank2);
-//        row1.add(blank3);
-//        row1.add(reset);
+        row1.add(displayOWin);
+        row1.add(displayCatWin);
+        row1.add(reset);
+        row1.add(blank1);
         add(row1); //adds the GridLayout to the FlowLayout.
+        
         
         //makes the program ready to handle mouse clicks.
         play.addActionListener(tictac); 
-        for (int x=0; x<=2; x++){
-            for (int y=0; y<=2; y++){
+        for (int x=0; x < boxes.length; x++){
+            for (int y=0; y < boxes[x].length; y++){
                 boxes[x][y].addActionListener(tictac);
             }
         }
