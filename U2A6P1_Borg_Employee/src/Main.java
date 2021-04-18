@@ -12,11 +12,7 @@ import java.util.ArrayList;
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
-    String sIDNumber, sFirstName, sLastName, sAnnualSalary, sStartDate; //creats string to store inputed data
-    
-    ArrayList<String> employeeData =  new ArrayList(); //Creats a Array list for employee Data
-    
-    ArrayList<ArrayList<String>> companyData = new ArrayList(); //Creats a 2d Array list for company Data
+    ArrayList <data> employeeList =  new ArrayList <data> (); //Creats a Array list for employee Data
     
     /**
      * Creates new form Main
@@ -191,24 +187,19 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        //Gets text inputs and saves them to strings
-        sIDNumber = inputIdNumber.getText();
-        sFirstName = inputFirstName.getText();
-        sLastName =  inputLastName.getText();
-        sAnnualSalary = inputAnnualSalary.getText();
-        sStartDate = inputStartDate.getText();
+        data d; //creates d from the class data
+        String id, firstName, lastName, annualSalary, startDate; //creats strings
         
-        //adds strings to employeeData arraylist
-        employeeData.add(sIDNumber);
-        employeeData.add(sFirstName);
-        employeeData.add(sLastName);
-        employeeData.add(sAnnualSalary);
-        employeeData.add(sStartDate);
-        
-        //Adds employeeData to 2d 
-        companyData.add(new ArrayList<>(employeeData));
-        
-        employeeData.clear(); //clears info in emploeeData
+        //sets strings to input from gui
+         id = inputIdNumber.getText(); 
+         firstName = inputFirstName.getText();
+         lastName = inputLastName.getText();
+         annualSalary = inputAnnualSalary.getText();
+         startDate = inputStartDate.getText();
+         
+         //calls data from data class and sets it to the var d
+         d = new data(id, firstName, lastName, annualSalary, startDate);
+         employeeList.add(d); //adds d to employeeList
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
@@ -217,18 +208,29 @@ public class Main extends javax.swing.JFrame {
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
         String sTemp = ""; //Create temp string
-        for (int x = 0; x <= companyData.size() - 1; x++) { //for loop to initalise rows 
+        for (int x = 0; x <= employeeList.size() - 1; x++) { //for loop to initalise rows 
             //adds text and the data stored in company data to sTemp
-            sTemp = sTemp + "Employee Number: " + companyData.get(x).get(0) + "\n"
-                    + "Employee First Name: " + companyData.get(x).get(1) + "\n"
-                    + "Employee Last Name: " + companyData.get(x).get(2) + "\n"
-                    + "Employee Annual Salary: " + companyData.get(x).get(3) + "\n"
-                    + "Employee StartDate: " + companyData.get(x).get(4) + "\n"
+            sTemp = sTemp + "Employee Number: " + employeeList.get(x).idNumber+ "\n"
+                    + "Employee First Name: " + employeeList.get(x).firstName + "\n"
+                    + "Employee Last Name: " + employeeList.get(x).lastName + "\n"
+                    + "Employee Annual Salary: " + employeeList.get(x).annualSalary + "\n"
+                    + "Employee StartDate: " + employeeList.get(x).startDate + "\n"
                     + "\n";
         }
         outputList.setText(sTemp);//prints sTemp
     }//GEN-LAST:event_btnListActionPerformed
-
+    
+    class data {
+        String idNumber, firstName, lastName, annualSalary, startDate; //creats string to store inputed data
+        
+        data(String _idNumber, String _firstName, String _lastName, String _annualSalary, String _startDate) {
+            idNumber = _idNumber;
+            firstName = _firstName;
+            lastName = _lastName;
+            annualSalary = _annualSalary;
+            startDate = _startDate;
+        }
+    }
     /**
      * @param args the command line arguments
      */
