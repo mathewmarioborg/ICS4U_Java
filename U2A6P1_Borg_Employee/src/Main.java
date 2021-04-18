@@ -65,18 +65,6 @@ public class Main extends javax.swing.JFrame {
         author.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         author.setText("By: Mathew Borg");
 
-        inputFirstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputFirstNameActionPerformed(evt);
-            }
-        });
-
-        inputAnnualSalary.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputAnnualSalaryActionPerformed(evt);
-            }
-        });
-
         btnList.setText("List");
 
         btnRemove.setText("Remove");
@@ -178,14 +166,6 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void inputAnnualSalaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputAnnualSalaryActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputAnnualSalaryActionPerformed
-
-    private void inputFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputFirstNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputFirstNameActionPerformed
 
     /**
      * @param args the command line arguments

@@ -187,16 +187,10 @@
     <Component class="javax.swing.JTextField" name="inputIdNumber">
     </Component>
     <Component class="javax.swing.JTextField" name="inputFirstName">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputFirstNameActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputLastName">
     </Component>
     <Component class="javax.swing.JTextField" name="inputAnnualSalary">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputAnnualSalaryActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputStartDate">
     </Component>
