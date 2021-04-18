@@ -26,9 +26,9 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     public TicTacEvent (TicTac in){ //associates the two files to be used together.
         gui = in;
         //for loops initiates the winner check array.
-        for (int row=0; row < check.length; row++){
+        for (int row=0; row < check.length; row++){ 
            for (int col=0; col < check[row].length; col++){
-               check[row][col]=0;
+               check[row][col]=0; //sets check to 0
            }
        }
        
@@ -102,7 +102,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
                 btn(3, 3);
             }
         } else {
-            System.out.println("Hit Start");
+            TicTac.playBtnInstructions.setText("Click Start!!!!");
         }
     }
     /*
@@ -134,7 +134,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     void winner() {
         /** Check rows for winner */
         
-        for (int x=0; x<=3; x++){ //for loop checks eatch row
+        for (int x=0; x < check.length; x++){ //for loop checks eatch row
             //if statements  checks to see if all entries are X, or all entries are O
            if ((check[x][0]==check[x][1])&&(check[x][0]==check[x][2])&&(check[x][0]==check[x][3])) {
                 if (check[x][0]==1) {
@@ -150,16 +150,16 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
         }
 
         /** Check columns for winner */
-        for (int x=0; x<=3; x++){ //for loop checks each columns
+        for (int x=0; x < check.length; x++){ //for loop checks each columns
             //if statements  checks to see if all entries are X, or all entries are O
             if ((check[0][x]==check[1][x])&&(check[0][x]==check[2][x])&&(check[0][x]==check[3][x])) {
                 if (check[0][x]==1) {
                     JOptionPane.showMessageDialog(null, "X is the winner"); // creates a pop up box declaring a winner
-                    win = 1;
+                    win = 1; //sets win to 1
                     xWins = setWinVars(xWins);//calls setWinVars method
                 } else if (check[0][x]==2) {
                     JOptionPane.showMessageDialog(null, "O is the winner"); //  creates a pop up box declaring a winner.
-                    win = 1;
+                    win = 1; //sets win to 1
                     oWins = setWinVars(oWins);//calls setWinVars method
                 }
             }
@@ -170,11 +170,11 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
                 ((check[3][0]==check[1][2])&&(check[1][2]==check[2][1])&&(check[2][1]==check[0][3]))){ // checks for diagonal matches
             if (check[1][1]==1 && check[2][2]==1 || check[1][2]==1 && check[2][1]==1) { //checks for X or O winner.
                 JOptionPane.showMessageDialog(null, "X is the winner"); //creates a pop up box declaring a winner.
-                win = 1;
+                win = 1; //sets win to 1
                 xWins = setWinVars(xWins);//calls setWinVars method
             } else if (check[1][1]==2 && check[2][2]==2 || check[1][2]==2 && check[2][1]==2) {
                 JOptionPane.showMessageDialog(null, "O is the winner"); //creates a pop up box declaring a winner.
-                win = 1;
+                win = 1; //sets win to 1
                 oWins = setWinVars(oWins);//calls setWinVars method
             }
 
@@ -186,7 +186,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
          * chosen (clicks) and that a winner has not been declared (win == 0).
          */
         if ((clicks==15) && (win==0)) {
-            JOptionPane.showMessageDialog(null, "The game is a tie");
+            JOptionPane.showMessageDialog(null, "The game is a tie"); //creates a pop up box declaring a tie.
             catGames = setWinVars(catGames); //calls setWinVars method
         }
     }
@@ -207,6 +207,9 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
         TicTac.displayXWin.setText("x Wins = " + sXWins);
         TicTac.displayOWin.setText("o Wins = " + sOWins);
         TicTac.displayCatWin.setText("Cat Games = " + sCatGames);
+        TicTac.playBtnInstructions.setText("Click Play To Start");
+        TicTac.resetBtnInstructions.setText("Reset All Game Data");
+        TicTac.author.setText("Game By: Mathew Borg");
     }
     
     /*
@@ -216,10 +219,10 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     Return:     void 
     */
     void clearCards(){
-        for (int x = 0; x < gui.boxes.length; x++) {
+        for (int x = 0; x < gui.boxes.length; x++) { //for loops intalise 2d array
             for (int y = 0; y < gui.boxes[x].length; y++) {
-                gui.boxes[x][y].setIcon(back);
-                check[x][y]=0;
+                gui.boxes[x][y].setIcon(back); //sets all cards to back image
+                check[x][y]=0; //sets check to 0
             }
         }
     }
@@ -232,7 +235,6 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     */
     int setWinVars(int winVar) {
         winVar += 1; //adds 1 to x winVar
-        System.out.println(xWins);
         run = 0; //sets run to 0
         gui.play.setEnabled(true); //enables play btn
         return winVar; //returns winVar
@@ -257,13 +259,14 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     Return:     void 
     */
     void resetGame() {
-        xWins = 0; //sets ints to 0
+        //sets ints to 0
+        xWins = 0; 
         oWins = 0;
         catGames = 0;
         run = 0;
-        gui.play.setEnabled(true);
-        clearCards();
-        outPrint();
+        gui.play.setEnabled(true); //enables play btn
+        clearCards(); //runs method clearCards
+        outPrint(); //runs method outPrint
     }
     
     /*
@@ -286,9 +289,9 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
     */
     @Override
     public void run() {
-        run = 1;
-        clicks = 0;
-        clearCards();
-        outPrint();
+        run = 1; //sets run to 1
+        clicks = 0; //sets clicks to 0
+        clearCards(); //runs method clearCards0o=
+        outPrint(); //runs method outPrint
     }
 }

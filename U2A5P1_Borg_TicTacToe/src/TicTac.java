@@ -23,7 +23,9 @@ public class TicTac extends JFrame {
     public static JTextField displayXWin = new JTextField(); //creats jtextfeild displayXWin
     public static JTextField displayOWin = new JTextField(); //creats jtextfeild displayOWin
     public static JTextField displayCatWin = new JTextField(); //creats jtextfeild displayCatWin
-    public static JTextField blank1 = new JTextField(); //creats jtextfeild blank1
+    public static JTextField playBtnInstructions = new JTextField(); //creats jtextfeild playBtnInstructions
+    public static JTextField resetBtnInstructions = new JTextField(); //creats jtextfeild resetBtnInstructions
+    public static JTextField author = new JTextField(); //creats jtextfeild author
     final JOptionPane win = new JOptionPane("Winner"); //creats joptionpane win
     final ImageIcon back = new ImageIcon("src//images//cardback.jpg"); //creats new image icon with cardback.jpg
 
@@ -51,10 +53,12 @@ public class TicTac extends JFrame {
         //adds remaining components to the GridLayout.
         row1.add(displayXWin);
         row1.add(play);
+        row1.add(reset);
         row1.add(displayOWin);
         row1.add(displayCatWin);
-        row1.add(reset);
-        row1.add(blank1);
+        row1.add(playBtnInstructions);
+        row1.add(resetBtnInstructions);
+        row1.add(author);
         add(row1); //adds the GridLayout to the FlowLayout.
         
         
