@@ -216,7 +216,17 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
-
+        String sTemp = ""; //Create temp string
+        for (int x = 0; x <= companyData.size() - 1; x++) { //for loop to initalise rows 
+            //adds text and the data stored in company data to sTemp
+            sTemp = sTemp + "Employee Number: " + companyData.get(x).get(0) + "\n"
+                    + "Employee First Name: " + companyData.get(x).get(1) + "\n"
+                    + "Employee Last Name: " + companyData.get(x).get(2) + "\n"
+                    + "Employee Annual Salary: " + companyData.get(x).get(3) + "\n"
+                    + "Employee StartDate: " + companyData.get(x).get(4) + "\n"
+                    + "\n";
+        }
+        outputList.setText(sTemp);//prints sTemp
     }//GEN-LAST:event_btnListActionPerformed
 
     /**
