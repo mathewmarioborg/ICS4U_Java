@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
 public class TicTacEvent implements ItemListener, ActionListener, Runnable { //creates a class that responds to mouse and keyboard input by “listening.”
     TicTac gui; //associates the game board with the event.
     Thread playing;
-    ImageIcon a = new ImageIcon("src//images//X.jpg"); //creats imageicon
-    ImageIcon b = new ImageIcon("src//images//O.jpg"); //creats imageicon
+    ImageIcon a = new ImageIcon("src//images//xbox.jpg"); //creats imageicon
+    ImageIcon b = new ImageIcon("src//images//ps.jpg"); //creats imageicon
     final ImageIcon back = new ImageIcon("src//images//cardback.jpg"); //creats new image icon with cardback.jpg
 
     //created to check for a winner.
@@ -138,11 +138,11 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             //if statements  checks to see if all entries are X, or all entries are O
            if ((check[x][0]==check[x][1])&&(check[x][0]==check[x][2])&&(check[x][0]==check[x][3])) {
                 if (check[x][0]==1) {
-                    JOptionPane.showMessageDialog(null, "X is the winner"); // creates a pop up box declaring a winner
+                    JOptionPane.showMessageDialog(null, "X Box is the winner"); // creates a pop up box declaring a winner
                     win = 1;
                     xWins = setWinVars(xWins);//calls setWinVars method
                 } else if (check[x][0]==2){
-                    JOptionPane.showMessageDialog(null, "O is the winner"); //  creates a pop up box declaring a winner.
+                    JOptionPane.showMessageDialog(null, "Play Station is the winner"); //  creates a pop up box declaring a winner.
                     win = 1;
                     oWins = setWinVars(oWins);//calls setWinVars method
                 }
@@ -154,11 +154,11 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
             //if statements  checks to see if all entries are X, or all entries are O
             if ((check[0][x]==check[1][x])&&(check[0][x]==check[2][x])&&(check[0][x]==check[3][x])) {
                 if (check[0][x]==1) {
-                    JOptionPane.showMessageDialog(null, "X is the winner"); // creates a pop up box declaring a winner
+                    JOptionPane.showMessageDialog(null, "X Box is the winner"); // creates a pop up box declaring a winner
                     win = 1; //sets win to 1
                     xWins = setWinVars(xWins);//calls setWinVars method
                 } else if (check[0][x]==2) {
-                    JOptionPane.showMessageDialog(null, "O is the winner"); //  creates a pop up box declaring a winner.
+                    JOptionPane.showMessageDialog(null, "Play Station is the winner"); //  creates a pop up box declaring a winner.
                     win = 1; //sets win to 1
                     oWins = setWinVars(oWins);//calls setWinVars method
                 }
@@ -169,11 +169,11 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
         if (((check[0][0]==check[1][1])&&(check[0][0]==check[2][2])&&(check[0][0]==check[3][3]))|| 
                 ((check[3][0]==check[1][2])&&(check[1][2]==check[2][1])&&(check[2][1]==check[0][3]))){ // checks for diagonal matches
             if (check[1][1]==1 && check[2][2]==1 || check[1][2]==1 && check[2][1]==1) { //checks for X or O winner.
-                JOptionPane.showMessageDialog(null, "X is the winner"); //creates a pop up box declaring a winner.
+                JOptionPane.showMessageDialog(null, "X Box is the winner"); //creates a pop up box declaring a winner.
                 win = 1; //sets win to 1
                 xWins = setWinVars(xWins);//calls setWinVars method
             } else if (check[1][1]==2 && check[2][2]==2 || check[1][2]==2 && check[2][1]==2) {
-                JOptionPane.showMessageDialog(null, "O is the winner"); //creates a pop up box declaring a winner.
+                JOptionPane.showMessageDialog(null, "Play Station is the winner"); //creates a pop up box declaring a winner.
                 win = 1; //sets win to 1
                 oWins = setWinVars(oWins);//calls setWinVars method
             }
@@ -185,7 +185,7 @@ public class TicTacEvent implements ItemListener, ActionListener, Runnable { //c
          * This structure checks to see if nine boxes have been 
          * chosen (clicks) and that a winner has not been declared (win == 0).
          */
-        if ((clicks==15) && (win==0)) {
+        if ((clicks==16) && (win==0)) {
             JOptionPane.showMessageDialog(null, "The game is a tie"); //creates a pop up box declaring a tie.
             catGames = setWinVars(catGames); //calls setWinVars method
         }
