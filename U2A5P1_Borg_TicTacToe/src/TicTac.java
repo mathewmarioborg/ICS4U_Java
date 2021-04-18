@@ -40,14 +40,14 @@ public class TicTac extends JFrame {
 
         GridLayout layout1 = new GridLayout(6, 4, 10, 10); //arranges the components in a rectangular grid, where all cells are of equal size.
         row1.setLayout(layout1);
-        //creates and adds the buttons to the GridLayout's first three rows
-        for (int x = 0; x < boxes.length; x++) {
+        //creates and adds the buttons to the GridLayout
+        for (int x = 0; x < boxes.length; x++) { //for loops initalise boxes
             for (int y = 0; y < boxes[x].length; y++) {
-                name = name + 1;
-                newname = Integer.toString(name);
-                boxes[x][y] = new JButton(newname);
-                boxes[x][y].setIcon(back);
-                row1.add(boxes[x][y]); 
+                name = name + 1; //adds 1 to name
+                newname = Integer.toString(name); //converts name to new name
+                boxes[x][y] = new JButton(newname); //creates new jbutton
+                boxes[x][y].setIcon(back); //sets icon to back
+                row1.add(boxes[x][y]); //adds jbuttons to rows 
             }
         }
         //adds remaining components to the GridLayout.
