@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,7 +12,12 @@
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
-
+    String sIDNumber, sFirstName, sLastName, sAnnualSalary, sStartDate; //creats string to store inputed data
+    
+    ArrayList<String> employeeData =  new ArrayList(); //Creats a Array list for employee Data
+    
+    ArrayList<ArrayList<String>> companyData = new ArrayList(); //Creats a 2d Array list for company Data
+    
     /**
      * Creates new form Main
      */
@@ -66,10 +74,25 @@ public class Main extends javax.swing.JFrame {
         author.setText("By: Mathew Borg");
 
         btnList.setText("List");
+        btnList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListActionPerformed(evt);
+            }
+        });
 
         btnRemove.setText("Remove");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
 
         btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         outputList.setEditable(false);
         outputList.setColumns(20);
@@ -166,6 +189,35 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        //Gets text inputs and saves them to strings
+        sIDNumber = inputIdNumber.getText();
+        sFirstName = inputFirstName.getText();
+        sLastName =  inputLastName.getText();
+        sAnnualSalary = inputAnnualSalary.getText();
+        sStartDate = inputStartDate.getText();
+        
+        //adds strings to employeeData arraylist
+        employeeData.add(sIDNumber);
+        employeeData.add(sFirstName);
+        employeeData.add(sLastName);
+        employeeData.add(sAnnualSalary);
+        employeeData.add(sStartDate);
+        
+        //Adds employeeData to 2d 
+        companyData.add(new ArrayList<>(employeeData));
+        
+        employeeData.clear(); //clears info in emploeeData
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        
+    }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
+
+    }//GEN-LAST:event_btnListActionPerformed
 
     /**
      * @param args the command line arguments
