@@ -250,7 +250,7 @@ public class Main extends javax.swing.JFrame {
         //if nothing found in arraylist
         if (employeeList.isEmpty()) {
             JOptionPane.showMessageDialog(null, "No Data Found Please Add New Employee With The Add Button"); // creates a pop up box with no values found
-            outputList.setText("");
+            outputList.setText(""); //clears text
             return; //retry program
         } else {
             outputList.setText(sTemp);//prints sTemp
