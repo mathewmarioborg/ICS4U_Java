@@ -215,25 +215,18 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        int position = -1, employeeID = 0; //creats ints
+        int position = 0; //creats ints
         String id = inputIdNumber.getText(); //gets text 
-        try {//trys to turn string to int
-            employeeID = Integer.parseInt(id);
-        }catch (NumberFormatException e) {//catch letters detected display Numbers Only!!
-            inputIdNumber.setText("Numbers Only!!");
-            return; //retry
-        }if(employeeID < 0){ //if num is less then 0 display Positive Numbers!!
-            inputIdNumber.setText("Positive Numbers!!");
-            return;//retry 
-        }
+        
         for (int x = 0; x <= employeeList.size() - 1; x++) { //initalise employeeList
-            int index = employeeList.get(x).idNumber.indexOf(employeeID); //get the index of employeeID
-            position = position - index; //subtract index from position
+            if(employeeList.get(x).idNumber.equals(id)){//get the index of id
+                position = x; //sets position to x
+                break; //brake
+            }
         }
         employeeList.remove(position); //remove position from arraylist
         
         inputIdNumber.setText("");//remove text from input id
-
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
