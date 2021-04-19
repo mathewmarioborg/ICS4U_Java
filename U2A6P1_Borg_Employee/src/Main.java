@@ -1,19 +1,17 @@
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Mathew Borg
- */
+    programmer: Mathew Borg
+    Date: 2021-04-15
+    Program Name: U2A4P1_Borg_Employee
+    Program Discription: This program stores employee records
+*/
 public class Main extends javax.swing.JFrame {
-    ArrayList<data> employeeList =  new ArrayList<data>(); //Creats a Array list for employee Data
-    
+
+    ArrayList<data> employeeList = new ArrayList<data>(); //Creats a Array list for employee Data
+
     /**
      * Creates new form Main
      */
@@ -189,7 +187,7 @@ public class Main extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         data d; //creates d from the class data
         String id, firstName, lastName, annualSalary, startDate; //creats strings
-    
+
         //sets strings to input from gui
         id = inputIdNumber.getText();
         firstName = inputFirstName.getText();
@@ -199,9 +197,11 @@ public class Main extends javax.swing.JFrame {
 
         //calls data from data class and sets it to the var d
         d = new data(id, firstName, lastName, annualSalary, startDate);
+
         //if there is no text detected 
         if (inputStartDate.getText().isEmpty() || inputFirstName.getText().isEmpty() || inputLastName.getText().isEmpty() || inputAnnualSalary.getText().isEmpty() || inputStartDate.getText().isEmpty()) {
-            return; //retry 
+            JOptionPane.showMessageDialog(null, "Please Enter A Value In All Feild"); // creates a pop up box Enter A Value
+            return; //retry the program
         } else {
             employeeList.add(d); //adds d to arraylist
         }
@@ -211,21 +211,28 @@ public class Main extends javax.swing.JFrame {
         inputLastName.setText("");
         inputAnnualSalary.setText("");
         inputStartDate.setText("");
-                 
+
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        String id = "";
         int position = 0; //creats ints
-        String id = inputIdNumber.getText(); //gets text 
-        
+
+        //if no text detected
+        if (inputIdNumber.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please Enter A Value In ID Feild"); // creates a pop up box Enter A Value
+            return; //retry the program
+        } else {
+            id = inputIdNumber.getText(); //gets text 
+        }
+
         for (int x = 0; x <= employeeList.size() - 1; x++) { //initalise employeeList
-            if(employeeList.get(x).idNumber.equals(id)){//get the index of id
+            if (employeeList.get(x).idNumber.equals(id)) {//get the index of id
                 position = x; //sets position to x
                 break; //brake
             }
         }
         employeeList.remove(position); //remove position from arraylist
-        
         inputIdNumber.setText("");//remove text from input id
     }//GEN-LAST:event_btnRemoveActionPerformed
 
@@ -233,20 +240,28 @@ public class Main extends javax.swing.JFrame {
         String sTemp = ""; //Create temp string
         for (int x = 0; x <= employeeList.size() - 1; x++) { //for loop to initalise rows 
             //adds text and the data stored in company data to sTemp
-            sTemp = sTemp + "Employee Number: " + employeeList.get(x).idNumber+ "\n"
+            sTemp = sTemp + "Employee Number: " + employeeList.get(x).idNumber + "\n"
                     + "Employee First Name: " + employeeList.get(x).firstName + "\n"
                     + "Employee Last Name: " + employeeList.get(x).lastName + "\n"
                     + "Employee Annual Salary: " + employeeList.get(x).annualSalary + "\n"
                     + "Employee StartDate: " + employeeList.get(x).startDate + "\n"
                     + "\n";
         }
-        outputList.setText(sTemp);//prints sTemp
+        //if nothing found in arraylist
+        if (employeeList.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No Data Found Please Add New Employee With The Add Button"); // creates a pop up box with no values found
+            outputList.setText("");
+            return; //retry program
+        } else {
+            outputList.setText(sTemp);//prints sTemp
+        }
     }//GEN-LAST:event_btnListActionPerformed
     //creates class to sets up the new object with field names and values when called as a new object.
     class data {
+
         String idNumber, firstName, lastName, annualSalary, startDate; //creats string to store inputed data
-        
-         /*
+
+        /*
         Function: data
         Purpose:  to take inputed strings and set them to main data strings
         Parameters: String _idNumber            
@@ -257,6 +272,7 @@ public class Main extends javax.swing.JFrame {
         Return: n/a 
          */
         data(String _idNumber, String _firstName, String _lastName, String _annualSalary, String _startDate) {
+            //sets string to string
             idNumber = _idNumber;
             firstName = _firstName;
             lastName = _lastName;
@@ -264,6 +280,7 @@ public class Main extends javax.swing.JFrame {
             startDate = _startDate;
         }
     }
+
     /**
      * @param args the command line arguments
      */
