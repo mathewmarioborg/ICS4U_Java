@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
-    ArrayList <data> employeeList =  new ArrayList <data> (); //Creats a Array list for employee Data
+    ArrayList<data> employeeList =  new ArrayList<data>(); //Creats a Array list for employee Data
     
     /**
      * Creates new form Main
@@ -189,21 +189,51 @@ public class Main extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         data d; //creates d from the class data
         String id, firstName, lastName, annualSalary, startDate; //creats strings
-        
+    
         //sets strings to input from gui
-         id = inputIdNumber.getText(); 
-         firstName = inputFirstName.getText();
-         lastName = inputLastName.getText();
-         annualSalary = inputAnnualSalary.getText();
-         startDate = inputStartDate.getText();
-         
-         //calls data from data class and sets it to the var d
-         d = new data(id, firstName, lastName, annualSalary, startDate);
-         employeeList.add(d); //adds d to employeeList
+        id = inputIdNumber.getText();
+        firstName = inputFirstName.getText();
+        lastName = inputLastName.getText();
+        annualSalary = inputAnnualSalary.getText();
+        startDate = inputStartDate.getText();
+
+        //calls data from data class and sets it to the var d
+        d = new data(id, firstName, lastName, annualSalary, startDate);
+        //if there is no text detected 
+        if (inputStartDate.getText().isEmpty() || inputFirstName.getText().isEmpty() || inputLastName.getText().isEmpty() || inputAnnualSalary.getText().isEmpty() || inputStartDate.getText().isEmpty()) {
+            return; //retry 
+        } else {
+            employeeList.add(d); //adds d to arraylist
+        }
+        //clear out all text feilds 
+        inputIdNumber.setText("");
+        inputFirstName.setText("");
+        inputLastName.setText("");
+        inputAnnualSalary.setText("");
+        inputStartDate.setText("");
+                 
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        int position = -1, employeeID = 0; //creats ints
+        String id = inputIdNumber.getText(); //gets text 
+        try {//trys to turn string to int
+            employeeID = Integer.parseInt(id);
+        }catch (NumberFormatException e) {//catch letters detected display Numbers Only!!
+            inputIdNumber.setText("Numbers Only!!");
+            return; //retry
+        }if(employeeID < 0){ //if num is less then 0 display Positive Numbers!!
+            inputIdNumber.setText("Positive Numbers!!");
+            return;//retry 
+        }
+        for (int x = 0; x <= employeeList.size() - 1; x++) { //initalise employeeList
+            int index = employeeList.get(x).idNumber.indexOf(employeeID); //get the index of employeeID
+            position = position - index; //subtract index from position
+        }
+        employeeList.remove(position); //remove position from arraylist
         
+        inputIdNumber.setText("");//remove text from input id
+
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
@@ -219,10 +249,20 @@ public class Main extends javax.swing.JFrame {
         }
         outputList.setText(sTemp);//prints sTemp
     }//GEN-LAST:event_btnListActionPerformed
-    
+    //creates class to sets up the new object with field names and values when called as a new object.
     class data {
         String idNumber, firstName, lastName, annualSalary, startDate; //creats string to store inputed data
         
+         /*
+        Function: data
+        Purpose:  to take inputed strings and set them to main data strings
+        Parameters: String _idNumber            
+                    String _firstName
+                    String _lastName
+                    String _annualSalary    
+                    String _startDate
+        Return: n/a 
+         */
         data(String _idNumber, String _firstName, String _lastName, String _annualSalary, String _startDate) {
             idNumber = _idNumber;
             firstName = _firstName;
