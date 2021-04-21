@@ -119,21 +119,33 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnRemove">
       <Properties>
         <Property name="text" type="java.lang.String" value="Remove"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCalculate">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calculate"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalculateActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnClear">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputAdd">
     </Component>
