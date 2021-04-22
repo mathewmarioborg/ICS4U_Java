@@ -114,12 +114,11 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(jScrollPane1)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(53, 53, 53)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnAdd)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(inputAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(inputAdd))
                                     .addComponent(author))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -161,13 +160,13 @@ public class Main extends javax.swing.JFrame {
             sTemp = inputAdd.getText(); //sets string to inputAdd value
             nTemp = Integer.parseInt(sTemp); //changes sting to integer
         }catch(NumberFormatException e){ //if letters are typed in
-            inputAdd.setText("Numbers Only"); //sets text to Numbers Only
+            inputAdd.setText("Numbers Only!!"); //sets text to Numbers Only
             return;
         }if(nTemp < 0){ //if value is less than 0
-            inputAdd.setText("Positive Numbers Only"); //set text to positive numbers only
+            inputAdd.setText("Positive Numbers!!"); //set text to positive numbers only
             return;
         }if(nTemp > 100){ //if value is greater then 100 
-            inputAdd.setText("Max Num is 100"); //set Text to output max number is 100
+            inputAdd.setText("Max Num is 100!!"); //set Text to output max number is 100
             return;
         }
         inputAdd.setText(""); //clears input feild 
