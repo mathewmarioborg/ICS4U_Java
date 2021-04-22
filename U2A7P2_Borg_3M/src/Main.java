@@ -153,7 +153,25 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
+        String sTemp = ""; //creats temp string
+        Integer nTemp = 0; //creats temp Integer
+        
+        try{ //trys to convert string input to interger
+            sTemp = inputAdd.getText(); //sets string to inputAdd value
+            nTemp = Integer.parseInt(sTemp); //changes sting to integer
+        }catch(NumberFormatException e){ //if letters are typed in
+            inputAdd.setText("Numbers Only"); //sets text to Numbers Only
+            return;
+        }if(nTemp < 0){ //if value is less than 0
+            inputAdd.setText("Positive Numbers Only"); //set text to positive numbers only
+            return;
+        }if(nTemp > 100){ //if value is greater then 100 
+            inputAdd.setText("Max Num is 100"); //set Text to output max number is 100
+            return;
+        }
+        inputAdd.setText(""); //clears input feild 
+        
+        integerData.add(nTemp); //adds nTemp to arrayList
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
