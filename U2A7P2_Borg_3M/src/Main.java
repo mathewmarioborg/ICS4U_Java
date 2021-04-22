@@ -175,7 +175,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        // TODO add your handling code here:
+        if(integerData.size() > 0){ //checks the size of the array list
+            integerData.remove(integerData.size() - 1); //removes the size of the list -1
+        }
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
