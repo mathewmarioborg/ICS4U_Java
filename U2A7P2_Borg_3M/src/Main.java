@@ -195,8 +195,8 @@ public class Main extends javax.swing.JFrame {
     
     private void listArray(){
         String sTemp = ""; //Create temp string
-        for (int x = 0; x <= integerData.size() - 1; x++) { //for loop to initalise rows 
-            //adds text and the data stored in company data to sTemp
+        for (int x = 0; x <= integerData.size() - 1; x++) { //for loop to initalise ArrayList
+            //adds text and the data stored in integerData to sTemp
             sTemp = sTemp + "Integer: " + integerData.get(x) + "\n" + "\n";
         }
         //if nothing found in arraylist
