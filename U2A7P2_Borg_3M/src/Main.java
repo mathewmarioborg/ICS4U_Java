@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -172,12 +173,15 @@ public class Main extends javax.swing.JFrame {
         inputAdd.setText(""); //clears input feild 
         
         integerData.add(nTemp); //adds nTemp to arrayList
+        
+        listArray(); //lists the array
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
         if(integerData.size() > 0){ //checks the size of the array list
             integerData.remove(integerData.size() - 1); //removes the size of the list -1
         }
+        listArray(); //lists the array
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
@@ -185,8 +189,26 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        integerData.clear(); //clears data in array list
+        listArray(); //lists the array
     }//GEN-LAST:event_btnClearActionPerformed
+    
+    private void listArray(){
+        String sTemp = ""; //Create temp string
+        for (int x = 0; x <= integerData.size() - 1; x++) { //for loop to initalise rows 
+            //adds text and the data stored in company data to sTemp
+            sTemp = sTemp + "Integer: " + integerData.get(x) + "\n" + "\n";
+        }
+        //if nothing found in arraylist
+        if (integerData.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No Data Found Please Add New Integer With The Add Button"); // creates a pop up box with no values found
+            outputList.setText(""); //clears text
+            return; //retry program
+        } else {
+            outputList.setText(sTemp);//prints sTemp
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
