@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,6 +12,8 @@
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
+    
+    ArrayList <Integer> integerData = new ArrayList(); //creates Array List
 
     /**
      * Creates new form Main
@@ -162,7 +167,6 @@ public class Main extends javax.swing.JFrame {
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnClearActionPerformed
-
     /**
      * @param args the command line arguments
      */
