@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class Main extends javax.swing.JFrame {
     
-    ArrayList <Integer> integerData = new ArrayList(); //creates Array List
+    ArrayList <Double> doubleData = new ArrayList(); //creates Array List
 
     /**
      * Creates new form Main
@@ -154,31 +154,31 @@ public class Main extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         String sTemp = ""; //creats temp string
-        Integer nTemp = 0; //creats temp Integer
+        Double dTemp = 0.0; //creats temp Double
         
         try{ //trys to convert string input to interger
             sTemp = inputAdd.getText(); //sets string to inputAdd value
-            nTemp = Integer.parseInt(sTemp); //changes sting to integer
+            dTemp = Double.parseDouble(sTemp); //changes sting to Double
         }catch(NumberFormatException e){ //if letters are typed in
             inputAdd.setText("Numbers Only!!"); //sets text to Numbers Only
             return;
-        }if(nTemp < 0){ //if value is less than 0
+        }if(dTemp < 0){ //if value is less than 0
             inputAdd.setText("Positive Numbers!!"); //set text to positive numbers only
             return;
-        }if(nTemp > 100){ //if value is greater then 100 
+        }if(dTemp > 100){ //if value is greater then 100 
             inputAdd.setText("Max Num is 100!!"); //set Text to output max number is 100
             return;
         }
         inputAdd.setText(""); //clears input feild 
         
-        integerData.add(nTemp); //adds nTemp to arrayList
+        doubleData.add(dTemp); //adds nTemp to arrayList
         
         listArray(); //lists the array
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        if(integerData.size() > 0){ //checks the size of the array list
-            integerData.remove(integerData.size() - 1); //removes the size of the list -1
+        if(doubleData.size() > 0){ //checks the size of the array list
+            doubleData.remove(doubleData.size() - 1); //removes the size of the list -1
         }
         listArray(); //lists the array
     }//GEN-LAST:event_btnRemoveActionPerformed
@@ -188,19 +188,19 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        integerData.clear(); //clears data in array list
+        doubleData.clear(); //clears data in array list
         listArray(); //lists the array
     }//GEN-LAST:event_btnClearActionPerformed
     
     private void listArray(){
         String sTemp = ""; //Create temp string
-        for (int x = 0; x <= integerData.size() - 1; x++) { //for loop to initalise ArrayList
+        for (int x = 0; x <= doubleData.size() - 1; x++) { //for loop to initalise ArrayList
             //adds text and the data stored in integerData to sTemp
-            sTemp = sTemp + "Integer: " + integerData.get(x) + "\n" + "\n";
+            sTemp = sTemp + "Integer: " + doubleData.get(x) + "\n" + "\n";
         }
         //if nothing found in arraylist
-        if (integerData.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "No Data Found Please Add New Integer With The Add Button"); // creates a pop up box with no values found
+        if (doubleData.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No Data Found Please Add New Number With The Add Button"); // creates a pop up box with no values found
             outputList.setText(""); //clears text
             return; //retry program
         } else {
