@@ -1,12 +1,12 @@
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Mathew Borg
@@ -20,33 +20,21 @@ public class MeanMedianModeCalculator {
             tot = tot + doubleData.get(i);
         }
         mean = tot / doubleData.size();
-        
+
         return mean;
     }
 
-    public static double medianCalculator(ArrayList <Double> doubleData){
-        double median = 0.0; 
-        
-        if(doubleData.size()%2 == 0){
-            int temp = (doubleData.size()/2) -1;
-            for(int i = 0; i < doubleData.size(); i++){
-                if(temp == i || (temp + 1) == i){
-                    median = median + doubleData.get(i);
-                }
-            }
-            median /= 2;
-            return median;
-        }else{
-            int temp = (doubleData.size()/2);
-            for(int i = 0; i < doubleData.size(); i++){
-                if(temp == i){
-                    median = doubleData.get(i);
-                }
-            }
-            return median;
+    public static double medianCalculator(ArrayList<Double> doubleData) {
+        double median = 0.0;
+        if (doubleData.size() % 2 == 1) {
+            median = doubleData.get((doubleData.size() + 1) / 2 - 1);
+        } else {
+            median = (doubleData.get(doubleData.size() / 2 - 1) + doubleData.get(doubleData.size() / 2)) / 2;
         }
+        
+        return median;
     }
-    
+
     public static double modeCalculator(ArrayList<Double> doubleData) {
         double mode = 0, maxCount = 0;
         int i, j;
