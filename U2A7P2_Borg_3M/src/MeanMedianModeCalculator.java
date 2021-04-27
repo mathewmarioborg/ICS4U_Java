@@ -12,18 +12,18 @@ import java.util.ArrayList;
  * @author Mathew Borg
  */
 public class MeanMedianModeCalculator {
-    
-    public static double meanCalculator(ArrayList <Double> doubleData){
-        double total = 0.0, mean = 0.0;
-        
-        for(int i = 0; i < doubleData.size(); i++){
-            total += doubleData.get(i);
+
+    public static double meanCalculator(ArrayList<Double> doubleData) {
+        double tot = 0;
+        double mean = 0;
+        for (int i = 0; i < doubleData.size(); i++) {
+            tot = tot + doubleData.get(i);
         }
-        mean = total/doubleData.size();
+        mean = tot / doubleData.size();
         
         return mean;
     }
-    
+
     public static double medianCalculator(ArrayList <Double> doubleData){
         double median = 0.0; 
         
