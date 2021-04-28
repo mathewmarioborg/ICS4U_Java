@@ -143,9 +143,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(btnClear)
                     .addComponent(btnRemove))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -184,12 +184,17 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
-        // TODO add your handling code here:
+        double mean = MeanMedianModeCalculator.meanCalculator(doubleData);
+        double median = MeanMedianModeCalculator.medianCalculator(doubleData);
+        ArrayList mode = MeanMedianModeCalculator.modeCalculator(doubleData);
+        
+        outputCalculations.setText("Mean: " + mean + " Median: " + median + " Mode: " + mode);
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         doubleData.clear(); //clears data in array list
         listArray(); //lists the array
+        outputCalculations.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
     
     private void listArray(){
