@@ -55,31 +55,32 @@ public class MeanMedianModeCalculator {
     Return:     ArrayList 
     */
     public static ArrayList modeCalculator(ArrayList<Double> doubleData) {
-        ArrayList<Double> modes = new ArrayList<>();
-        int maxCount = 0;
-        for (int i = 0; i < doubleData.size(); ++i) {
-            int count = 0;
-            for (int j = 0; j < doubleData.size(); ++j) {
-                if (Objects.equals(doubleData.get(j), doubleData.get(i))) {
-                    ++count;
+        ArrayList<Double> modes = new ArrayList<>(); //creats arraylist to store mode values in
+        int maxCount = 0; //creats int maxCount
+        for (int i = 0; i < doubleData.size(); ++i) { //for loop to initalise DoubleData to the int i
+            int count = 0; //creats count int and sets it to 0
+            for (int j = 0; j < doubleData.size(); ++j) { //for loop to initalise DoubleData to the int j
+                if (Objects.equals(doubleData.get(j), doubleData.get(i))) { //if all of doubleDatas j values is equals to all of doubleDatas i values
+                    ++count; //increment count by one
                 }
             }
-            if (count > maxCount) {
-                maxCount = count;
-                modes.clear();
-                modes.add(doubleData.get(i));
-            } else if (count == maxCount) {
-                modes.add(doubleData.get(i));
+            if (count > maxCount) { //if count is greater then maxCount
+                maxCount = count; //set maxCount to = count 
+                modes.clear(); //clear the modes arraylist
+                modes.add(doubleData.get(i)); //add all the values of doubleData at the position of i int to modes arraylist
+            } else if (count == maxCount) { //else if count is equal to MaxCount 
+                modes.add(doubleData.get(i)); //also add all the additonal values of doubleData at the position of i int to modes arraylist
             }
         }
-        LinkedHashSet<Double> hashSet = new LinkedHashSet<>(modes);
+        //creats hashset to find all double values then removes them and adds all the remaning values to mode arraylist
+        LinkedHashSet<Double> hashSet = new LinkedHashSet<>(modes); 
         ArrayList<Double> mode = new ArrayList<>(hashSet);
         
-        if (maxCount > 1) {
-            return mode;
+        if (maxCount > 1) { //checks if there is mode values found
+            return mode; //return mode
         }
-        mode.clear();
-        return mode;
+        mode.clear(); //clear mode arraylist
+        return mode; //return mode
 
     }
 }
