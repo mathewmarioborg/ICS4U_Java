@@ -196,7 +196,7 @@ public class Main extends javax.swing.JFrame {
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         doubleData.clear(); //clears data in array list
         listArray(); //lists the array
-        outputCalculations.setText("");
+        outputCalculations.setText(""); //clears outputCalculations
     }//GEN-LAST:event_btnClearActionPerformed
     
     /*
