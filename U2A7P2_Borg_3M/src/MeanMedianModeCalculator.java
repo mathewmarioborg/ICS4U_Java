@@ -26,6 +26,8 @@ public class MeanMedianModeCalculator {
             total = total + doubleData.get(i); //adds all the values of the arraylist to total
         }
         mean = total / doubleData.size(); //sets the mean value to = the total / by the size of the doubleData
+        
+        mean = Math.round(mean*100)/100; //rounds mean to 2 decimal places 
 
         return mean; //returns mean value
     }
@@ -44,6 +46,8 @@ public class MeanMedianModeCalculator {
         } else { //else 
             median = (doubleData.get(doubleData.size() / 2 - 1) + doubleData.get(doubleData.size() / 2)) / 2; // sets median to doubleData position of the size / 2 - 1 plus doubleData position of arraylist size /2 then /2.
         }
+        
+        median = Math.round(median*100)/100; //rounds median to 2 decimal places 
 
         return median; //returns median
     }
