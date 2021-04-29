@@ -12,7 +12,13 @@ import java.util.Objects;
                         the mean, median and mode of the data entered.
 */
 public class MeanMedianModeCalculator {
-
+    
+    /*
+    Function:   meanCalculator
+    Purpose:    This method takes in a arraylist of doubles and calculated the mean value for them
+    Parameters: ArrayList<Double> doubleData to input an arraylist of double numbers
+    Return:     double 
+    */
     public static double meanCalculator(ArrayList<Double> doubleData) {
         double tot = 0;
         double mean = 0;
@@ -24,6 +30,12 @@ public class MeanMedianModeCalculator {
         return mean;
     }
 
+    /*
+    Function:   medianCalculator
+    Purpose:    This method takes in a arraylist of doubles and calculated the median value for them
+    Parameters: ArrayList<Double> doubleData to input an arraylist of double numbers
+    Return:     double 
+    */
     public static double medianCalculator(ArrayList<Double> doubleData) {
         double median = 0.0;
         if (doubleData.size() % 2 == 1) {
@@ -34,7 +46,13 @@ public class MeanMedianModeCalculator {
 
         return median;
     }
-
+    
+    /*
+    Function:   modeCalculator
+    Purpose:    This method takes in a arraylist of doubles and calculated the mode value or values for them
+    Parameters: ArrayList<Double> doubleData to input an arraylist of double numbers
+    Return:     ArrayList 
+    */
     public static ArrayList modeCalculator(ArrayList<Double> doubleData) {
         ArrayList<Double> modes = new ArrayList<>();
         int maxCount = 0;
