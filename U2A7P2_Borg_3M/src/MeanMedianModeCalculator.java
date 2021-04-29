@@ -37,14 +37,15 @@ public class MeanMedianModeCalculator {
     Return:     double 
     */
     public static double medianCalculator(ArrayList<Double> doubleData) {
-        double median = 0.0;
-        if (doubleData.size() % 2 == 1) {
-            median = doubleData.get((doubleData.size() + 1) / 2 - 1);
-        } else {
-            median = (doubleData.get(doubleData.size() / 2 - 1) + doubleData.get(doubleData.size() / 2)) / 2;
+        double median; //creats double integer
+        
+        if (doubleData.size() % 2 == 1) { //if the remainder of doubleData that is devided by 2 is eual to 1
+            median = doubleData.get((doubleData.size() + 1) / 2 - 1); //set median to doubleData at the position of the arraylist size + 1 then devided by 2 - 1 
+        } else { //else 
+            median = (doubleData.get(doubleData.size() / 2 - 1) + doubleData.get(doubleData.size() / 2)) / 2; // sets median to doubleData position of the size / 2 - 1 plus doubleData position of arraylist size /2 then /2.
         }
 
-        return median;
+        return median; //returns median
     }
     
     /*
