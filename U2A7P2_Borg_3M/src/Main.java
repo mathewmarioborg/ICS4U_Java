@@ -180,11 +180,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
-        double mean = MeanMedianModeCalculator.meanCalculator(doubleData);
-        double median = MeanMedianModeCalculator.medianCalculator(doubleData);
-        ArrayList mode = MeanMedianModeCalculator.modeCalculator(doubleData);
+        if(doubleData.isEmpty()){ //if no data found in arraylist
+            JOptionPane.showMessageDialog(null, "No Data Found Please Add New Number With The Add Button"); // creates a pop up box with no values found
+            return; //retry program
+        }else{ //else
+        double mean = MeanMedianModeCalculator.meanCalculator(doubleData); //create double and send doubleData to method 
+        double median = MeanMedianModeCalculator.medianCalculator(doubleData); //create double and send doubleData to method 
+        ArrayList mode = MeanMedianModeCalculator.modeCalculator(doubleData); //create Arraylist and send doubleData to method 
         
-        outputCalculations.setText("Mean: " + mean + " Median: " + median + " Mode: " + mode);
+        outputCalculations.setText("Mean: " + mean + " Median: " + median + " Mode: " + mode); //output mean median and mode to outputCalculations
+        }
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
