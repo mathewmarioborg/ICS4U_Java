@@ -4,14 +4,13 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Mathew Borg
- */
+    programmer:         Mathew Borg
+    Date:               2021-04-20
+    Program Name:       U2A4P1_Borg_3M
+    Program Discription:This program will except an undetermined number of 
+                        integer inputs of values from 0 to 100 then calculates 
+                        the mean, median and mode of the data entered.
+*/
 public class MeanMedianModeCalculator {
 
     public static double meanCalculator(ArrayList<Double> doubleData) {
