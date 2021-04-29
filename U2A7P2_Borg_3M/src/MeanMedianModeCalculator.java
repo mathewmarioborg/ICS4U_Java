@@ -20,14 +20,14 @@ public class MeanMedianModeCalculator {
     Return:     double 
     */
     public static double meanCalculator(ArrayList<Double> doubleData) {
-        double tot = 0;
-        double mean = 0;
-        for (int i = 0; i < doubleData.size(); i++) {
-            tot = tot + doubleData.get(i);
+        double total = 0, mean; //creates double integers
+        
+        for (int i = 0; i < doubleData.size(); i++) { //creats a for loop to initalise doubleData
+            total = total + doubleData.get(i); //adds all the values of the arraylist to total
         }
-        mean = tot / doubleData.size();
+        mean = total / doubleData.size(); //sets the mean value to = the total / by the size of the doubleData
 
-        return mean;
+        return mean; //returns mean value
     }
 
     /*
