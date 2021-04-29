@@ -191,13 +191,20 @@ public class Main extends javax.swing.JFrame {
         outputCalculations.setText("Mean: " + mean + " Median: " + median + " Mode: " + mode); //output mean median and mode to outputCalculations
         }
     }//GEN-LAST:event_btnCalculateActionPerformed
-
+    
+    
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         doubleData.clear(); //clears data in array list
         listArray(); //lists the array
         outputCalculations.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
     
+    /*
+    Function:   listArray
+    Purpose:    This method prints the arraylist and checks if there is data found
+    Parameters: n/a
+    Return:     void 
+    */
     private void listArray(){
         String sTemp = ""; //Create temp string
         for (int x = 0; x <= doubleData.size() - 1; x++) { //for loop to initalise ArrayList
