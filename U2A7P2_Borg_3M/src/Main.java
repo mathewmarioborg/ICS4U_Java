@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
                         the mean, median and mode of the data entered.
 */
 public class Main extends javax.swing.JFrame {
-    
     ArrayList <Double> doubleData = new ArrayList(); //creates Array List
 
     /**
