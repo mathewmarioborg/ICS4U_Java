@@ -123,7 +123,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calculateFibonacciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateFibonacciActionPerformed
-        int numInput = 0;
+        int numInput = 0; //creats int and sets it to 0
         
         try{ //trys to convert string input to interger
             String sTemp = inputNum.getText(); //sets string to inputNum value
@@ -133,11 +133,10 @@ public class Main extends javax.swing.JFrame {
             return; //retry the program
         }
         
-        int fibonacciNumber = nThFibonacciCalculator.nThCalculator(numInput);
+        int fibonacciNumber = nThFibonacciCalculator.nThCalculator(numInput); //creats int and sets it to the retun value of nThCalculator (passes numInput to function)
         
         outputFibonacciNum.setText("Fibonacci Number " + numInput + " is " + fibonacciNumber); //set Text to Enter Numbers Only!!
 
-        
     }//GEN-LAST:event_calculateFibonacciActionPerformed
 
     /**
