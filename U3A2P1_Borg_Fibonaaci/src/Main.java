@@ -123,7 +123,21 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calculateFibonacciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateFibonacciActionPerformed
-        // TODO add your handling code here:
+        int numInput = 0;
+        
+        try{ //trys to convert string input to interger
+            String sTemp = inputNum.getText(); //sets string to inputNum value
+            numInput = Integer.parseInt(sTemp); //changes sting to Integer
+        }catch(NumberFormatException e){ //catch letters are typed in
+            outputFibonacciNum.setText("Enter Numbers Only!!"); //set Text to Enter Numbers Only!!
+            return; //retry the program
+        }
+        
+        int fibonacciNumber = nThFibonacciCalculator.nThCalculator(numInput);
+        
+        outputFibonacciNum.setText("Fibonacci Number " + numInput + " is " + fibonacciNumber); //set Text to Enter Numbers Only!!
+
+        
     }//GEN-LAST:event_calculateFibonacciActionPerformed
 
     /**
