@@ -1,13 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Mathew Borg
- */
+    programmer:         Mathew Borg
+    Date:               2021-05-1
+    Program Name:       U3A2P1_Borg_Fibonaaci
+    Program Discription:This program will use a recursive function to find the 
+                        value of the nth Fibonacci number.
+*/
 public class Main extends javax.swing.JFrame {
 
     /**
