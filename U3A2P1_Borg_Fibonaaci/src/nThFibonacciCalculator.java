@@ -9,5 +9,9 @@
  * @author Mathew Borg
  */
 public class nThFibonacciCalculator {
-    
+
+    public static int nThCalculator(int num) {
+        
+    }
+
 }
