@@ -133,6 +133,8 @@ public class Main extends javax.swing.JFrame {
         int fibonacciNumber = nThFibonacciCalculator.nThCalculator(numInput); //creats int and sets it to the retun value of nThCalculator (passes numInput to function)
         
         outputFibonacciNum.setText("Fibonacci Number " + numInput + " is " + fibonacciNumber); //set Text to Enter Numbers Only!!
+        
+        inputNum.setText(""); //clears input text box
 
     }//GEN-LAST:event_calculateFibonacciActionPerformed
 
