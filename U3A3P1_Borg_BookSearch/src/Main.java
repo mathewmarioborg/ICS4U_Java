@@ -33,7 +33,7 @@ public class Main extends javax.swing.JFrame {
         textDescription3 = new javax.swing.JLabel();
         textEnterRefNum = new javax.swing.JLabel();
         inputRefNum = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnFindIt = new javax.swing.JButton();
         textLinearSearch = new javax.swing.JLabel();
         textBinarySearch = new javax.swing.JLabel();
         outputLinearSearch = new javax.swing.JTextField();
@@ -61,10 +61,10 @@ public class Main extends javax.swing.JFrame {
         textEnterRefNum.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         textEnterRefNum.setText("Enter The Reference Number:");
 
-        jButton1.setText("Find It!!!");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnFindIt.setText("Find It!!!");
+        btnFindIt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnFindItActionPerformed(evt);
             }
         });
 
@@ -111,7 +111,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(textEnterRefNum)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnFindIt, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(inputRefNum, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(81, 81, 81)))
@@ -119,15 +119,17 @@ public class Main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textDescription1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(textDescription2)
-                        .addGap(0, 52, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addComponent(textDescription3)
-                        .addGap(179, 179, 179)))
+                        .addGap(179, 179, 179))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textDescription1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(textDescription2)))
+                        .addGap(0, 12, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -148,13 +150,13 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(inputRefNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnFindIt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textLinearSearch)
                     .addComponent(outputLinearSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textBinarySearch)
                     .addComponent(outputBinarySearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -163,9 +165,9 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnFindItActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindItActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnFindItActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,8 +205,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFindIt;
     private javax.swing.JTextField inputRefNum;
-    private javax.swing.JButton jButton1;
     private javax.swing.JTextField outputBinarySearch;
     private javax.swing.JTextField outputLinearSearch;
     private javax.swing.JLabel textAuthor;
