@@ -172,7 +172,18 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFindItActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindItActionPerformed
-        // TODO add your handling code here:
+        int numInput = 0; //creats int and sets it to 0
+        
+        try{ //trys to convert string input to interger
+            String sTemp = inputRefNum.getText(); //sets string to inputNum value
+            numInput = Integer.parseInt(sTemp); //changes sting to Integer
+        }catch(NumberFormatException e){ //catch letters are typed in
+            inputRefNum.setText("Enter Numbers Only!!"); //set Text to Enter Numbers Only!!
+            return; //retry the program
+        }
+        
+        inputRefNum.setText(""); //clears input text box
+
     }//GEN-LAST:event_btnFindItActionPerformed
 
     /**
