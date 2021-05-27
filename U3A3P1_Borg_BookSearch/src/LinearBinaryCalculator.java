@@ -10,4 +10,12 @@
  */
 public class LinearBinaryCalculator {
     
+    public static int linearSearch() {
+        
+    }
+    
+    public static int binarySearch() {
+        
+    }
+    
 }
