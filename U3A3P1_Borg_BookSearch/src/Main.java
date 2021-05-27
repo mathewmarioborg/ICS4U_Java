@@ -1,3 +1,9 @@
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -202,6 +208,29 @@ public class Main extends javax.swing.JFrame {
                 new Main().setVisible(true);
             }
         });
+        
+        ArrayList <String> books = new ArrayList <String>();
+        BufferedReader br = null;
+
+        try {
+            br = new BufferedReader(new FileReader("BookList.txt"));
+            String word;
+            while ((word = br.readLine()) != null ){
+                books.add(word);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        String [] bookList = new String[books.size()];
+        books.toArray(bookList);
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
