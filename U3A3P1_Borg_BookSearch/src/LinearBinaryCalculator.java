@@ -25,8 +25,22 @@ public class LinearBinaryCalculator {
         return position;
     }
     
-    public static int binarySearch() {
+    public static int binarySearch(int[] values, int searchedValue) {
+        int left = 0 , right = values.length -1; 
         
+        while(left <= right){
+            int mid = left +((right - left) / 2);
+            if (values[mid] == searchedValue){
+                return values[mid];
+            }else if (searchedValue < values[mid]){
+                right = mid - 1;
+                return right;
+            }else {
+                left = mid + 1;
+                return left;
+            }
+        }
+        return 404;
     }
     
 }
