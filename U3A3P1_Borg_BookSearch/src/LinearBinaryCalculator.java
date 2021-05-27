@@ -10,8 +10,19 @@
  */
 public class LinearBinaryCalculator {
     
-    public static int linearSearch() {
+    public static int linearSearch(int[] values, int searchedValue) {
+        int position = 0;
+        boolean found = false;
         
+        while(position < values.length && !found){
+            if(values[position] == searchedValue){
+                found = true;
+            }else{
+                position++;
+            }  
+        }
+        
+        return position;
     }
     
     public static int binarySearch() {
