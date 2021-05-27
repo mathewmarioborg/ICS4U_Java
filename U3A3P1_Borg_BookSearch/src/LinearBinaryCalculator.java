@@ -9,38 +9,37 @@
  * @author Mathew Borg
  */
 public class LinearBinaryCalculator {
-    
-    public static int linearSearch(int[] values, int searchedValue) {
-        int position = 0;
-        boolean found = false;
-        
-        while(position < values.length && !found){
-            if(values[position] == searchedValue){
-                found = true;
+   public static int linearPosition = 0;
+   public static int binaryPosition = 0;
+   
+    public static boolean linearSearch(int[] values, int searchedValue) {
+        while(linearPosition < values.length){
+            if(values[linearPosition] == searchedValue){
+                return true;
             }else{
-                position++;
+                linearPosition++;
             }  
         }
-        
-        return position;
+        return false;
     }
     
-    public static int binarySearch(int[] values, int searchedValue) {
+    public static boolean binarySearch(int[] values, int searchedValue) {
         int left = 0 , right = values.length -1; 
         
         while(left <= right){
             int mid = left +((right - left) / 2);
             if (values[mid] == searchedValue){
-                return values[mid];
+                binaryPosition = values[mid];
+                return true;
             }else if (searchedValue < values[mid]){
                 right = mid - 1;
-                return right;
+                binaryPosition = right;
             }else {
                 left = mid + 1;
-                return left;
+                binaryPosition = left;
             }
         }
-        return 404;
+        return false;
     }
     
 }
