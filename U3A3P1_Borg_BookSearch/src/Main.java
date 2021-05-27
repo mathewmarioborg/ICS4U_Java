@@ -172,18 +172,47 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFindItActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindItActionPerformed
-        int numInput = 0; //creats int and sets it to 0
+        String stringInput = ""; //creats int and sets it to 0
+        
+        ArrayList <String> books = new ArrayList <String>();
+        BufferedReader br = null;
+
+        try {
+            br = new BufferedReader(new FileReader("BookList.txt"));
+            String word;
+            while ((word = br.readLine()) != null ){
+                books.add(word);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        String [] bookList = new String[books.size()];
+        books.toArray(bookList);
         
         try{ //trys to convert string input to interger
-            String sTemp = inputRefNum.getText(); //sets string to inputNum value
-            numInput = Integer.parseInt(sTemp); //changes sting to Integer
+            stringInput = inputRefNum.getText(); //sets string to inputNum value
         }catch(NumberFormatException e){ //catch letters are typed in
             inputRefNum.setText("Enter Numbers Only!!"); //set Text to Enter Numbers Only!!
             return; //retry the program
         }
         
         inputRefNum.setText(""); //clears input text box
-
+        
+        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookList, stringInput);
+        
+        if (foundLinear) {
+            outputLinearSearch.setText(bookList[LinearBinaryCalculator.linearPosition + 1]);
+        }else{
+            outputLinearSearch.setText("Book Not Found");
+        }
+        
     }//GEN-LAST:event_btnFindItActionPerformed
 
     /**
@@ -220,27 +249,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         
-        ArrayList <String> books = new ArrayList <String>();
-        BufferedReader br = null;
-
-        try {
-            br = new BufferedReader(new FileReader("BookList.txt"));
-            String word;
-            while ((word = br.readLine()) != null ){
-                books.add(word);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                br.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-
-        String [] bookList = new String[books.size()];
-        books.toArray(bookList);
+        
 
     }
 
