@@ -16,8 +16,10 @@ import java.util.Arrays;
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
-    public static String [] bookList, bookName;
-    public static Integer [] bookNumber;
+    public static String [] bookList; 
+    public static String [] bookName;
+    public static String [] bookNumber;
+    
     /**
      * Creates new form Main
      */
@@ -191,22 +193,11 @@ public class Main extends javax.swing.JFrame {
             outputLinearSearch.setText(bookList[LinearBinaryCalculator.linearPosition + 1]);
         }else{
             outputLinearSearch.setText("Book Not Found");
-        }
+        }     
+        
+//        boolean foundBinary = LinearBinaryCalculator.linearSearch(bookNumber, stringInput);
+//        System.out.println(foundBinary);
 
-//        for (int i = 1; i <= bookList.length; i++) {
-//            if (i % 2 == 0) {
-//                System.out.print(i + " ");
-//            }
-//            
-//        }
-//        for (int i = 1; i <= bookList.length; i++) {
-//            if (i % 2 != 0) {
-//                System.out.print(i + " ");
-//            }
-//            
-//        }
-        
-        
     }//GEN-LAST:event_btnFindItActionPerformed
 
     /**
@@ -240,6 +231,7 @@ public class Main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 getTxt();
+                sortTxt();
                 new Main().setVisible(true);
             }
         });
@@ -267,6 +259,33 @@ public class Main extends javax.swing.JFrame {
 
         bookList = new String[books.size()];
         books.toArray(bookList);
+    }
+    
+    public static void sortTxt() {
+        ArrayList<String> bookNameTemp = new ArrayList<>();
+        //Name
+        for (int i = 1; i <= bookList.length; i++) {
+            if (i % 2 != 0) {
+                bookNameTemp.add(bookList[i]);
+            }
+
+        }
+        ArrayList<String> bookNumTemp = new ArrayList<>();
+        //Number
+        for (int i = 1; i <= bookList.length; i++) {
+            if (i % 2 == 0) {
+                bookNumTemp.add(bookList[i]);
+            }
+
+        }
+        System.out.println(bookName);
+        System.out.println(bookNumber);
+        
+//        bookName = new String[bookNameTemp.size()];
+//        bookNameTemp.toArray(bookName);
+//        
+//        bookNumber = new String[bookNumTemp.size()];
+//        bookNumTemp.toArray(bookNumber);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
