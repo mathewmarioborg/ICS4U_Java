@@ -24,23 +24,27 @@ public class LinearBinaryCalculator {
         return false;
     }
     
-    public static boolean binarySearch(int[] values, int searchedValue) {
-        int left = 0 , right = values.length -1; 
-        
-        while(left <= right){
-            int mid = left +((right - left) / 2);
-            if (values[mid] == searchedValue){
-                binaryPosition = values[mid];
-                return true;
-            }else if (searchedValue < values[mid]){
-                right = mid - 1;
-                binaryPosition = right;
-            }else {
-                left = mid + 1;
-                binaryPosition = left;
+    public static boolean binarySearch(String[] values, String searchedValue) {
+        int left = 0, right = values.length - 1, middle = 0;
+        Boolean found = false;
+
+        while (found == false && left <= right) {
+            middle = (left + right) / 2;
+            int compare = values[middle].compareTo(searchedValue);
+            if (compare == 0) {
+                found = true;
+            } else {
+                if (compare > 0) {
+                    right = middle - 1;
+                } else {
+                    left = middle + 1;
+                }
             }
         }
-        return false;
+        if (left > right) {
+            return false;
+        } else {
+            return true;
+        }
     }
-    
 }
