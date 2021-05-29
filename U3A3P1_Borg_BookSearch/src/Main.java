@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,7 +16,8 @@ import java.util.ArrayList;
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
-
+    public static String [] bookList, bookName;
+    public static Integer [] bookNumber;
     /**
      * Creates new form Main
      */
@@ -174,28 +176,6 @@ public class Main extends javax.swing.JFrame {
     private void btnFindItActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindItActionPerformed
         String stringInput = ""; //creats int and sets it to 0
         
-        ArrayList <String> books = new ArrayList <String>();
-        BufferedReader br = null;
-
-        try {
-            br = new BufferedReader(new FileReader("BookList.txt"));
-            String word;
-            while ((word = br.readLine()) != null ){
-                books.add(word);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                br.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-
-        String [] bookList = new String[books.size()];
-        books.toArray(bookList);
-        
         try{ //trys to convert string input to interger
             stringInput = inputRefNum.getText(); //sets string to inputNum value
         }catch(NumberFormatException e){ //catch letters are typed in
@@ -212,6 +192,20 @@ public class Main extends javax.swing.JFrame {
         }else{
             outputLinearSearch.setText("Book Not Found");
         }
+
+//        for (int i = 1; i <= bookList.length; i++) {
+//            if (i % 2 == 0) {
+//                System.out.print(i + " ");
+//            }
+//            
+//        }
+//        for (int i = 1; i <= bookList.length; i++) {
+//            if (i % 2 != 0) {
+//                System.out.print(i + " ");
+//            }
+//            
+//        }
+        
         
     }//GEN-LAST:event_btnFindItActionPerformed
 
@@ -245,12 +239,34 @@ public class Main extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                getTxt();
                 new Main().setVisible(true);
             }
         });
-        
-        
+    }
+    
+    public static void getTxt(){        
+        ArrayList <String> books = new ArrayList <String>();
+        BufferedReader br = null;
 
+        try {
+            br = new BufferedReader(new FileReader("BookList.txt"));
+            String word;
+            while ((word = br.readLine()) != null ){
+                books.add(word);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        bookList = new String[books.size()];
+        books.toArray(bookList);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
