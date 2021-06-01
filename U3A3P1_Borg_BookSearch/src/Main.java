@@ -187,16 +187,17 @@ public class Main extends javax.swing.JFrame {
         
         inputRefNum.setText(""); //clears input text box
         
-//        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookList, stringInput);
-//        
-//        if (foundLinear) {
-//            outputLinearSearch.setText(bookList[LinearBinaryCalculator.linearPosition + 1]);
-//        }else{
-//            outputLinearSearch.setText("Book Not Found");
-//        }     
+        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookNumber, stringInput);
         
-//        boolean foundBinary = LinearBinaryCalculator.linearSearch(bookNumber, stringInput);
-//        System.out.println(foundBinary);
+        if (foundLinear) {
+            outputLinearSearch.setText(bookName[LinearBinaryCalculator.linearPosition]);
+        }else{
+            outputLinearSearch.setText("Book Not Found");
+        }     
+        
+        boolean foundBinary = LinearBinaryCalculator.linearSearch(bookNumber, stringInput);
+        System.out.println(foundBinary);
+        System.out.println(LinearBinaryCalculator.binaryPosition);
 
     }//GEN-LAST:event_btnFindItActionPerformed
 
@@ -285,9 +286,6 @@ public class Main extends javax.swing.JFrame {
         //Number
         bookNumber = new String[bookNumTemp.size()];
         bookNumTemp.toArray(bookNumber);
-        
-        System.out.println(java.util.Arrays.toString(bookName));
-        System.out.println(java.util.Arrays.toString(bookNumber));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
