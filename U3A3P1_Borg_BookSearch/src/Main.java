@@ -16,8 +16,9 @@ import java.util.Arrays;
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
-    public static String [] bookList; 
-    public static String [][] bookData;
+    public static String [] bookName;
+    public static String [] bookNumber;
+
     
     /**
      * Creates new form Main
@@ -186,13 +187,13 @@ public class Main extends javax.swing.JFrame {
         
         inputRefNum.setText(""); //clears input text box
         
-        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookList, stringInput);
-        
-        if (foundLinear) {
-            outputLinearSearch.setText(bookList[LinearBinaryCalculator.linearPosition + 1]);
-        }else{
-            outputLinearSearch.setText("Book Not Found");
-        }     
+//        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookList, stringInput);
+//        
+//        if (foundLinear) {
+//            outputLinearSearch.setText(bookList[LinearBinaryCalculator.linearPosition + 1]);
+//        }else{
+//            outputLinearSearch.setText("Book Not Found");
+//        }     
         
 //        boolean foundBinary = LinearBinaryCalculator.linearSearch(bookNumber, stringInput);
 //        System.out.println(foundBinary);
@@ -258,7 +259,7 @@ public class Main extends javax.swing.JFrame {
             }
         }
 
-        bookList = new String[books.size()];
+        String [] bookList = new String[books.size()];
         books.toArray(bookList);
 
         //Name
@@ -276,6 +277,17 @@ public class Main extends javax.swing.JFrame {
 
         }
         
+        //adds array lists to appropreate arrays
+        //Name
+        bookName = new String[bookNameTemp.size()];
+        bookNameTemp.toArray(bookName);
+        
+        //Number
+        bookNumber = new String[bookNumTemp.size()];
+        bookNumTemp.toArray(bookNumber);
+        
+        System.out.println(java.util.Arrays.toString(bookName));
+        System.out.println(java.util.Arrays.toString(bookNumber));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
