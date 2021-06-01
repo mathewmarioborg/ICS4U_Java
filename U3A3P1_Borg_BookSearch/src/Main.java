@@ -272,14 +272,14 @@ public class Main extends javax.swing.JFrame {
         }
         ArrayList<String> bookNumTemp = new ArrayList<>();
         //Number
-        for (int i = 1; i <= bookList.length; i++) {
-            if (i % 2 == 0) {
-                bookNumTemp.add(bookList[i]);
+        for (int j = 0; j <= bookList.length - 1; j++) {
+            if (j % 2 == 0) {
+                bookNumTemp.add(bookList[j]);
             }
 
         }
-        System.out.println(bookName);
-        System.out.println(bookNumber);
+        System.out.println(bookNameTemp);
+        System.out.println(bookNumTemp);
         
 //        bookName = new String[bookNameTemp.size()];
 //        bookNameTemp.toArray(bookName);
