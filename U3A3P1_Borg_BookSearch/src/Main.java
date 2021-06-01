@@ -17,8 +17,7 @@ import java.util.Arrays;
  */
 public class Main extends javax.swing.JFrame {
     public static String [] bookList; 
-    public static String [] bookName;
-    public static String [] bookNumber;
+    public static String [][] bookData;
     
     /**
      * Creates new form Main
@@ -231,7 +230,6 @@ public class Main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 getTxt();
-                sortTxt();
                 new Main().setVisible(true);
             }
         });
@@ -239,12 +237,15 @@ public class Main extends javax.swing.JFrame {
     
     public static void getTxt(){        
         ArrayList <String> books = new ArrayList <String>();
+        ArrayList<String> bookNameTemp = new ArrayList<>();
+        ArrayList<String> bookNumTemp = new ArrayList<>();
+        
         BufferedReader br = null;
 
         try {
             br = new BufferedReader(new FileReader("BookList.txt"));
             String word;
-            while ((word = br.readLine()) != null ){
+            while ((word = br.readLine()) != null) {
                 books.add(word);
             }
         } catch (IOException e) {
@@ -259,10 +260,7 @@ public class Main extends javax.swing.JFrame {
 
         bookList = new String[books.size()];
         books.toArray(bookList);
-    }
-    
-    public static void sortTxt() {
-        ArrayList<String> bookNameTemp = new ArrayList<>();
+
         //Name
         for (int i = 1; i <= bookList.length; i++) {
             if (i % 2 != 0) {
@@ -270,7 +268,6 @@ public class Main extends javax.swing.JFrame {
             }
 
         }
-        ArrayList<String> bookNumTemp = new ArrayList<>();
         //Number
         for (int j = 0; j <= bookList.length - 1; j++) {
             if (j % 2 == 0) {
@@ -278,14 +275,7 @@ public class Main extends javax.swing.JFrame {
             }
 
         }
-        System.out.println(bookNameTemp);
-        System.out.println(bookNumTemp);
         
-//        bookName = new String[bookNameTemp.size()];
-//        bookNameTemp.toArray(bookName);
-//        
-//        bookNumber = new String[bookNumTemp.size()];
-//        bookNumTemp.toArray(bookNumber);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
