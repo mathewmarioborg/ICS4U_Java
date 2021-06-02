@@ -26,6 +26,7 @@ public class LinearBinaryCalculator {
     
     public static boolean binarySearch(String[] values, String searchedValue) {
         int left = 0, right = values.length - 1, middle = 0;
+        binaryPosition = 0;
         Boolean found = false;
 
         while (found == false && left <= right) {
@@ -33,6 +34,7 @@ public class LinearBinaryCalculator {
             int compare = values[middle].compareTo(searchedValue);
             if (compare == 0) {
                 found = true;
+                binaryPosition = compare;
             } else {
                 if (compare > 0) {
                     right = middle - 1;
