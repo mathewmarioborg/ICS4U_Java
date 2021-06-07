@@ -17,7 +17,7 @@ import java.util.Arrays;
  */
 public class Main extends javax.swing.JFrame {
     public static String [] bookName;
-    public static String [] bookNumber;
+    public static int [] bookNumber;
 
     
     /**
@@ -180,24 +180,24 @@ public class Main extends javax.swing.JFrame {
         
         try{ //trys to convert string input to interger
             stringInput = inputRefNum.getText(); //sets string to inputNum value
-        }catch(NumberFormatException e){ //catch letters are typed in
+        } catch (NumberFormatException e) { //catch letters are typed in
             inputRefNum.setText("Enter Numbers Only!!"); //set Text to Enter Numbers Only!!
             return; //retry the program
         }
-        
+
         inputRefNum.setText(""); //clears input text box
-        
-        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookNumber, stringInput);
-        
-        if (foundLinear) {
-            outputLinearSearch.setText(bookName[LinearBinaryCalculator.linearPosition]);
-        }else{
-            outputLinearSearch.setText("Book Not Found");
-        }     
-        
-        boolean foundBinary = LinearBinaryCalculator.linearSearch(bookNumber, stringInput);
+
+//        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookNumber, stringInput);
+//        
+//        if (foundLinear) {
+//            outputLinearSearch.setText(bookName[LinearBinaryCalculator.linearPosition]);
+//        }else{
+//            outputLinearSearch.setText("Book Not Found");
+//        }
+        int intTemp;
+        intTemp = Integer.parseInt(stringInput);
+        int foundBinary = LinearBinaryCalculator.binarySearch(bookNumber, intTemp);
         System.out.println(foundBinary);
-        System.out.println(LinearBinaryCalculator.binaryPosition);
 
     }//GEN-LAST:event_btnFindItActionPerformed
 
@@ -232,6 +232,9 @@ public class Main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 getTxt();
+                for (int i = 0; i < bookNumber.length; i++) {
+                System.out.println(bookNumber[i]);
+                }
                 new Main().setVisible(true);
             }
         });
@@ -282,10 +285,17 @@ public class Main extends javax.swing.JFrame {
         //Name
         bookName = new String[bookNameTemp.size()];
         bookNameTemp.toArray(bookName);
-        
+
         //Number
-        bookNumber = new String[bookNumTemp.size()];
-        bookNumTemp.toArray(bookNumber);
+        String[] sTemp = new String[bookNumTemp.size()];
+        bookNumTemp.toArray(sTemp);
+        bookNumber = new int[sTemp.length];
+        for (int i = 0; i < sTemp.length; i++) {
+            // Note that this is assuming valid input
+            // If you want to check then add a try/catch 
+            // and another index for the numbers if to continue adding the others (see below)
+            bookNumber[i] = Integer.parseInt(sTemp[i]);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
