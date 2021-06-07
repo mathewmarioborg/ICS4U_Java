@@ -188,7 +188,7 @@ public class Main extends javax.swing.JFrame {
         //Linear
         boolean foundLinear = LinearBinaryCalculator.linearSearch(bookNumber, intInput); //creats boolean and sets its value to the return of linear search method form LinearBinaryCalculator class
         if (foundLinear) { //if found linear is true
-            outputLinearSearch.setText(bookName[LinearBinaryCalculator.linearPosition]); //set the outputLinearSearch text feild to book name array at position of the linearPosition var
+            outputLinearSearch.setText("Book ''" + bookName[LinearBinaryCalculator.linearPosition] + "'' Book Number ''" + stringInput + "''"); //set the outputLinearSearch text feild to book name array at position of the linearPosition var
         } else { //else
             outputLinearSearch.setText("Book Not Found"); //set the outputLinearSearch text feild to Book not found
         }
@@ -196,7 +196,7 @@ public class Main extends javax.swing.JFrame {
         //Binary
         boolean foundBinary = LinearBinaryCalculator.binarySearch(bookNumber, intInput); //creats boolean and sets its value to the return of binary search method form LinearBinaryCalculator class
         if (foundBinary) { //if found binary is true 
-            outputBinarySearch.setText(bookName[LinearBinaryCalculator.binaryPosition]); //sets the outputBinarySearch text feild to book name array at the position of the binaryPosition var
+            outputBinarySearch.setText("Book ''" + bookName[LinearBinaryCalculator.binaryPosition] + "'' Book Number ''" + stringInput + "''"); //sets the outputBinarySearch text feild to book name array at the position of the binaryPosition var
         } else { //else
             outputBinarySearch.setText("Book Not Found"); //set the outputBinarySearch text feild to Book not found
         }
