@@ -243,6 +243,12 @@ public class Main extends javax.swing.JFrame {
         });
     }
     
+    /*
+    Function: getTxt
+    Purpose:  to get data form a text file and set them to the correct arrays
+    Parameters: n/a
+    Return: n/a 
+    */
     public static void getTxt(){        
         //creats array lists of strings (used so we dont need to know the size of the file)
         ArrayList <String> books = new ArrayList <String>();
