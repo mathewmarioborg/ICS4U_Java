@@ -237,70 +237,65 @@ public class Main extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                getTxt();
-                for (int i = 0; i < bookNumber.length; i++) {
-                System.out.println(bookNumber[i]);
-                }
+                getTxt(); //runs the get text method
                 new Main().setVisible(true);
             }
         });
     }
     
     public static void getTxt(){        
+        //creats array lists of strings (used so we dont need to know the size of the file)
         ArrayList <String> books = new ArrayList <String>();
         ArrayList<String> bookNameTemp = new ArrayList<>();
         ArrayList<String> bookNumTemp = new ArrayList<>();
         
-        BufferedReader br = null;
+        BufferedReader br = null; //creats a buffer reader br
 
-        try {
-            br = new BufferedReader(new FileReader("BookList.txt"));
-            String word;
-            while ((word = br.readLine()) != null) {
-                books.add(word);
+        try { //trys to 
+            br = new BufferedReader(new FileReader("BookList.txt")); //locate the file
+            String word; //creats string word
+            while ((word = br.readLine()) != null) { //sets word to the first line in the text file and repeats till there is no new lines
+                books.add(word); //adds word to the books array list
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                br.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
+        } catch (IOException e) { // catch 
+            e.printStackTrace(); //makes sure you dont read past the end of the file
+        } finally { //finaly 
+            try { //try
+                br.close(); // to close the file 
+            } catch (IOException ex) { //catch
+                ex.printStackTrace(); //makes sure you dont read past the end of the file
             }
         }
 
-        String [] bookList = new String[books.size()];
-        books.toArray(bookList);
+        String [] bookList = new String[books.size()]; //creats string array and gets the size to the size of books arraylist
+        books.toArray(bookList); //converts books array list to array bookList
 
         //Name
-        for (int i = 1; i <= bookList.length; i++) {
-            if (i % 2 != 0) {
-                bookNameTemp.add(bookList[i]);
+        for (int i = 1; i <= bookList.length; i++) { //for loop to count the size of bookList
+            if (i % 2 != 0) { //gets every other value even
+                bookNameTemp.add(bookList[i]); //sets every other value of book list to bookNameTmep
             }
 
         }
         //Number
-        for (int j = 0; j <= bookList.length - 1; j++) {
-            if (j % 2 == 0) {
-                bookNumTemp.add(bookList[j]);
+        for (int j = 0; j <= bookList.length - 1; j++) { //for loop to count the size of bookList
+            if (j % 2 == 0) { //gets every other value odd
+                bookNumTemp.add(bookList[j]); //sets every other value of book list to bookNumTemp
             }
 
         }
         
         //adds array lists to appropreate arrays
         //Name
-        bookName = new String[bookNameTemp.size()];
-        bookNameTemp.toArray(bookName);
+        bookName = new String[bookNameTemp.size()]; //initalises bookName array size 
+        bookNameTemp.toArray(bookName); //sets bookNameTemp array list to array book name
 
         //Number
-        String[] sTemp = new String[bookNumTemp.size()];
-        bookNumTemp.toArray(sTemp);
-        bookNumber = new int[sTemp.length];
-        for (int i = 0; i < sTemp.length; i++) {
-            // Note that this is assuming valid input
-            // If you want to check then add a try/catch 
-            // and another index for the numbers if to continue adding the others (see below)
-            bookNumber[i] = Integer.parseInt(sTemp[i]);
+        String[] sTemp = new String[bookNumTemp.size()]; //creats temp string and inits size
+        bookNumTemp.toArray(sTemp); //sets bookNumTemp array list to array sTemp
+        bookNumber = new int[sTemp.length]; //initalises bookNumber array size
+        for (int i = 0; i < sTemp.length; i++) { //creats for loop of sTemp size
+            bookNumber[i] = Integer.parseInt(sTemp[i]); //converts string array sTemp to int array bookNumber
         }
     }
 
