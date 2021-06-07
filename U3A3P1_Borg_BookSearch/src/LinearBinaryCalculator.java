@@ -12,10 +12,10 @@ public class LinearBinaryCalculator {
    public static int linearPosition = 0;
    public static int binaryPosition = 0;
    
-    public static boolean linearSearch(String[] values, String searchedValue) {
+    public static boolean linearSearch(int[] values, int searchedValue) {
         linearPosition = 0;
         while(linearPosition < values.length){
-            if(values[linearPosition].equals(searchedValue)){
+            if(values[linearPosition] == (searchedValue)){
                 return true;
             }else{
                 linearPosition++;

@@ -189,13 +189,13 @@ public class Main extends javax.swing.JFrame {
 
         inputRefNum.setText(""); //clears input text box
 
-//        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookNumber, stringInput);
-//        
-//        if (foundLinear) {
-//            outputLinearSearch.setText(bookName[LinearBinaryCalculator.linearPosition]);
-//        }else{
-//            outputLinearSearch.setText("Book Not Found");
-//        }
+        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookNumber, intInput);
+        
+        if (foundLinear) {
+            outputLinearSearch.setText(bookName[LinearBinaryCalculator.linearPosition]);
+        }else{
+            outputLinearSearch.setText("Book Not Found");
+        }
 
         boolean foundBinary = LinearBinaryCalculator.binarySearch(bookNumber, intInput);
         System.out.println(foundBinary);
