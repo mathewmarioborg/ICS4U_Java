@@ -6,20 +6,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Mathew Borg
+    programmer: Mathew Borg
+    Date: 2021-05-23
+    Program Name: U3A3P1_Borg_BookSearch
+    Program Discription: This program finds a book by its appropreate book number using linear and binary search
  */
 public class Main extends javax.swing.JFrame {
-    private static String [] bookName;
-    private static int [] bookNumber;
 
-    
+    private static String[] bookName;
+    private static int[] bookNumber;
+
     /**
      * Creates new form Main
      */
@@ -178,8 +174,8 @@ public class Main extends javax.swing.JFrame {
     private void btnFindItActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindItActionPerformed
         String stringInput = ""; //creats int and sets it to 0
         int intInput = 0;
-        
-        try{ //trys to convert string input to interger
+
+        try { //trys to convert string input to interger
             stringInput = inputRefNum.getText(); //sets string to inputNum value
             intInput = Integer.parseInt(stringInput); //converts string to int
         } catch (NumberFormatException e) { //catch letters are typed in
@@ -193,15 +189,15 @@ public class Main extends javax.swing.JFrame {
         boolean foundLinear = LinearBinaryCalculator.linearSearch(bookNumber, intInput); //creats boolean and sets its value to the return of linear search method form LinearBinaryCalculator class
         if (foundLinear) { //if found linear is true
             outputLinearSearch.setText(bookName[LinearBinaryCalculator.linearPosition]); //set the outputLinearSearch text feild to book name array at position of the linearPosition var
-        }else{ //else
+        } else { //else
             outputLinearSearch.setText("Book Not Found"); //set the outputLinearSearch text feild to Book not found
         }
-        
+
         //Binary
         boolean foundBinary = LinearBinaryCalculator.binarySearch(bookNumber, intInput); //creats boolean and sets its value to the return of binary search method form LinearBinaryCalculator class
         if (foundBinary) { //if found binary is true 
             outputBinarySearch.setText(bookName[LinearBinaryCalculator.binaryPosition]); //sets the outputBinarySearch text feild to book name array at the position of the binaryPosition var
-        }else{ //else
+        } else { //else
             outputBinarySearch.setText("Book Not Found"); //set the outputBinarySearch text feild to Book not found
         }
 
@@ -242,19 +238,19 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-    
+
     /*
     Function: getTxt
     Purpose:  to get data form a text file and set them to the correct arrays
     Parameters: n/a
     Return: n/a 
-    */
-    public static void getTxt(){        
+     */
+    public static void getTxt() {
         //creats array lists of strings (used so we dont need to know the size of the file)
-        ArrayList <String> books = new ArrayList <String>();
+        ArrayList<String> books = new ArrayList<String>();
         ArrayList<String> bookNameTemp = new ArrayList<>();
         ArrayList<String> bookNumTemp = new ArrayList<>();
-        
+
         BufferedReader br = null; //creats a buffer reader br
 
         try { //trys to 
@@ -273,7 +269,7 @@ public class Main extends javax.swing.JFrame {
             }
         }
 
-        String [] bookList = new String[books.size()]; //creats string array and gets the size to the size of books arraylist
+        String[] bookList = new String[books.size()]; //creats string array and gets the size to the size of books arraylist
         books.toArray(bookList); //converts books array list to array bookList
 
         //Name
@@ -290,7 +286,7 @@ public class Main extends javax.swing.JFrame {
             }
 
         }
-        
+
         //adds array lists to appropreate arrays
         //Name
         bookName = new String[bookNameTemp.size()]; //initalises bookName array size 
