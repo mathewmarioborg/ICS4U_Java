@@ -16,8 +16,8 @@ import java.util.Arrays;
  * @author Mathew Borg
  */
 public class Main extends javax.swing.JFrame {
-    public static String [] bookName;
-    public static int [] bookNumber;
+    private static String [] bookName;
+    private static int [] bookNumber;
 
     
     /**
@@ -189,20 +189,20 @@ public class Main extends javax.swing.JFrame {
 
         inputRefNum.setText(""); //clears input text box
 
-        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookNumber, intInput);
-        
-        if (foundLinear) {
-            outputLinearSearch.setText(bookName[LinearBinaryCalculator.linearPosition]);
-        }else{
-            outputLinearSearch.setText("Book Not Found");
+        //Linear
+        boolean foundLinear = LinearBinaryCalculator.linearSearch(bookNumber, intInput); //creats boolean and sets its value to the return of linear search method form LinearBinaryCalculator class
+        if (foundLinear) { //if found linear is true
+            outputLinearSearch.setText(bookName[LinearBinaryCalculator.linearPosition]); //set the outputLinearSearch text feild to book name array at position of the linearPosition var
+        }else{ //else
+            outputLinearSearch.setText("Book Not Found"); //set the outputLinearSearch text feild to Book not found
         }
-
-        boolean foundBinary = LinearBinaryCalculator.binarySearch(bookNumber, intInput);
-        System.out.println(foundBinary);
-        if (foundBinary) { 
-            outputBinarySearch.setText(bookName[LinearBinaryCalculator.binaryPosition]);
-        }else{
-            outputBinarySearch.setText("Book Not Found");
+        
+        //Binary
+        boolean foundBinary = LinearBinaryCalculator.binarySearch(bookNumber, intInput); //creats boolean and sets its value to the return of binary search method form LinearBinaryCalculator class
+        if (foundBinary) { //if found binary is true 
+            outputBinarySearch.setText(bookName[LinearBinaryCalculator.binaryPosition]); //sets the outputBinarySearch text feild to book name array at the position of the binaryPosition var
+        }else{ //else
+            outputBinarySearch.setText("Book Not Found"); //set the outputBinarySearch text feild to Book not found
         }
 
     }//GEN-LAST:event_btnFindItActionPerformed
