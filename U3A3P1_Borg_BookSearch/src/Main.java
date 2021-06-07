@@ -177,9 +177,11 @@ public class Main extends javax.swing.JFrame {
 
     private void btnFindItActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindItActionPerformed
         String stringInput = ""; //creats int and sets it to 0
+        int intInput = 0;
         
         try{ //trys to convert string input to interger
             stringInput = inputRefNum.getText(); //sets string to inputNum value
+            intInput = Integer.parseInt(stringInput); //converts string to int
         } catch (NumberFormatException e) { //catch letters are typed in
             inputRefNum.setText("Enter Numbers Only!!"); //set Text to Enter Numbers Only!!
             return; //retry the program
@@ -194,10 +196,14 @@ public class Main extends javax.swing.JFrame {
 //        }else{
 //            outputLinearSearch.setText("Book Not Found");
 //        }
-        int intTemp;
-        intTemp = Integer.parseInt(stringInput);
-        int foundBinary = LinearBinaryCalculator.binarySearch(bookNumber, intTemp);
+
+        boolean foundBinary = LinearBinaryCalculator.binarySearch(bookNumber, intInput);
         System.out.println(foundBinary);
+        if (foundBinary) { 
+            outputBinarySearch.setText(bookName[LinearBinaryCalculator.binaryPosition]);
+        }else{
+            outputBinarySearch.setText("Book Not Found");
+        }
 
     }//GEN-LAST:event_btnFindItActionPerformed
 
