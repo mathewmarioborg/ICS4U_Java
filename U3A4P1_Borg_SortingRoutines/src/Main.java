@@ -1,3 +1,6 @@
+
+import java.util.Arrays;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,7 +12,7 @@
  * @author mborg
  */
 public class Main extends javax.swing.JFrame {
-
+    int[] test = {10,6,3,8,19,3,1,5};
     /**
      * Creates new form Main
      */
@@ -195,7 +198,8 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSortNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortNumActionPerformed
-        // TODO add your handling code here:
+        int[] arr = SortingRoutines.sortSelection(test, false, true);
+        System.out.println(Arrays.toString(arr));
     }//GEN-LAST:event_btnSortNumActionPerformed
 
     private void btnInsertionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertionActionPerformed
