@@ -35,34 +35,27 @@ public class SortingRoutines {
     }
 
     public static int[] sortBubble(int[] A, boolean ascending, boolean descending) {
-
-        if (ascending) {
-            for (int i = 0; i < A.length - 1; i++) {
-                for (int j = 0; j < A.length - i - 1; j++) {
-
-                    if (A[j] > A[j + 1]) {
+        for (int i = 0; i < A.length - 1; i++) {
+            for (int j = 0; j < A.length - i - 1; j++) {
+                if (ascending && !descending) {
+                    if (A[j] > A[j + 1]) { //ascending
                         int temp = A[j];
                         A[j] = A[j + 1];
                         A[j + 1] = temp;
                     }
-                }
-            }
-            return A;
-        } else if (descending) {
-            for (int i = 0; i < A.length - 1; i++) {
-                for (int j = 0; j < A.length - i - 1; j++) {
-
-                    if (A[j] < A[j + 1]) {
+                } else if (descending && !ascending) {
+                    if (A[j] < A[j + 1]) { //descending
                         int temp = A[j];
                         A[j] = A[j + 1];
                         A[j + 1] = temp;
                     }
+                } else {
+                    return null;
+
                 }
             }
-            return A;
-        } else {
-            return null;
         }
+        return A;
     }
 
     public static int[] sortInsertion(int[] A, boolean ascending, boolean descending) {
