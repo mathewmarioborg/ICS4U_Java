@@ -62,12 +62,12 @@ public class SortingRoutines {
         for (int i = 1; i < A.length; ++i) {
             int key = A[i];
             int j = i - 1;
-            if (ascending) {
+            if (ascending && !descending) {
                 while (j >= 0 && A[j] > key) { //ascending
                     A[j + 1] = A[j];
                     j = j - 1;
                 }
-            } else if (descending) {
+            } else if (descending && !ascending) {
                 while (j >= 0 && A[j] < key) { //descending
                     A[j + 1] = A[j];
                     j = j - 1;
@@ -80,48 +80,51 @@ public class SortingRoutines {
         return A;
     }
 
-//    public static int[] sortQuick(int[] A, boolean ascending, boolean descending) {
-//        int begin = 0, end = A.length - 1;
-//        
-//        if (ascending){
-//            int[] a = quickSort(A,begin,end);
-//            return a;
-//        } else if (descending){
-//            int[] a = quickSort(A,begin,end);
-//            return a;
-//        }else {
-//            return null;
-//        }
-//    }
-//
-//    private static int[] quickSort(int arr[], int begin, int end) {
-//        if (begin <= end) {
-//            int partitionIndex = partition(arr, begin, end);
-//
-//            quickSort(arr, begin, partitionIndex - 1);
-//            quickSort(arr, partitionIndex + 1, end);
-//        }
-//        return arr;
-//    }
-//
-//    private static int partition(int arr[], int begin, int end) {
-//        int pivot = arr[end];
-//        int i = (begin - 1);
-//
-//        for (int j = begin; j < end; j++) {
-//            if (arr[j] >= pivot) {
-//                i++;
-//
-//                int swapTemp = arr[i];
-//                arr[i] = arr[j];
-//                arr[j] = swapTemp;
-//            }
-//        }
-//
-//        int swapTemp = arr[i + 1];
-//        arr[i + 1] = arr[end];
-//        arr[end] = swapTemp;
-//
-//        return i + 1;
-//    }
+    public static int[] sortQuick(int[] A, boolean ascending, boolean descending) {
+        int begin = 0, end = A.length - 1;
+        A = quickSort(A, begin, end, ascending, descending);
+        return A;
+    }
+
+    private static int[] quickSort(int arr[], int begin, int end, boolean ascending, boolean descending) {
+        if (begin <= end) {
+            int partitionIndex = partition(arr, begin, end, ascending, descending);
+
+            quickSort(arr, begin, partitionIndex - 1, ascending, descending);
+            quickSort(arr, partitionIndex + 1, end, ascending, descending);
+        }
+        return arr;
+    }
+
+    private static int partition(int arr[], int begin, int end, boolean ascending, boolean descending) {
+        int pivot = arr[end];
+        int i = (begin - 1);
+
+        for (int j = begin; j < end; j++) {
+
+            if (ascending && !descending) {
+                if (arr[j] <= pivot) {
+                    i++;
+                    int swapTemp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = swapTemp;
+                }
+            } else if (descending && !ascending) {
+                if (arr[j] >= pivot) {
+                    i++;
+                    int swapTemp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = swapTemp;
+                }
+            } else {
+                return 0;
+            }
+        }
+
+        int swapTemp = arr[i + 1];
+        arr[i + 1] = arr[end];
+        arr[end] = swapTemp;
+
+        return i + 1;
+    }
 }
