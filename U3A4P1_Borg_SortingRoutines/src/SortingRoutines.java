@@ -11,37 +11,27 @@
 public class SortingRoutines {
 
     public static int[] sortSelection(int[] A, boolean ascending, boolean descending) {
-        if (ascending) {
-            for (int i = 0; i < A.length - 1; i++) {
-                int index = i;
-                for (int j = i + 1; j < A.length; j++) {
+        for (int i = 0; i < A.length - 1; i++) {
+            int index = i;
+            for (int j = i + 1; j < A.length; j++) {
+                if (ascending && !descending) {
                     if (A[j] < A[index]) {
                         index = j;//searching for lowest index  
                     }
-                }
-                int smallerNumber = A[index];
-                A[index] = A[i];
-                A[i] = smallerNumber;
-            }
-            return A;
-            
-        } else if (descending) {
-            for (int i = 0; i < A.length - 1; i++) {
-                int index = i;
-                for (int j = i + 1; j < A.length; j++) {
+                } else if (descending && !ascending) {
                     if (A[j] > A[index]) {
                         index = j;//searching for highest index  
                     }
+                }else {
+                    return null;
                 }
-                int largerNumber = A[index];
-                A[index] = A[i];
-                A[i] = largerNumber;
             }
-            return A;
-            
-        } else {
-            return null;
+            int smallerNumber = A[index];
+            A[index] = A[i];
+            A[i] = smallerNumber;
         }
+        return A;
+
     }
 
     public static int[] sortBubble(int[] A, boolean ascending, boolean descending) {
@@ -111,9 +101,49 @@ public class SortingRoutines {
         }
 
     }
-//    
-//    public static int[] sortQuick(int[] A, boolean ascending, boolean descending){
+
+//    public static int[] sortQuick(int[] A, boolean ascending, boolean descending) {
+//        int begin = 0, end = A.length - 1;
 //        
+//        if (ascending){
+//            int[] a = quickSort(A,begin,end);
+//            return a;
+//        } else if (descending){
+//            int[] a = quickSort(A,begin,end);
+//            return a;
+//        }else {
+//            return null;
+//        }
+//    }
+//
+//    private static int[] quickSort(int arr[], int begin, int end) {
+//        if (begin <= end) {
+//            int partitionIndex = partition(arr, begin, end);
+//
+//            quickSort(arr, begin, partitionIndex - 1);
+//            quickSort(arr, partitionIndex + 1, end);
+//        }
+//        return arr;
+//    }
+//
+//    private static int partition(int arr[], int begin, int end) {
+//        int pivot = arr[end];
+//        int i = (begin - 1);
+//
+//        for (int j = begin; j < end; j++) {
+//            if (arr[j] >= pivot) {
+//                i++;
+//
+//                int swapTemp = arr[i];
+//                arr[i] = arr[j];
+//                arr[j] = swapTemp;
+//            }
+//        }
+//
+//        int swapTemp = arr[i + 1];
+//        arr[i + 1] = arr[end];
+//        arr[end] = swapTemp;
+//
+//        return i + 1;
 //    }
 }
-
