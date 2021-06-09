@@ -59,40 +59,25 @@ public class SortingRoutines {
     }
 
     public static int[] sortInsertion(int[] A, boolean ascending, boolean descending) {
-        if (ascending) {
-            for (int i = 1; i < A.length; ++i) {
-                int key = A[i];
-                int j = i - 1;
-
-                /* Move elements of A[0..i-1], that are
-               greater than key, to one position ahead
-               of their current position */
-                while (j >= 0 && A[j] > key) {
+        for (int i = 1; i < A.length; ++i) {
+            int key = A[i];
+            int j = i - 1;
+            if (ascending) {
+                while (j >= 0 && A[j] > key) { //ascending
                     A[j + 1] = A[j];
                     j = j - 1;
                 }
-                A[j + 1] = key;
-            }
-            return A;
-        } else if (descending) {
-            for (int i = 1; i < A.length; ++i) {
-                int key = A[i];
-                int j = i - 1;
-
-                /* Move elements of A[0..i-1], that are
-               greater than key, to one position ahead
-               of their current position */
-                while (j >= 0 && A[j] < key) {
+            } else if (descending) {
+                while (j >= 0 && A[j] < key) { //descending
                     A[j + 1] = A[j];
                     j = j - 1;
                 }
-                A[j + 1] = key;
+            } else {
+                return null;
             }
-            return A;
-        } else {
-            return null;
+            A[j + 1] = key;
         }
-
+        return A;
     }
 
 //    public static int[] sortQuick(int[] A, boolean ascending, boolean descending) {
