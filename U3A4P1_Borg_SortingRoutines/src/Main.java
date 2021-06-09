@@ -12,7 +12,8 @@ import java.util.Arrays;
  * @author mborg
  */
 public class Main extends javax.swing.JFrame {
-    int[] test = {10,6,3,8,19,3,1,5};
+    private static int[] numbers, numbersSorted;
+    private static int amountOfNums;
     /**
      * Creates new form Main
      */
@@ -46,11 +47,11 @@ public class Main extends javax.swing.JFrame {
         btnQuick = new javax.swing.JRadioButton();
         btnAscending = new javax.swing.JRadioButton();
         btnDescending = new javax.swing.JRadioButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        outputOriginalNumbers = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         outputSortedNumbers = new javax.swing.JTextArea();
         inputNumbersToSort = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        outputOriginalNumbers = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,11 +89,6 @@ public class Main extends javax.swing.JFrame {
 
         sortType.add(btnInsertion);
         btnInsertion.setText("Insertion");
-        btnInsertion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertionActionPerformed(evt);
-            }
-        });
 
         sortType.add(btnQuick);
         btnQuick.setText("Quick");
@@ -103,54 +99,61 @@ public class Main extends javax.swing.JFrame {
         sortOrder.add(btnDescending);
         btnDescending.setText("Desending");
 
-        outputOriginalNumbers.setColumns(20);
-        outputOriginalNumbers.setRows(5);
-        outputOriginalNumbers.setEnabled(false);
-        jScrollPane1.setViewportView(outputOriginalNumbers);
-
         outputSortedNumbers.setColumns(20);
         outputSortedNumbers.setRows(5);
         outputSortedNumbers.setEnabled(false);
         jScrollPane2.setViewportView(outputSortedNumbers);
 
+        outputOriginalNumbers.setColumns(20);
+        outputOriginalNumbers.setRows(5);
+        outputOriginalNumbers.setEnabled(false);
+        jScrollPane1.setViewportView(outputOriginalNumbers);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(ammountNumSort)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(inputNumbersToSort, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnQuick)
-                            .addComponent(btnSelection)
-                            .addComponent(btnInsertion)
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(ammountNumSort)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(inputNumbersToSort, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnQuick)
+                                    .addComponent(btnSelection)
+                                    .addComponent(btnInsertion)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(sortAlgorithumText)
+                                        .addGap(194, 194, 194)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(sortTypeText)
+                                            .addComponent(btnAscending)
+                                            .addComponent(btnDescending)
+                                            .addComponent(btnSortNum)))
+                                    .addComponent(originalNumbers)
+                                    .addComponent(enterInfo)
+                                    .addComponent(btnBubble)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(sortAlgorithumText)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(133, 133, 133)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(sortTypeText)
-                                    .addComponent(sortedNumbers)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnAscending)
-                                    .addComponent(btnDescending)
-                                    .addComponent(btnSortNum)))
-                            .addComponent(originalNumbers)
-                            .addComponent(enterInfo)
-                            .addComponent(btnBubble)))
+                                .addGap(122, 122, 122)
+                                .addComponent(title))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(148, 148, 148)
+                                .addComponent(author))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(sortedNumbers)))
+                        .addGap(0, 55, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(title))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(author)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2)
+                            .addComponent(jScrollPane1))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,27 +187,51 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(ammountNumSort)
                     .addComponent(inputNumbersToSort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(originalNumbers)
-                    .addComponent(sortedNumbers))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(originalNumbers)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sortedNumbers)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSortNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortNumActionPerformed
-        int[] arr = SortingRoutines.sortSelection(test, false, true);
-        System.out.println(Arrays.toString(arr));
+        String sTemp = ""; //creats int and sets it to 0
+        
+        try { //trys to convert string input to interger
+            sTemp = inputNumbersToSort.getText(); //sets string to inputNum value
+            amountOfNums = Integer.parseInt(sTemp); //converts string to int
+        } catch (NumberFormatException e) { //catch letters are typed in
+            inputNumbersToSort.setText("Enter Numbers Only!!"); //set Text to Enter Numbers Only!!
+            return; //retry the program
+        }
+      
+        numbers = new int[amountOfNums];
+        for (int i = 0; i < numbers.length; i++) {
+            int range = (1000 - -1000) + 1;
+            numbers[i] = (int) (Math.random() * range) + -1000;
+        }
+        
+        outputOriginalNumbers.setText(Arrays.toString(numbers));
+        
+        if (btnSelection.isSelected()) {
+            numbersSorted = SortingRoutines.sortSelection(numbers, btnAscending.isSelected(), btnDescending.isSelected());
+        } else if (btnBubble.isSelected()) {
+            numbersSorted = SortingRoutines.sortBubble(numbers, btnAscending.isSelected(), btnDescending.isSelected());
+        } else if (btnInsertion.isSelected()) {
+            numbersSorted = SortingRoutines.sortInsertion(numbers, btnAscending.isSelected(), btnDescending.isSelected());
+        } else if (btnQuick.isSelected()) {
+            numbersSorted = SortingRoutines.sortQuick(numbers, btnAscending.isSelected(), btnDescending.isSelected());
+        }
+              
+        outputSortedNumbers.setText(Arrays.toString(numbersSorted));
+        
     }//GEN-LAST:event_btnSortNumActionPerformed
-
-    private void btnInsertionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInsertionActionPerformed
 
     /**
      * @param args the command line arguments
