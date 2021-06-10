@@ -1,0 +1,18 @@
+<class>
+<!--This is the database for my three favorite songs including the song data of name, artist and album -->
+	<song>
+		<name>I Wanna Love You</name>
+		<artist>Acon</artist>
+		<album>Konvicted</album>
+	</song>
+	<song>
+		<name>Black and Yellow</name>
+		<artist>Wiz Khalifa</artist>
+		<album>Rolling Papers</album>
+	</song>
+	<song>
+		<name>The Way I Are</name>
+		<artist>Timbaland</artist>
+		<album>Shock Value</album>
+	</song>
+</class>
