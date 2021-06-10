@@ -2,16 +2,18 @@
 import java.util.Arrays;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author mborg
+    programmer: Mathew Borg
+    Date: 2021-06-1
+    Program Name: U3A4P1_Borg_SortingRoutines
+    Program Discription: This program will sort a list of random numbers. 
+                         The random numbers are in the range of -1 000 to 1 000.
+                         The user can choose which sorting algorithm to use to 
+                         sort the numbers (selection, bubble, insertion, quick),
+                         how many numbers are to be sorted in the list and
+                         whether the list is sorted in ascending or descending order.
  */
 public class Main extends javax.swing.JFrame {
+    //creats private static int arrays and ints
     private static int[] numbers, numbersSorted;
     private static int amountOfNums;
     /**
@@ -220,25 +222,25 @@ public class Main extends javax.swing.JFrame {
             return; //retry the program
         }
       
-        numbers = new int[amountOfNums];
-        for (int i = 0; i < numbers.length; i++) {
-            int range = (1000 - -1000) + 1;
-            numbers[i] = (int) (Math.random() * range) + -1000;
+        numbers = new int[amountOfNums]; //sets the range of the numbers array
+        for (int i = 0; i < numbers.length; i++) { //for loop the length of the numbers array
+            int range = (1000 - -1000) + 1; //sets int range to = 1000 - -1000 + 1
+            numbers[i] = (int) (Math.random() * range) + -1000; //sets assigns random numbers from -1000 to 1000 to numbers array
         }
         
-        outputOriginalNumbers.setText(Arrays.toString(numbers));
+        outputOriginalNumbers.setText(Arrays.toString(numbers)); //prints numbers array to text area 
         
-        if (btnSelection.isSelected()) {
-            numbersSorted = SortingRoutines.sortSelection(numbers, btnAscending.isSelected(), btnDescending.isSelected());
-        } else if (btnBubble.isSelected()) {
-            numbersSorted = SortingRoutines.sortBubble(numbers, btnAscending.isSelected(), btnDescending.isSelected());
-        } else if (btnInsertion.isSelected()) {
-            numbersSorted = SortingRoutines.sortInsertion(numbers, btnAscending.isSelected(), btnDescending.isSelected());
-        } else if (btnQuick.isSelected()) {
-            numbersSorted = SortingRoutines.sortQuick(numbers, btnAscending.isSelected(), btnDescending.isSelected());
+        if (btnSelection.isSelected()) { //if btnSelection is clicked 
+            numbersSorted = SortingRoutines.sortSelection(numbers, btnAscending.isSelected(), btnDescending.isSelected()); //set numbers sorted array to the return value of sortSelection method
+        } else if (btnBubble.isSelected()) { //if btnBubble is clicked 
+            numbersSorted = SortingRoutines.sortBubble(numbers, btnAscending.isSelected(), btnDescending.isSelected()); //set numbers sorted array to the return value of sortBubble method
+        } else if (btnInsertion.isSelected()) { //if btnInsertion is clicked 
+            numbersSorted = SortingRoutines.sortInsertion(numbers, btnAscending.isSelected(), btnDescending.isSelected()); //set numbers sorted array to the return value of sortInsertion method
+        } else if (btnQuick.isSelected()) { //if btnQuick is clicked 
+            numbersSorted = SortingRoutines.sortQuick(numbers, btnAscending.isSelected(), btnDescending.isSelected()); //set numbers sorted array to the return value of sortQuick method
         }
               
-        outputSortedNumbers.setText(Arrays.toString(numbersSorted));
+        outputSortedNumbers.setText(Arrays.toString(numbersSorted)); //prints numbersSorted array to text area
         
     }//GEN-LAST:event_btnSortNumActionPerformed
 
