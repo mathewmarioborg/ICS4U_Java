@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<class>
+	<course>
+		<code>ICS4U</course>
+		<description> Computer Programming, Grade 12, University</description>
+		<teacher>Teacher A </teacher>
+		<fileType>Unmodified</fileType>
+	</course>
+	<course>
+		<code>PPL4O1</course>
+		<description> Healthy Active Living Education Grade 12 Open</description>
+		<teacher>Teacher A </teacher>
+		<fileType>Unmodified</fileType>
+	</course>
+	<course>
+		<code>TEJ4M</course>
+		<description> Computer Programming, Grade 12, University</description>
+		<teacher>Teacher A </teacher>
+		<fileType>Unmodified</fileType>
+	</course>
+</class>
