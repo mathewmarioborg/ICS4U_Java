@@ -26,40 +26,79 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        author = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        outputXmlData = new javax.swing.JTextArea();
+        btnAddData = new javax.swing.JButton();
+        btnPrintXml = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("XML Create");
+        title.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        title.setForeground(new java.awt.Color(255, 10, 10));
+        title.setText("XML Create");
 
-        jLabel2.setText("jLabel2");
+        author.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        author.setText("By: Mathew Borg");
+
+        outputXmlData.setColumns(20);
+        outputXmlData.setRows(5);
+        jScrollPane1.setViewportView(outputXmlData);
+
+        btnAddData.setText("Click To Add New Data");
+
+        btnPrintXml.setText("Click To Print XML");
+        btnPrintXml.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintXmlActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(158, 158, 158)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel2))
-                    .addComponent(jLabel1))
-                .addContainerGap(176, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnAddData)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addComponent(btnPrintXml)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(author)
+                    .addComponent(title))
+                .addGap(80, 80, 80))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addGap(7, 7, 7)
+                .addComponent(title)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(author)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAddData)
+                    .addComponent(btnPrintXml))
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPrintXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintXmlActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPrintXmlActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,7 +136,11 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel author;
+    private javax.swing.JButton btnAddData;
+    private javax.swing.JButton btnPrintXml;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea outputXmlData;
+    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
