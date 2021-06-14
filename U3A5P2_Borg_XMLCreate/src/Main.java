@@ -10,6 +10,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
 /*
@@ -23,7 +25,7 @@ import org.xml.sax.SAXException;
  * @author mborg
  */
 public class Main extends javax.swing.JFrame {
-    private static String xmlName = "courses.xml";
+    private static final String xmlName = "courses.xml";
     /**
      * Creates new form Main
      */
@@ -120,7 +122,14 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrintXmlActionPerformed
 
     private void btnAddDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDataActionPerformed
-        Document doc = findXml(xmlName);
+        Document doc = findXml();
+        
+        addXmlElement(0, "course", "schoolBoard", "RCDSB");
+        addXmlElement(1, "course", "schoolBoard", "RCDSB");
+        addXmlElement(2, "course", "schoolBoard", "RCDSB");
+        
+        
+        
     }//GEN-LAST:event_btnAddDataActionPerformed
 
     /**
@@ -158,7 +167,7 @@ public class Main extends javax.swing.JFrame {
         });
     }
 
-    private static Document findXml(String xmlName) {
+    private static Document findXml() {
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -177,8 +186,8 @@ public class Main extends javax.swing.JFrame {
         }
     }
     
-    private static void updateXml(String xmlName) {
-        Document doc = findXml(xmlName);
+    private static void updateXml() {
+        Document doc = findXml();
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
@@ -188,6 +197,14 @@ public class Main extends javax.swing.JFrame {
         } catch (TransformerException tfe) {
 
         }
+    }
+    
+    private static void addXmlElement(int position, String mainElement, String newElement, String newElementInfo){
+        Document doc = findXml();
+        Node element = doc.getElementsByTagName(mainElement).item(position);
+        Element schoolBoard = doc.createElement(newElement);
+        schoolBoard.appendChild(doc.createTextNode(newElementInfo));
+        element.appendChild(schoolBoard);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
