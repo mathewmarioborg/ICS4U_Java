@@ -26,6 +26,7 @@ import org.xml.sax.SAXException;
  */
 public class Main extends javax.swing.JFrame {
     private static final String xmlName = "courses.xml";
+    private static final Document doc = findXml();
     /**
      * Creates new form Main
      */
@@ -122,14 +123,15 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrintXmlActionPerformed
 
     private void btnAddDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDataActionPerformed
-        Document doc = findXml();
-        
         addXmlElement(0, "course", "schoolBoard", "RCDSB");
-        addXmlElement(1, "course", "schoolBoard", "RCDSB");
-        addXmlElement(2, "course", "schoolBoard", "RCDSB");
+        addXmlElement(1, "course", "schoolBoard", "SCDSB");
+        addXmlElement(2, "course", "schoolBoard", "SCDSB");
         
+        updateXmlElement(0, "teacher", "Mr. Matthews");
+        updateXmlElement(1, "teacher", "Mrs. Mitchell");
+        updateXmlElement(2, "teacher", "Mr. Haas");
         
-        
+        updateXml();
     }//GEN-LAST:event_btnAddDataActionPerformed
 
     /**
@@ -187,7 +189,6 @@ public class Main extends javax.swing.JFrame {
     }
     
     private static void updateXml() {
-        Document doc = findXml();
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
@@ -200,11 +201,15 @@ public class Main extends javax.swing.JFrame {
     }
     
     private static void addXmlElement(int position, String mainElement, String newElement, String newElementInfo){
-        Document doc = findXml();
         Node element = doc.getElementsByTagName(mainElement).item(position);
         Element schoolBoard = doc.createElement(newElement);
         schoolBoard.appendChild(doc.createTextNode(newElementInfo));
         element.appendChild(schoolBoard);
+    }
+    
+    private static void updateXmlElement(int position, String elementName, String updatedElementInfo){
+        Node element = doc.getElementsByTagName(elementName).item(position);
+        element.setTextContent(updatedElementInfo);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
