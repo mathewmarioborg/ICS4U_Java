@@ -1,3 +1,17 @@
+
+import java.io.File;
+import java.io.IOException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,7 +23,7 @@
  * @author mborg
  */
 public class Main extends javax.swing.JFrame {
-
+    private static String xmlName = "courses.xml";
     /**
      * Creates new form Main
      */
@@ -47,6 +61,11 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1.setViewportView(outputXmlData);
 
         btnAddData.setText("Click To Add New Data");
+        btnAddData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDataActionPerformed(evt);
+            }
+        });
 
         btnPrintXml.setText("Click To Print XML");
         btnPrintXml.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +119,10 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPrintXmlActionPerformed
 
+    private void btnAddDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDataActionPerformed
+        Document doc = findXml(xmlName);
+    }//GEN-LAST:event_btnAddDataActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -133,6 +156,38 @@ public class Main extends javax.swing.JFrame {
                 new Main().setVisible(true);
             }
         });
+    }
+
+    private static Document findXml(String xmlName) {
+        try {
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            Document doc = docBuilder.parse(xmlName);
+            return doc;
+
+        } catch (ParserConfigurationException pce) {
+            pce.printStackTrace();
+            return null;
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            return null;
+        } catch (SAXException sae) {
+            sae.printStackTrace();
+            return null;
+        }
+    }
+    
+    private static void updateXml(String xmlName) {
+        Document doc = findXml(xmlName);
+        try {
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(xmlName));
+            transformer.transform(source, result);
+        } catch (TransformerException tfe) {
+
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
