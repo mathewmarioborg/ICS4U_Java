@@ -1,6 +1,7 @@
 
 import java.io.File;
 import java.io.IOException;
+import javax.swing.JTextArea;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -12,6 +13,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /*
@@ -49,6 +51,7 @@ public class Main extends javax.swing.JFrame {
         outputXmlData = new javax.swing.JTextArea();
         btnAddData = new javax.swing.JButton();
         btnPrintXml = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,27 +80,36 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAddData)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                        .addComponent(btnPrintXml)))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 90, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(author)
                     .addComponent(title))
                 .addGap(80, 80, 80))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnPrintXml, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAddData)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnReset)
+                .addGap(141, 141, 141))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,23 +118,26 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(title)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(author)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddData)
-                    .addComponent(btnPrintXml))
-                .addGap(10, 10, 10)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addComponent(btnPrintXml)
+                    .addComponent(btnAddData))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnReset)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrintXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintXmlActionPerformed
-        // TODO add your handling code here:
+        printXML();
     }//GEN-LAST:event_btnPrintXmlActionPerformed
 
     private void btnAddDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDataActionPerformed
+        outputXmlData.setText("t");
         addXmlElement(0, "course", "schoolBoard", "RCDSB");
         addXmlElement(1, "course", "schoolBoard", "SCDSB");
         addXmlElement(2, "course", "schoolBoard", "SCDSB");
@@ -132,7 +147,23 @@ public class Main extends javax.swing.JFrame {
         updateXmlElement(2, "teacher", "Mr. Haas");
         
         updateXml();
+        
+        printXML();
     }//GEN-LAST:event_btnAddDataActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        removeXmlElement(0, "course", "schoolBoard");
+        removeXmlElement(1, "course", "schoolBoard");
+        removeXmlElement(2, "course", "schoolBoard");
+        
+        updateXmlElement(0, "teacher", "Teacher A");
+        updateXmlElement(1, "teacher", "Teacher B");
+        updateXmlElement(2, "teacher", "Teacher C");
+        
+        updateXml();
+        
+        printXML();
+    }//GEN-LAST:event_btnResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,8 +199,27 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void printXML(){
+        String[] code = printXml("course", "code", outputXmlData);
+        String[] description = printXml("course", "description", outputXmlData);
+        String[] teacher = printXml("course", "teacher", outputXmlData);
+        String[] fileType = printXml("course", "fileType", outputXmlData);
+        
+        try{
+        String[] schoolBoard = printXml("course", "schoolBoard", outputXmlData);
+        outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + schoolBoard[0] + "\n" + 
+                              code[1] + description[1] + teacher[1] + fileType[1] + schoolBoard[1] + "\n" + 
+                              code[2] + description[2] + teacher[2] + fileType[2] + schoolBoard[2] + "\n");
+        }catch (Exception e){
+            outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + "\n" + 
+                                  code[1] + description[1] + teacher[1] + fileType[1] + "\n" + 
+                                  code[2] + description[2] + teacher[2] + fileType[2] + "\n");
+        }
+    }
 
     private static Document findXml() {
+        
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -202,20 +252,45 @@ public class Main extends javax.swing.JFrame {
     
     private static void addXmlElement(int position, String mainElement, String newElement, String newElementInfo){
         Node element = doc.getElementsByTagName(mainElement).item(position);
-        Element schoolBoard = doc.createElement(newElement);
-        schoolBoard.appendChild(doc.createTextNode(newElementInfo));
-        element.appendChild(schoolBoard);
+        Element addElement = doc.createElement(newElement);
+        addElement.appendChild(doc.createTextNode(newElementInfo));
+        element.appendChild(addElement);
     }
     
+    private static void removeXmlElement(int position, String mainElement, String removeElement) {
+        Element element = (Element) doc.getElementsByTagName(removeElement).item(position);
+        element.getParentNode().removeChild(element);
+        doc.normalize();
+    }
+
     private static void updateXmlElement(int position, String elementName, String updatedElementInfo){
         Node element = doc.getElementsByTagName(elementName).item(position);
         element.setTextContent(updatedElementInfo);
+        
+    }
+
+    private static String[] printXml(String elementName, String subElementName, JTextArea printArea) {
+        NodeList listOfElements = doc.getElementsByTagName(elementName);
+        String[] sTemp = new String[listOfElements.getLength()];
+        
+        for (int s = 0; s < listOfElements.getLength(); s++) {
+            Node firstElementNode = listOfElements.item(s);
+            
+            
+            Element theElement = (Element) firstElementNode;
+            NodeList theElementList = theElement.getElementsByTagName(subElementName);
+            Element theFirstElement = (Element) theElementList.item(0);
+            NodeList textList = theFirstElement.getChildNodes();
+            sTemp[s] = (((Node)textList.item(0)).getNodeValue().trim()+ "\n");
+        }
+        return sTemp;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel author;
     private javax.swing.JButton btnAddData;
     private javax.swing.JButton btnPrintXml;
+    private javax.swing.JButton btnReset;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea outputXmlData;
     private javax.swing.JLabel title;

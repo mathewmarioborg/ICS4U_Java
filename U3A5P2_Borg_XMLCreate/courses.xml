@@ -2,19 +2,19 @@
 	<course>
 		<code>ICS4U</code>
 		<description> Computer Programming, Grade 12, University</description>
-		<teacher>Mr. Matthews</teacher>
+		<teacher>Teacher A</teacher>
 		<fileType>Unmodified</fileType>
-	<schoolBoard>RCDSB</schoolBoard></course>
+	</course>
 	<course>
 		<code>PPL4O1</code>
 		<description> Healthy Active Living Education Grade 12 Open</description>
-		<teacher>Mrs. Mitchell</teacher>
+		<teacher>Teacher B</teacher>
 		<fileType>Unmodified</fileType>
 	<schoolBoard>SCDSB</schoolBoard></course>
 	<course>
-		<code>TEJ4M</code>
+		<code>TEJ4M</code>"
 		<description> Computer Programming, Grade 12, University</description>
-		<teacher>Mr. Haas</teacher>
+		<teacher>Teacher C</teacher>
 		<fileType>Unmodified</fileType>
 	<schoolBoard>SCDSB</schoolBoard></course>
 </class>
