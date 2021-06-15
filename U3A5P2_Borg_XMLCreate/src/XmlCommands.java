@@ -29,6 +29,7 @@ public class XmlCommands {
     private static final String xmlName = Main.fileName;
     private static final Document doc = findXml();
     
+    
     public static Document findXml() {
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();

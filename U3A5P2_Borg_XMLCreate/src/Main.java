@@ -1,15 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author mborg
+    programmer: Mathew Borg
+    Date: 2021-06-6
+    Program Name: U3A5P2_Borg_XMLCreate
+    Program Discription: This program reads an xml file changes and adds elements by the push of btns
  */
 public class Main extends javax.swing.JFrame {
-    public static String fileName = "courses.xml";
+    public static String fileName = "courses.xml"; //creats public string for the name of the xml file
+    
     /**
      * Creates new form Main
      */
@@ -115,35 +112,39 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrintXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintXmlActionPerformed
-        printXML();
+        printXML(); //runs printXML method
     }//GEN-LAST:event_btnPrintXmlActionPerformed
 
     private void btnAddDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDataActionPerformed
+        //runs the addXmlElement method and adds the following elements with corosponding info
         XmlCommands.addXmlElement(0, "course", "schoolBoard", "RCDSB");
         XmlCommands.addXmlElement(1, "course", "schoolBoard", "SCDSB");
         XmlCommands.addXmlElement(2, "course", "schoolBoard", "SCDSB");
         
+        //runs the updateXMLElement method and changes the following elements to corosponding new info
         XmlCommands.updateXmlElement(0, "teacher", "Mr. Matthews");
         XmlCommands.updateXmlElement(1, "teacher", "Mrs. Mitchell");
         XmlCommands.updateXmlElement(2, "teacher", "Mr. Haas");
         
-        XmlCommands.updateXml();
+        XmlCommands.updateXml(); //runs updateXml method to update the file
         
-        printXML();
+        printXML(); //runs printXML method
     }//GEN-LAST:event_btnAddDataActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        //runs the removeXmlElement method and removes the following elements
         XmlCommands.removeXmlElement(0, "course", "schoolBoard");
         XmlCommands.removeXmlElement(1, "course", "schoolBoard");
         XmlCommands.removeXmlElement(2, "course", "schoolBoard");
-
+        
+        //runs the updateXMLElement method and changes the following elements to corosponding new info
         XmlCommands.updateXmlElement(0, "teacher", "Teacher A");
         XmlCommands.updateXmlElement(1, "teacher", "Teacher B");
         XmlCommands.updateXmlElement(2, "teacher", "Teacher C");
 
-        XmlCommands.updateXml();
+        XmlCommands.updateXml(); //runs updateXml method to update the file
 
-        printXML();
+        printXML(); //runs printXML method
     }//GEN-LAST:event_btnResetActionPerformed
 
     /**
@@ -180,19 +181,28 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-  
+    
+    /*
+    Function: printXML
+    Purpose:  to print all the arrays the printXml method returns
+    Parameters: n/a
+    Return: void
+     */
     private void printXML() {
+        //creats string arrays that will be set as the return of printXml method
         String[] code = XmlCommands.printXml("course", "code", outputXmlData);
         String[] description = XmlCommands.printXml("course", "description", outputXmlData);
         String[] teacher = XmlCommands.printXml("course", "teacher", outputXmlData);
         String[] fileType = XmlCommands.printXml("course", "fileType", outputXmlData);
 
-        try {
-            String[] schoolBoard = XmlCommands.printXml("course", "schoolBoard", outputXmlData);
-            outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + schoolBoard[0] + "\n"
+        try { //try
+            String[] schoolBoard = XmlCommands.printXml("course", "schoolBoard", outputXmlData); //creat string array that will be set as the return of printXml method
+            //set outputXmlData text too the string arrays at the corosponding positions
+            outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + schoolBoard[0] + "\n" 
                     + code[1] + description[1] + teacher[1] + fileType[1] + schoolBoard[1] + "\n"
                     + code[2] + description[2] + teacher[2] + fileType[2] + schoolBoard[2] + "\n");
-        } catch (Exception e) {
+        } catch (Exception e) { //catch expetopn e 
+            //set outputXmlData text too the string arrays at the corosponding positions
             outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + "\n"
                     + code[1] + description[1] + teacher[1] + fileType[1] + "\n"
                     + code[2] + description[2] + teacher[2] + fileType[2] + "\n");
