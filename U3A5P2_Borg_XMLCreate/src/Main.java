@@ -1,21 +1,3 @@
-
-import java.io.File;
-import java.io.IOException;
-import javax.swing.JTextArea;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,8 +9,7 @@ import org.xml.sax.SAXException;
  * @author mborg
  */
 public class Main extends javax.swing.JFrame {
-    private static final String xmlName = "courses.xml";
-    private static final Document doc = findXml();
+    public static String fileName = "courses.xml";
     /**
      * Creates new form Main
      */
@@ -64,6 +45,7 @@ public class Main extends javax.swing.JFrame {
 
         outputXmlData.setColumns(20);
         outputXmlData.setRows(5);
+        outputXmlData.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane1.setViewportView(outputXmlData);
 
         btnAddData.setText("Click To Add New Data");
@@ -137,31 +119,30 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrintXmlActionPerformed
 
     private void btnAddDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDataActionPerformed
-        outputXmlData.setText("t");
-        addXmlElement(0, "course", "schoolBoard", "RCDSB");
-        addXmlElement(1, "course", "schoolBoard", "SCDSB");
-        addXmlElement(2, "course", "schoolBoard", "SCDSB");
+        XmlCommands.addXmlElement(0, "course", "schoolBoard", "RCDSB");
+        XmlCommands.addXmlElement(1, "course", "schoolBoard", "SCDSB");
+        XmlCommands.addXmlElement(2, "course", "schoolBoard", "SCDSB");
         
-        updateXmlElement(0, "teacher", "Mr. Matthews");
-        updateXmlElement(1, "teacher", "Mrs. Mitchell");
-        updateXmlElement(2, "teacher", "Mr. Haas");
+        XmlCommands.updateXmlElement(0, "teacher", "Mr. Matthews");
+        XmlCommands.updateXmlElement(1, "teacher", "Mrs. Mitchell");
+        XmlCommands.updateXmlElement(2, "teacher", "Mr. Haas");
         
-        updateXml();
+        XmlCommands.updateXml();
         
         printXML();
     }//GEN-LAST:event_btnAddDataActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        removeXmlElement(0, "course", "schoolBoard");
-        removeXmlElement(1, "course", "schoolBoard");
-        removeXmlElement(2, "course", "schoolBoard");
-        
-        updateXmlElement(0, "teacher", "Teacher A");
-        updateXmlElement(1, "teacher", "Teacher B");
-        updateXmlElement(2, "teacher", "Teacher C");
-        
-        updateXml();
-        
+        XmlCommands.removeXmlElement(0, "course", "schoolBoard");
+        XmlCommands.removeXmlElement(1, "course", "schoolBoard");
+        XmlCommands.removeXmlElement(2, "course", "schoolBoard");
+
+        XmlCommands.updateXmlElement(0, "teacher", "Teacher A");
+        XmlCommands.updateXmlElement(1, "teacher", "Teacher B");
+        XmlCommands.updateXmlElement(2, "teacher", "Teacher C");
+
+        XmlCommands.updateXml();
+
         printXML();
     }//GEN-LAST:event_btnResetActionPerformed
 
@@ -199,92 +180,26 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void printXML(){
-        String[] code = printXml("course", "code", outputXmlData);
-        String[] description = printXml("course", "description", outputXmlData);
-        String[] teacher = printXml("course", "teacher", outputXmlData);
-        String[] fileType = printXml("course", "fileType", outputXmlData);
-        
-        try{
-        String[] schoolBoard = printXml("course", "schoolBoard", outputXmlData);
-        outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + schoolBoard[0] + "\n" + 
-                              code[1] + description[1] + teacher[1] + fileType[1] + schoolBoard[1] + "\n" + 
-                              code[2] + description[2] + teacher[2] + fileType[2] + schoolBoard[2] + "\n");
-        }catch (Exception e){
-            outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + "\n" + 
-                                  code[1] + description[1] + teacher[1] + fileType[1] + "\n" + 
-                                  code[2] + description[2] + teacher[2] + fileType[2] + "\n");
-        }
-    }
+  
+    private void printXML() {
+        String[] code = XmlCommands.printXml("course", "code", outputXmlData);
+        String[] description = XmlCommands.printXml("course", "description", outputXmlData);
+        String[] teacher = XmlCommands.printXml("course", "teacher", outputXmlData);
+        String[] fileType = XmlCommands.printXml("course", "fileType", outputXmlData);
 
-    private static Document findXml() {
-        
         try {
-            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-            Document doc = docBuilder.parse(xmlName);
-            return doc;
-
-        } catch (ParserConfigurationException pce) {
-            pce.printStackTrace();
-            return null;
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            return null;
-        } catch (SAXException sae) {
-            sae.printStackTrace();
-            return null;
+            String[] schoolBoard = XmlCommands.printXml("course", "schoolBoard", outputXmlData);
+            outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + schoolBoard[0] + "\n"
+                    + code[1] + description[1] + teacher[1] + fileType[1] + schoolBoard[1] + "\n"
+                    + code[2] + description[2] + teacher[2] + fileType[2] + schoolBoard[2] + "\n");
+        } catch (Exception e) {
+            outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + "\n"
+                    + code[1] + description[1] + teacher[1] + fileType[1] + "\n"
+                    + code[2] + description[2] + teacher[2] + fileType[2] + "\n");
         }
     }
-    
-    private static void updateXml() {
-        try {
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File(xmlName));
-            transformer.transform(source, result);
-        } catch (TransformerException tfe) {
 
-        }
-    }
-    
-    private static void addXmlElement(int position, String mainElement, String newElement, String newElementInfo){
-        Node element = doc.getElementsByTagName(mainElement).item(position);
-        Element addElement = doc.createElement(newElement);
-        addElement.appendChild(doc.createTextNode(newElementInfo));
-        element.appendChild(addElement);
-    }
-    
-    private static void removeXmlElement(int position, String mainElement, String removeElement) {
-        Element element = (Element) doc.getElementsByTagName(removeElement).item(position);
-        element.getParentNode().removeChild(element);
-        doc.normalize();
-    }
 
-    private static void updateXmlElement(int position, String elementName, String updatedElementInfo){
-        Node element = doc.getElementsByTagName(elementName).item(position);
-        element.setTextContent(updatedElementInfo);
-        
-    }
-
-    private static String[] printXml(String elementName, String subElementName, JTextArea printArea) {
-        NodeList listOfElements = doc.getElementsByTagName(elementName);
-        String[] sTemp = new String[listOfElements.getLength()];
-        
-        for (int s = 0; s < listOfElements.getLength(); s++) {
-            Node firstElementNode = listOfElements.item(s);
-            
-            
-            Element theElement = (Element) firstElementNode;
-            NodeList theElementList = theElement.getElementsByTagName(subElementName);
-            Element theFirstElement = (Element) theElementList.item(0);
-            NodeList textList = theFirstElement.getChildNodes();
-            sTemp[s] = (((Node)textList.item(0)).getNodeValue().trim()+ "\n");
-        }
-        return sTemp;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel author;
