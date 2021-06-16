@@ -190,13 +190,13 @@ public class Main extends javax.swing.JFrame {
      */
     private void printXML() {
         //creats string arrays that will be set as the return of printXml method
-        String[] code = XmlCommands.printXml("course", "code", outputXmlData);
-        String[] description = XmlCommands.printXml("course", "description", outputXmlData);
-        String[] teacher = XmlCommands.printXml("course", "teacher", outputXmlData);
-        String[] fileType = XmlCommands.printXml("course", "fileType", outputXmlData);
+        String[] code = XmlCommands.printXml("course", "code");
+        String[] description = XmlCommands.printXml("course", "description");
+        String[] teacher = XmlCommands.printXml("course", "teacher");
+        String[] fileType = XmlCommands.printXml("course", "fileType");
 
         try { //try
-            String[] schoolBoard = XmlCommands.printXml("course", "schoolBoard", outputXmlData); //creat string array that will be set as the return of printXml method
+            String[] schoolBoard = XmlCommands.printXml("course", "schoolBoard"); //creat string array that will be set as the return of printXml method
             //set outputXmlData text too the string arrays at the corosponding positions
             outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + schoolBoard[0] + "\n" 
                     + code[1] + description[1] + teacher[1] + fileType[1] + schoolBoard[1] + "\n"
