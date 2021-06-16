@@ -93,10 +93,10 @@ public class XmlCommands {
      */
     public static void removeXmlElement(int position, String removeElement) {
         try { //try
-            Element element = (Element) doc.getElementsByTagName(removeElement).item(position);
-            Node parent = element.getParentNode();
-            parent.removeChild(element);
-            parent.normalize();
+            Element element = (Element) doc.getElementsByTagName(removeElement).item(position); //creats an element at the doc elemet of String remove element at the posion of int postion 
+            Node parent = element.getParentNode(); //creatse a node of element we created
+            parent.removeChild(element); //removes the child element from parent
+            parent.normalize(); //normalises the parent
         } catch (Exception e) { //catch expetopn e if there is nothing to remove 
             
         }
