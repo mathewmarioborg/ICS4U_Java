@@ -133,9 +133,9 @@ public class Main extends javax.swing.JFrame {
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         //runs the removeXmlElement method and removes the following elements
-        XmlCommands.removeXmlElement(0, "course", "schoolBoard");
-        XmlCommands.removeXmlElement(1, "course", "schoolBoard");
-        XmlCommands.removeXmlElement(2, "course", "schoolBoard");
+        XmlCommands.removeXmlElement(0, "schoolBoard");
+        XmlCommands.removeXmlElement(1, "schoolBoard");
+        XmlCommands.removeXmlElement(2, "schoolBoard");
         
         //runs the updateXMLElement method and changes the following elements to corosponding new info
         XmlCommands.updateXmlElement(0, "teacher", "Teacher A");

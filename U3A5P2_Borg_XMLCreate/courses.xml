@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<class>
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><class>
 <!--This is the database is for the three classes Mathew Borg is currently in including the code, description, teacher, file type and school bord will be latter added by java program  -->
 	<course>
 		<code>ICS4U</code>
@@ -12,11 +11,11 @@
 		<description> Healthy Active Living Education Grade 12 Open</description>
 		<teacher>Teacher B</teacher>
 		<fileType>Unmodified</fileType>
-	<schoolBoard>SCDSB</schoolBoard></course>
+	</course>
 	<course>
 		<code>TEJ4M</code>"
 		<description> Computer Programming, Grade 12, University</description>
 		<teacher>Teacher C</teacher>
 		<fileType>Unmodified</fileType>
-	<schoolBoard>SCDSB</schoolBoard></course>
+	</course>
 </class>

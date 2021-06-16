@@ -91,12 +91,17 @@ public class XmlCommands {
                     String removeElement is the new element we are removing
         Return: void
      */
-    public static void removeXmlElement(int position, String mainElement, String removeElement) {
-        Element element = (Element) doc.getElementsByTagName(removeElement).item(position); //creats element of our doc at mainElement positon at int position
-        element.getParentNode().removeChild(element); //removes the String element from the parentNode
-        doc.normalize(); //normalize the doc
+    public static void removeXmlElement(int position, String removeElement) {
+        try { //try
+            Element element = (Element) doc.getElementsByTagName(removeElement).item(position);
+            Node parent = element.getParentNode();
+            parent.removeChild(element);
+            parent.normalize();
+        } catch (Exception e) { //catch expetopn e if there is nothing to remove 
+            
+        }
     }
-    
+
     /*
         Function: updateXmlElement
         Purpose:  to update the context of elements in xml files
