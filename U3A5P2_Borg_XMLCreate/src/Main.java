@@ -198,14 +198,14 @@ public class Main extends javax.swing.JFrame {
         try { //try
             String[] schoolBoard = XmlCommands.printXml("course", "schoolBoard"); //creat string array that will be set as the return of printXml method
             //set outputXmlData text too the string arrays at the corosponding positions
-            outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + schoolBoard[0] + "\n" 
-                    + code[1] + description[1] + teacher[1] + fileType[1] + schoolBoard[1] + "\n"
-                    + code[2] + description[2] + teacher[2] + fileType[2] + schoolBoard[2] + "\n");
+            outputXmlData.setText("Course Code: " + code[0] + "Course Description: " + description[0] + "Course Teacher: " + teacher[0] + "File Type: " + fileType[0] + "School Board: " + schoolBoard[0] + "\n" 
+                    + "Course Code: " + code[1] + "Course Description: " + description[1] + "Course Teacher: " + teacher[1] + "File Type: " + fileType[1] + "School Board: " + schoolBoard[1] + "\n"
+                    + "Course Code: " + code[2] + "Course Description: " + description[2] + "Course Teacher: " + teacher[2] + "File Type: " + fileType[2] + "School Board: " + schoolBoard[2] + "\n");
         } catch (Exception e) { //catch expetopn e 
             //set outputXmlData text too the string arrays at the corosponding positions
-            outputXmlData.setText(code[0] + description[0] + teacher[0] + fileType[0] + "\n"
-                    + code[1] + description[1] + teacher[1] + fileType[1] + "\n"
-                    + code[2] + description[2] + teacher[2] + fileType[2] + "\n");
+            outputXmlData.setText("Course Code: " + code[0] + "Course Description: " + description[0] + "Course Teacher: " + teacher[0] + "File Type: " +  fileType[0] + "\n"
+                    + "Course Code: " + code[1] + "Course Description: " + description[1] + "Course Teacher: " + teacher[1] + "File Type: " + fileType[1] + "\n"
+                    + "Course Code: " + code[2] + "Course Description: " + description[2] + "Course Teacher: " + teacher[2] + "File Type: " + fileType[2] + "\n");
         }
     }
 
