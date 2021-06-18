@@ -26,17 +26,296 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        title = new javax.swing.JLabel();
+        author = new javax.swing.JLabel();
+        playerSixthCard = new javax.swing.JLabel();
+        playerFourthCard = new javax.swing.JLabel();
+        dealerSixthCard = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btnHit = new javax.swing.JRadioButton();
+        btnStand = new javax.swing.JRadioButton();
+        btnDouble = new javax.swing.JRadioButton();
+        btnSplit = new javax.swing.JRadioButton();
+        btnSurrender = new javax.swing.JRadioButton();
+        btnDeal = new javax.swing.JButton();
+        btnEnter = new javax.swing.JButton();
+        btnFinished = new javax.swing.JButton();
+        dealersHand = new javax.swing.JLabel();
+        yourHand = new javax.swing.JLabel();
+        dealerFirstCard = new javax.swing.JLabel();
+        dealerThirdCard = new javax.swing.JLabel();
+        playerFirstCard = new javax.swing.JLabel();
+        playerThirdCard = new javax.swing.JLabel();
+        dealerSecondCard = new javax.swing.JLabel();
+        playerSecondCard = new javax.swing.JLabel();
+        playerFifthCard = new javax.swing.JLabel();
+        dealerFifthCard = new javax.swing.JLabel();
+        firstCard = new javax.swing.JLabel();
+        secondCard = new javax.swing.JLabel();
+        thirdCard = new javax.swing.JLabel();
+        fourthCard = new javax.swing.JLabel();
+        fifthCard = new javax.swing.JLabel();
+        sixthCard = new javax.swing.JLabel();
+        welcomeBack = new javax.swing.JLabel();
+        outputPlayerBalance = new javax.swing.JTextField();
+        balanceIs = new javax.swing.JLabel();
+        outputPlayerName = new javax.swing.JTextField();
+        youAreCurrentlyBetting = new javax.swing.JLabel();
+        outputPlayerBet = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        title.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        title.setForeground(new java.awt.Color(10, 155, 10));
+        title.setText("Black Jack");
+
+        author.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        author.setText("By: Mathew Borg");
+
+        playerSixthCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+        playerSixthCard.setMaximumSize(new java.awt.Dimension(240, 264));
+        playerSixthCard.setMinimumSize(new java.awt.Dimension(240, 264));
+
+        playerFourthCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+
+        dealerSixthCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+        dealerSixthCard.setMaximumSize(new java.awt.Dimension(240, 264));
+        dealerSixthCard.setMinimumSize(new java.awt.Dimension(240, 264));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+
+        buttonGroup1.add(btnHit);
+        btnHit.setText("Hit");
+
+        buttonGroup1.add(btnStand);
+        btnStand.setText("Stand");
+
+        buttonGroup1.add(btnDouble);
+        btnDouble.setText("Double");
+
+        buttonGroup1.add(btnSplit);
+        btnSplit.setText("Split");
+
+        buttonGroup1.add(btnSurrender);
+        btnSurrender.setText("Surrender");
+
+        btnDeal.setText("Deal");
+
+        btnEnter.setText("Enter");
+
+        btnFinished.setText("Finished");
+
+        dealersHand.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        dealersHand.setText("Dealers Hand");
+
+        yourHand.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        yourHand.setText("Your Hand");
+
+        dealerFirstCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+        dealerFirstCard.setMaximumSize(new java.awt.Dimension(240, 264));
+        dealerFirstCard.setMinimumSize(new java.awt.Dimension(240, 264));
+
+        dealerThirdCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+
+        playerFirstCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+        playerFirstCard.setMaximumSize(new java.awt.Dimension(240, 264));
+        playerFirstCard.setMinimumSize(new java.awt.Dimension(240, 264));
+
+        playerThirdCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+
+        dealerSecondCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+
+        playerSecondCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+
+        playerFifthCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+
+        dealerFifthCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gray_back.png"))); // NOI18N
+
+        firstCard.setText("First");
+
+        secondCard.setText("Second");
+
+        thirdCard.setText("Third");
+
+        fourthCard.setText("Fourth");
+
+        fifthCard.setText("Fifth");
+
+        sixthCard.setText("Sixth");
+
+        welcomeBack.setText("Welcome Back:");
+
+        outputPlayerBalance.setEnabled(false);
+
+        balanceIs.setText("Your Balance Is:");
+
+        outputPlayerName.setEnabled(false);
+
+        youAreCurrentlyBetting.setText("You Are Currently Betting:");
+
+        outputPlayerBet.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(btnDeal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEnter)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnFinished))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnHit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnStand)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDouble)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSplit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSurrender))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(yourHand)))
+                .addGap(204, 204, 204))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(sixthCard)
+                        .addGap(87, 87, 87)
+                        .addComponent(fourthCard)
+                        .addGap(95, 95, 95)
+                        .addComponent(firstCard)
+                        .addGap(87, 87, 87)
+                        .addComponent(secondCard)
+                        .addGap(84, 84, 84)
+                        .addComponent(thirdCard)
+                        .addGap(99, 99, 99)
+                        .addComponent(fifthCard))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(welcomeBack)
+                                    .addComponent(balanceIs)
+                                    .addComponent(outputPlayerBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(outputPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(author)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(title)
+                                        .addGap(9, 9, 9)))
+                                .addGap(125, 125, 125)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(youAreCurrentlyBetting, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(outputPlayerBet)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(322, 322, 322)
+                                .addComponent(dealersHand)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(dealerSixthCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(dealerFirstCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(playerSixthCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(playerFourthCard)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(playerFirstCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(playerSecondCard)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(playerThirdCard)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(playerFifthCard))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(dealerSecondCard)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(dealerThirdCard)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(dealerFifthCard))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(youAreCurrentlyBetting)
+                            .addComponent(title))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(outputPlayerBet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(author)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(welcomeBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(outputPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(balanceIs)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(outputPlayerBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dealersHand)
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dealerFifthCard)
+                    .addComponent(jLabel6)
+                    .addComponent(dealerSixthCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dealerFirstCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dealerSecondCard)
+                    .addComponent(dealerThirdCard))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(firstCard)
+                        .addComponent(secondCard)
+                        .addComponent(thirdCard)
+                        .addComponent(fourthCard)
+                        .addComponent(sixthCard))
+                    .addComponent(fifthCard))
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(playerFourthCard)
+                    .addComponent(playerSixthCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(playerThirdCard)
+                    .addComponent(playerFirstCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(playerSecondCard)
+                    .addComponent(playerFifthCard))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(yourHand)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeal)
+                    .addComponent(btnEnter)
+                    .addComponent(btnFinished))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSplit)
+                    .addComponent(btnSurrender)
+                    .addComponent(btnDouble)
+                    .addComponent(btnStand)
+                    .addComponent(btnHit))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +357,42 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel author;
+    private javax.swing.JLabel balanceIs;
+    private javax.swing.JButton btnDeal;
+    private javax.swing.JRadioButton btnDouble;
+    private javax.swing.JButton btnEnter;
+    private javax.swing.JButton btnFinished;
+    private javax.swing.JRadioButton btnHit;
+    private javax.swing.JRadioButton btnSplit;
+    private javax.swing.JRadioButton btnStand;
+    private javax.swing.JRadioButton btnSurrender;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel dealerFifthCard;
+    private javax.swing.JLabel dealerFirstCard;
+    private javax.swing.JLabel dealerSecondCard;
+    private javax.swing.JLabel dealerSixthCard;
+    private javax.swing.JLabel dealerThirdCard;
+    private javax.swing.JLabel dealersHand;
+    private javax.swing.JLabel fifthCard;
+    private javax.swing.JLabel firstCard;
+    private javax.swing.JLabel fourthCard;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField outputPlayerBalance;
+    private javax.swing.JTextField outputPlayerBet;
+    private javax.swing.JTextField outputPlayerName;
+    private javax.swing.JLabel playerFifthCard;
+    private javax.swing.JLabel playerFirstCard;
+    private javax.swing.JLabel playerFourthCard;
+    private javax.swing.JLabel playerSecondCard;
+    private javax.swing.JLabel playerSixthCard;
+    private javax.swing.JLabel playerThirdCard;
+    private javax.swing.JLabel secondCard;
+    private javax.swing.JLabel sixthCard;
+    private javax.swing.JLabel thirdCard;
+    private javax.swing.JLabel title;
+    private javax.swing.JLabel welcomeBack;
+    private javax.swing.JLabel youAreCurrentlyBetting;
+    private javax.swing.JLabel yourHand;
     // End of variables declaration//GEN-END:variables
 }
