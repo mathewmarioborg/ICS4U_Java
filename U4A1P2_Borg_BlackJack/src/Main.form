@@ -31,12 +31,10 @@
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       <Component id="btnDeal" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnEnter" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnFinished" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnHit" min="-2" max="-2" attributes="0"/>
@@ -78,11 +76,11 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="welcomeBack" min="-2" max="-2" attributes="0"/>
-                                  <Component id="balanceIs" min="-2" max="-2" attributes="0"/>
                                   <Component id="outputPlayerBalance" min="-2" pref="160" max="-2" attributes="0"/>
                                   <Component id="outputPlayerName" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Component id="balanceIs" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="122" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="author" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
@@ -90,10 +88,16 @@
                                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="youAreCurrentlyBetting" max="32767" attributes="0"/>
-                                  <Component id="outputPlayerBet" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                                      <Component id="outputPlayerBet" min="-2" pref="149" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="youHavePlayed" min="-2" max="-2" attributes="0"/>
+                                      <Component id="youAreCurrentlyBetting" max="32767" attributes="0"/>
+                                      <Component id="outputPlayerGames" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -150,24 +154,34 @@
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="youAreCurrentlyBetting" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="title" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="title" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="outputPlayerBet" min="-2" max="-2" attributes="0"/>
-                          <Component id="author" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="author" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="welcomeBack" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="welcomeBack" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="outputPlayerName" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="youHavePlayed" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="outputPlayerGames" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="balanceIs" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="youAreCurrentlyBetting" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="outputPlayerName" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                      <Component id="balanceIs" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="outputPlayerBalance" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="outputPlayerBalance" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="outputPlayerBet" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -207,7 +221,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnDeal" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEnter" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnFinished" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -217,7 +230,7 @@
                   <Component id="btnStand" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnHit" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -326,16 +339,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Deal"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDealActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnEnter">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enter"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnFinished">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Finished"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnterActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="dealersHand">
       <Properties>
@@ -453,7 +467,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="welcomeBack">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Welcome Back:"/>
+        <Property name="text" type="java.lang.String" value="You are playing as:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="outputPlayerBalance">
@@ -477,6 +491,16 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="outputPlayerBet">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="youHavePlayed">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="You have played:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="outputPlayerGames">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>

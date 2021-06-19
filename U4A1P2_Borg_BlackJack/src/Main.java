@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,12 +12,17 @@
  * @author mborg
  */
 public class Main extends javax.swing.JFrame {
-
+    public static String fileName = "players.xml", inputPlayerName, playerName;
+    public static int playerGames, playerBalance, playerBet;
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
+        outputPlayerName.setText(playerName);
+        outputPlayerBalance.setText(Integer.toString(playerBalance));
+        outputPlayerGames.setText(Integer.toString(playerGames));
+        outputPlayerBet.setText(Integer.toString(playerBet));
     }
 
     /**
@@ -40,7 +48,6 @@ public class Main extends javax.swing.JFrame {
         btnSurrender = new javax.swing.JRadioButton();
         btnDeal = new javax.swing.JButton();
         btnEnter = new javax.swing.JButton();
-        btnFinished = new javax.swing.JButton();
         dealersHand = new javax.swing.JLabel();
         yourHand = new javax.swing.JLabel();
         dealerFirstCard = new javax.swing.JLabel();
@@ -63,6 +70,8 @@ public class Main extends javax.swing.JFrame {
         outputPlayerName = new javax.swing.JTextField();
         youAreCurrentlyBetting = new javax.swing.JLabel();
         outputPlayerBet = new javax.swing.JTextField();
+        youHavePlayed = new javax.swing.JLabel();
+        outputPlayerGames = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,10 +110,18 @@ public class Main extends javax.swing.JFrame {
         btnSurrender.setText("Surrender");
 
         btnDeal.setText("Deal");
+        btnDeal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDealActionPerformed(evt);
+            }
+        });
 
         btnEnter.setText("Enter");
-
-        btnFinished.setText("Finished");
+        btnEnter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnterActionPerformed(evt);
+            }
+        });
 
         dealersHand.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         dealersHand.setText("Dealers Hand");
@@ -144,7 +161,7 @@ public class Main extends javax.swing.JFrame {
 
         sixthCard.setText("Sixth");
 
-        welcomeBack.setText("Welcome Back:");
+        welcomeBack.setText("You are playing as:");
 
         outputPlayerBalance.setEnabled(false);
 
@@ -156,6 +173,10 @@ public class Main extends javax.swing.JFrame {
 
         outputPlayerBet.setEnabled(false);
 
+        youHavePlayed.setText("You have played:");
+
+        outputPlayerGames.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,12 +185,10 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                        .addGap(76, 76, 76)
                         .addComponent(btnDeal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEnter)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnFinished))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnEnter))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnHit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -205,19 +224,23 @@ public class Main extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(welcomeBack)
-                                    .addComponent(balanceIs)
                                     .addComponent(outputPlayerBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(outputPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(outputPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(balanceIs))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(author)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(title)
                                         .addGap(9, 9, 9)))
-                                .addGap(125, 125, 125)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(youAreCurrentlyBetting, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(outputPlayerBet)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(125, 125, 125)
+                                        .addComponent(outputPlayerBet, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(youHavePlayed)
+                                        .addComponent(youAreCurrentlyBetting, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(outputPlayerGames))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(322, 322, 322)
                                 .addComponent(dealersHand)
@@ -259,21 +282,28 @@ public class Main extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(youAreCurrentlyBetting)
-                            .addComponent(title))
+                        .addComponent(title)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(outputPlayerBet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(author)))
+                        .addComponent(author))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(welcomeBack)
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(welcomeBack)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(outputPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(youHavePlayed)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(outputPlayerGames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(4, 4, 4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(balanceIs)
+                            .addComponent(youAreCurrentlyBetting))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(outputPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addComponent(balanceIs)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(outputPlayerBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(outputPlayerBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(outputPlayerBet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dealersHand)
                 .addGap(7, 7, 7)
@@ -306,8 +336,7 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDeal)
-                    .addComponent(btnEnter)
-                    .addComponent(btnFinished))
+                    .addComponent(btnEnter))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSplit)
@@ -315,16 +344,26 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(btnDouble)
                     .addComponent(btnStand)
                     .addComponent(btnHit))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnDealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDealActionPerformed
+        
+    }//GEN-LAST:event_btnDealActionPerformed
+
+    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
+        
+    }//GEN-LAST:event_btnEnterActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        start();
+        playerInit();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -355,6 +394,39 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
+    
+    public static void start(){
+        JOptionPane.showMessageDialog(null, "Welcome to Black Jack!! Please Click Ok to Continue"); // creates a pop up box with no values found
+        inputPlayerName = JOptionPane.showInputDialog("Who do you want to play as. (Ritch, Wise or Poor)");
+        String betTemp = JOptionPane.showInputDialog("Please enter bet value");
+        try{
+            playerBet = Integer.parseInt(betTemp);
+        }catch (NumberFormatException e){ //if there ar
+             JOptionPane.showMessageDialog(null, "Use Numbers Only"); // creates a pop up box with no values found
+             return;
+        }
+    }
+
+    public static void playerInit(){
+        XmlCommands.findXml();
+        
+        boolean userExist = XmlCommands.checkPlayerXmlElement(inputPlayerName);
+        
+        if (userExist) {
+            String[] usernames = XmlCommands.printXml("player", "username"), totalGames = XmlCommands.printXml("player", "totalGames"), balance = XmlCommands.printXml("player", "balance");
+            int[] gTemp = new int[usernames.length], bTemp = new int[usernames.length];
+            playerName = usernames[XmlCommands.playerPosition];
+            for (int i = 0; i <  usernames.length; i++) {
+                gTemp[i] = Integer.parseInt(totalGames[i]);
+                bTemp[i] = Integer.parseInt(balance[i]);
+            }
+            playerGames = gTemp[XmlCommands.playerPosition];
+            playerBalance = bTemp[XmlCommands.playerPosition];
+        }else{
+            JOptionPane.showMessageDialog(null, "Not a Valid User!"); // creates a pop up box with no values found
+            inputPlayerName = JOptionPane.showInputDialog ("Who do you want to play as. (Ritch, Wise or Poor)");
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel author;
@@ -362,7 +434,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btnDeal;
     private javax.swing.JRadioButton btnDouble;
     private javax.swing.JButton btnEnter;
-    private javax.swing.JButton btnFinished;
     private javax.swing.JRadioButton btnHit;
     private javax.swing.JRadioButton btnSplit;
     private javax.swing.JRadioButton btnStand;
@@ -380,6 +451,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField outputPlayerBalance;
     private javax.swing.JTextField outputPlayerBet;
+    private javax.swing.JTextField outputPlayerGames;
     private javax.swing.JTextField outputPlayerName;
     private javax.swing.JLabel playerFifthCard;
     private javax.swing.JLabel playerFirstCard;
@@ -393,6 +465,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel title;
     private javax.swing.JLabel welcomeBack;
     private javax.swing.JLabel youAreCurrentlyBetting;
+    private javax.swing.JLabel youHavePlayed;
     private javax.swing.JLabel yourHand;
     // End of variables declaration//GEN-END:variables
 }
