@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -17,12 +16,12 @@ import org.xml.sax.SAXException;
 
 /*
     programmer: Mathew Borg
-    Date: 2021-06-6
-    Program Name: U3A5P2_Borg_XMLCreate
-    Program Discription: This program reads an xml file changes and adds elements by the push of btns
+    Date: 2021-06-10
+    Program Name: U4A1P2_Borg_BlackJack
+    Program Discription: This program lets you play black jack against the dealer 
  */
 public class XmlCommands {
-    public static int playerPosition = 0;
+    public static int playerPosition = 0; //creats public static int playerPosition
     private static final String xmlName = Main.fileName; //creats string for the name of the xml file
     private static final Document doc = findXml(); //creats a Document for the program to use for reading and editing
   
@@ -68,41 +67,6 @@ public class XmlCommands {
 
         }
     }
-    
-    /*
-        Function: addXmlElement
-        Purpose:  to add new elements to xml files
-        Parameters: int position is the position of the item in the xml file
-                    String mainElement is the main element we are adding too
-                    String newElement is the new element we are creating
-                    String newElementInfo is the info we are adding to the new element
-        Return: void
-     */
-    public static void addXmlSubElement(int position, String mainElement, String newElement, String newElementInfo) {
-        Node element = doc.getElementsByTagName(mainElement).item(position); //creats node of doc at mainElement positon at int position
-        Element addElement = doc.createElement(newElement); //creats an element in our doc and gives it the name of String newElement
-        addElement.appendChild(doc.createTextNode(newElementInfo)); //adds the newElementInfo to the newElement 
-        element.appendChild(addElement); //adds the new child element to the element we created 
-    }
-    
-    /*
-        Function: removeXmlElement
-        Purpose:  to remove elements to xml files
-        Parameters: int position is the position of the item in the xml file
-                    String mainElement is the main element we are removing from
-                    String removeElement is the new element we are removing
-        Return: void
-     */
-    public static void removeXmlElement(int position, String removeElement) {
-        try { //try
-            Element element = (Element) doc.getElementsByTagName(removeElement).item(position); //creats an element at the doc elemet of String remove element at the posion of int postion 
-            Node parent = element.getParentNode(); //creatse a node of element we created
-            parent.removeChild(element); //removes the child element from parent
-            parent.normalize(); //normalises the parent
-        } catch (Exception e) { //catch expetopn e if there is nothing to remove 
-            
-        }
-    }
 
     /*
         Function: updateXmlElement
@@ -117,18 +81,24 @@ public class XmlCommands {
         element.setTextContent(updatedElementInfo); //updates the node element context to String updatedElementInfo
 
     }
-
+    
+    /*
+        Function: checkPlayerXmlElement
+        Purpose:  to check if player element exists
+        Parameters: String playerName is to get the serched player name
+        Return: boolean
+     */
     public static boolean checkPlayerXmlElement(String playerName) {
-        playerPosition = 0;
-        String[] check = printXml("player", "username");
-        for (int k = 0; k < check.length; k++) {
-            if (check[k].equals(playerName)) {
-                return true;
-            }else {
-                playerPosition++;
+        playerPosition = 0; //creats playerPosition 
+        String[] check = printXml("player", "username"); //creats string and sets it to return value of printXml
+        for (int k = 0; k < check.length; k++) { //creats for loop
+            if (check[k].equals(playerName)) { //if check at k is equal to player name
+                return true; //return true 
+            }else { //else
+                playerPosition++; //increment playerPosition by 1
             }
         }
-        return false;
+        return false; //return false
     }
 
     /*

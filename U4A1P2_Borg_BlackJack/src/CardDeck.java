@@ -1,11 +1,13 @@
-/**
-    File Name:	U1A5P2_Borg_CARDS
-    Programmer:	Mathew Borg
-    Date:	2021-3-4
-    Description:This program determine the suit and card number from a deck of cards.
+
+/*
+    programmer: Mathew Borg
+    Date: 2021-06-10
+    Program Name: U4A1P2_Borg_BlackJack
+    Program Discription: This program lets you play black jack against the dealer 
  */
 public class CardDeck {
     public static boolean acePresent = false;
+    
     /*
     Function:  cardDeck
     Purpose:  This method determine the suit and card number from a deck of cards.
@@ -26,10 +28,16 @@ public class CardDeck {
         return deck; // returns deck to the method
     }
     
+    /*
+        Function: generateCard
+        Purpose:  to create a random card 
+        Parameters: n/a
+        Return: String[]
+     */
     public static String[] generateCard(){
         int cardNum = (int)(Math.random() * 52); //creats random number
         String[][] cardData = cardDeck(); //creats a card deck 
-        String[] returnCard = new String[4];
+        String[] returnCard = new String[4]; //creats string array
         
         //gets card data
         String value = cardData[cardNum][0];
@@ -43,27 +51,33 @@ public class CardDeck {
         returnCard[3] = Integer.toString(cardNum);
         
         
-        return returnCard;
+        return returnCard; //return card
     }
     
+    /*
+        Function: cardValue
+        Purpose:  to get the value of a card 
+        Parameters: String cardValue to get the card values 
+        Return: int 
+     */
     public static int cardValue(String cardValue){
-        int cardNumValue = 0;
-        acePresent = false;
+        int cardNumValue = 0; //creats int 
+        acePresent = false; //sets boolean to falsae
         
-        if(null == cardValue){
-            acePresent = false;
-            cardNumValue = 0;
-            return -1;
-        } else switch (cardValue) {
-            case "ACE":
-                acePresent = true;
-                cardNumValue = 0;
+        if(null == cardValue){ //if null = cardValue
+            acePresent = false; //sets boolean to false 
+            cardNumValue = 0; //sets cardNumValue to 0
+            return -1; //return -1
+        } else switch (cardValue) { //else switch cardValue
+            case "ACE": //if cace string 
+                acePresent = true; //set boolean to true 
+                cardNumValue = 0; //set cardNumValue value 
                 break;
             case "2":
-                cardNumValue = 2;
+                cardNumValue = 2; 
                 break;
             case "3":
-                cardNumValue = 3;
+                cardNumValue = 3; 
                 break;
             case "4":
                 cardNumValue = 4;
@@ -96,36 +110,39 @@ public class CardDeck {
                 cardNumValue = 10;
                 break;
             default:
-                acePresent = false;
-                return -1;
+                acePresent = false; //sets boolean to false 
+                return -1; //return -1
         }
-        return cardNumValue;
+        return cardNumValue; //return cardNumValue
     }
     
-    public static String getCardName(String[] cardData){
-        return cardData[0]+cardData[1]+cardData[2];
-    }
-
+    /*
+        Function: handValue
+        Purpose:  to get the total values of the cards in the hand 
+        Parameters: int[] cards to get the values of all cards in the hand
+                    boolean isAcePresent to know if there is a ace present
+        Return: int 
+     */
     public static int handValue(int[] cards, boolean isAcePresent) {
-        int handValue = 0;
+        int handValue = 0; //creats int 
         
-        if (!isAcePresent) {
-            for (int num : cards) {
-                handValue = handValue + num;
+        if (!isAcePresent) { //if boolean is false
+            for (int num : cards) { //creats advanced for loop 
+                handValue = handValue + num; //handValue plus num
             }
-        }else{
-            int handWithoutAce = 0;
+        }else{ //else
+            int handWithoutAce = 0; //creats int 
             
-            for (int num : cards) {
-                handWithoutAce = handWithoutAce + num;
+            for (int num : cards) { //creats advanced for loop 
+                handWithoutAce = handWithoutAce + num; //handWithoutAce plus num
             }
             
-            if(handWithoutAce + 11 <= 21){
-               handValue = handWithoutAce + 10;
-            }else{
-                handValue = handWithoutAce + 1;
+            if(handWithoutAce + 11 <= 21){ //if handWithoutAce plus 11 < or equal to 21 
+               handValue = handWithoutAce + 10; //handValue = handWithoutAce plus 10
+            }else{ //else
+                handValue = handWithoutAce + 1; //handValue equals handWithoutAce + 1
             }
         }
-        return handValue;
+        return handValue; //return handValue
     } 
 }

@@ -1,29 +1,23 @@
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showMessageDialog;
-import javax.swing.JTextArea;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author mborg
+    programmer: Mathew Borg
+    Date: 2021-06-10
+    Program Name: U4A1P2_Borg_BlackJack
+    Program Discription: This program lets you play black jack against the dealer 
  */
 public class Main extends javax.swing.JFrame {
-    public static String fileName = "players.xml", inputPlayerName, playerName;
-    public static int playerBalance, playerBet;
+    public static String fileName = "players.xml"; //creats public static string
+    private static String inputPlayerName, playerName; //creats private static Strings
+    private static int playerBalance, playerBet; //creats private static ints
     
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
-        setOutput();
+        setOutput(); //sets GUI outPuts
     }
 
     /**
@@ -212,71 +206,71 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDealActionPerformed
-        String[] playerFirst, playerSecond, DealerFirst, DealerSecond;
-        int playerHandValue = 0, dealerHandValue = 0;
-        boolean acePlayer = false, aceDealer = false;
-        int[] playerCards = new int[2];
-        int[] dealerCards = new int[2];
+        String[] playerFirst, playerSecond, DealerFirst, DealerSecond; //creats string arrays for the 4 cards we draw
+        int playerHandValue = 0, dealerHandValue = 0; //creats ints for player total hand and dealer total hand
+        boolean acePlayer = false, aceDealer = false; //creats booleans for if there is a ace detected for dealer and player
+        int[] playerCards = new int[2]; //creatts int array for player cards
+        int[] dealerCards = new int[2]; //creats int array for dealerCards
 
-        playerFirst = CardDeck.generateCard();
-        String sPlayerFirstCardValue = playerFirst[0];
-        int playerFirstCardValue = CardDeck.cardValue(sPlayerFirstCardValue);
-        if (playerFirstCardValue == 0) {
-            acePlayer = true;
+        playerFirst = CardDeck.generateCard(); //gets a random card for the players first card
+        String sPlayerFirstCardValue = playerFirst[0]; //creats string and sets it to playerFirst at position 0
+        int playerFirstCardValue = CardDeck.cardValue(sPlayerFirstCardValue); //crears int playerFirstCardValue and sets it to the return value of cardValue
+        if (playerFirstCardValue == 0) { //if playerFirstCardValue = 0
+            acePlayer = true; //set acePlayer to be true
         }
-        String playerFirstCardName = CardDeck.getCardName(playerFirst);
         
-        playerSecond = CardDeck.generateCard();
-        String sPlayerSecondCardValue = playerSecond[0];
-        int playerSecondCardValue = CardDeck.cardValue(sPlayerSecondCardValue);
-        if (playerSecondCardValue == 0){
-            acePlayer = true;
+        playerSecond = CardDeck.generateCard(); //gets a random card for the second first card
+        String sPlayerSecondCardValue = playerSecond[0]; //creats string and sets it to playerSecond at position 0
+        int playerSecondCardValue = CardDeck.cardValue(sPlayerSecondCardValue); //crears int playerSecondCardValue and sets it to the return value of cardValue
+        if (playerSecondCardValue == 0){ //if playerSecondCardValue = 0
+            acePlayer = true; //set acePlayer to be true
         }
-        String playerSecondCardName = CardDeck.getCardName(playerSecond);
         
-        DealerFirst = CardDeck.generateCard();
-        String sDealerFirstCardValue = DealerFirst[0];
-        int DealerFirstCardValue = CardDeck.cardValue(sDealerFirstCardValue);
-        if (DealerFirstCardValue == 0){
-            aceDealer = true;
+        DealerFirst = CardDeck.generateCard(); //gets a random card for the dealers first card
+        String sDealerFirstCardValue = DealerFirst[0]; //creats string and sets it to DealerFirst at position 0
+        int DealerFirstCardValue = CardDeck.cardValue(sDealerFirstCardValue); //crears int DealerFirstCardValue and sets it to the return value of cardValue
+        if (DealerFirstCardValue == 0){ //if DealerFirstCardValue = 0 
+            aceDealer = true; //set aceDealer to be true
         }
-        String DealerFirstCardName = CardDeck.getCardName(DealerFirst);
         
-        DealerSecond = CardDeck.generateCard();
-        String sDealerSecondCardValue = DealerSecond[0];
-        int DealerSecondCardValue = CardDeck.cardValue(sDealerSecondCardValue);
-        if (DealerSecondCardValue == 0){
-            aceDealer = true;
+        DealerSecond = CardDeck.generateCard(); //gets a random card for the dealers second card
+        String sDealerSecondCardValue = DealerSecond[0]; //creats string and sets it to DealersSecond at position 0
+        int DealerSecondCardValue = CardDeck.cardValue(sDealerSecondCardValue); //crears int DealerSecondCardValue and sets it to the return value of cardValue
+        if (DealerSecondCardValue == 0){ //if DealerSecondCardValue = 0 
+            aceDealer = true; //set aceDealer to be true
         }
-        String DealerSecondCardName = CardDeck.getCardName(DealerSecond);
-
-        playerCards[0] = playerFirstCardValue;
+        
+        //adds both of the players cards to the playerCards array
+        playerCards[0] = playerFirstCardValue; 
         playerCards[1] = playerSecondCardValue;
-        playerHandValue =  CardDeck.handValue(playerCards, acePlayer);
         
+        playerHandValue =  CardDeck.handValue(playerCards, acePlayer); //sets playerHandValue to return value of handValue
+        
+        //adds both of the dealer cards to the dealerCards array
         dealerCards[0] = DealerFirstCardValue;
         dealerCards[1] = DealerSecondCardValue;
-        dealerHandValue =  CardDeck.handValue(dealerCards, aceDealer);
         
-        JOptionPane.showMessageDialog(null, "You have a total valve of " + playerHandValue + "The Dealers Has A Total Value of" + dealerHandValue); // creates a pop up box with no values found
+        dealerHandValue =  CardDeck.handValue(dealerCards, aceDealer); //sets dealerHandValue to return value of handValue
         
-        settleBets(playerHandValue, dealerHandValue);
+        JOptionPane.showMessageDialog(null, "You have a total valve of " + playerHandValue + "The Dealers Has A Total Value of" + dealerHandValue); // creates a pop up box to print information
         
-        setOutput();
+        settleBets(playerHandValue, dealerHandValue); //runs settle bets method
         
-        betInfo();
+        setOutput(); //sets the updated outputs to GUI
+        
+        betInfo(); //changes the betInfo
     }//GEN-LAST:event_btnDealActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        System.exit(0);
+        System.exit(0); //exits the program
     }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        startUp();
-        playerInit();
+        startUp(); //runs startUp method
+        playerInit(); //runs playerInit method
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -308,90 +302,128 @@ public class Main extends javax.swing.JFrame {
         });
     }
     
+    /*
+        Function: startUp
+        Purpose:  to run the game start up menu
+        Parameters: n/a
+        Return: n/a
+     */
      public static void startUp(){
-        JOptionPane.showMessageDialog(null, "Welcome to Black Jack!! Please Click Ok to Continue"); // creates a pop up box with no values found
-        inputPlayerName = JOptionPane.showInputDialog("Who do you want to play as. (Ritch, Wise or Poor)");
-        betInfo();
+        JOptionPane.showMessageDialog(null, "Welcome to Black Jack!! Please Click Ok to Continue"); // creates a pop up box to print information
+        inputPlayerName = JOptionPane.showInputDialog("Who do you want to play as. (Ritch, Wise or Poor)"); //sets inputPlayerName to JOptionPane input
+        betInfo(); //runs metInfo method
     }
-     
-    public static void betInfo(){
-        String betTemp = JOptionPane.showInputDialog("Please enter bet value");
-        try{
-            playerBet = Integer.parseInt(betTemp);
-        }catch (NumberFormatException e){ //if there ar
-             JOptionPane.showMessageDialog(null, "Use Numbers Only"); // creates a pop up box with no values found
-             return;
+    
+    /*
+        Function: betInfo
+        Purpose:  to run the place a bet menu 
+        Parameters: n/a
+        Return: n/a
+     */
+    public static void betInfo(){ 
+        String betTemp = JOptionPane.showInputDialog("Please enter bet value"); //creats String betTemp and sets it to JOptionPane input
+        try{ //try
+            playerBet = Integer.parseInt(betTemp); //set playerbet to betTemp
+        }catch (NumberFormatException e){ //catch if there are letters
+             JOptionPane.showMessageDialog(null, "Use Numbers Only"); // creates a pop up saying use numbers only
+             return; //return  
         }
     }
-
+    
+    /*
+        Function: playerInit
+        Purpose:  to initalise all player data from xml
+        Parameters: n/a
+        Return: n/a
+     */
     public static void playerInit(){
-        XmlCommands.findXml();
+        XmlCommands.findXml(); //run findXml method
         
-        boolean userExist = XmlCommands.checkPlayerXmlElement(inputPlayerName);
+        boolean userExist = XmlCommands.checkPlayerXmlElement(inputPlayerName); //sets boolean userExist to return value of checkPlayerXmlElement
         
-        if (userExist) {
-            String[] usernames = XmlCommands.printXml("player", "username"), totalGames = XmlCommands.printXml("player", "totalGames"), balance = XmlCommands.printXml("player", "balance");
-            int[] gTemp = new int[usernames.length], bTemp = new int[usernames.length];
-            playerName = usernames[XmlCommands.playerPosition];
-            for (int i = 0; i <  usernames.length; i++) {
-                gTemp[i] = Integer.parseInt(totalGames[i]);
+        if (userExist) { //if userExist = true 
+            String[] usernames = XmlCommands.printXml("player", "username"), totalGames = XmlCommands.printXml("player", "totalGames"), balance = XmlCommands.printXml("player", "balance"); //creats strings to what was read from xml
+            int[] gTemp = new int[usernames.length], bTemp = new int[usernames.length]; //creats temp int arrays
+            playerName = usernames[XmlCommands.playerPosition]; //sets playerName to usernames at position playerPosition
+            for (int i = 0; i <  usernames.length; i++) { //creats for loop 
+                gTemp[i] = Integer.parseInt(totalGames[i]); //converts strings to ints
                 bTemp[i] = Integer.parseInt(balance[i]);
             }
-            playerBalance = bTemp[XmlCommands.playerPosition];
-        }else{
-            JOptionPane.showMessageDialog(null, "Not a Valid User!"); // creates a pop up box with no values found
-            inputPlayerName = JOptionPane.showInputDialog ("Who do you want to play as. (Ritch, Wise or Poor)");
+            playerBalance = bTemp[XmlCommands.playerPosition]; //sets playerBalance to bTemp at playerPosition
+        }else{ //else 
+            JOptionPane.showMessageDialog(null, "Not a Valid User!"); // creates a pop up box to print information
+            inputPlayerName = JOptionPane.showInputDialog ("Who do you want to play as. (Ritch, Wise or Poor)"); //retry who do you want to play as
         }
     }
     
+    /*
+        Function: settleBets
+        Purpose:  to find out who won and to pay them or remove money from there ballance 
+        Parameters: int player to get player total hand value
+                    int dealer to get dealer total hand value 
+        Return: n/a
+     */
     public static void settleBets (int player, int dealer){
-        if (player > 21){
+        if (player > 21){ // if player is > 21
             //lost
-            updatePlayerBallance(XmlCommands.playerPosition,false);
-            JOptionPane.showMessageDialog(null, "You have lost your bet of " + playerBet); // creates a pop up box with no values found
-        } else if (player == dealer){
+            updatePlayerBallance(XmlCommands.playerPosition,false); //run updatePlayerBallance method
+            JOptionPane.showMessageDialog(null, "You have lost your bet of " + playerBet); // creates a pop up box to print information
+        } else if (player == dealer){ //if player = dealer 
             //tie
-            JOptionPane.showMessageDialog(null, "You Have Tied The Dealer. Your Ballance Will Remain the Same"); // creates a pop up box with no values found
-        }else if(player < dealer && dealer <=21){
+            JOptionPane.showMessageDialog(null, "You Have Tied The Dealer. Your Ballance Will Remain the Same"); // creates a pop up box to print information
+        }else if(player < dealer && dealer <=21){ //if player is < than dealer and dealver is < or eual to 21
             //playerloss
-            updatePlayerBallance(XmlCommands.playerPosition,false);
-            JOptionPane.showMessageDialog(null, "You have lost your bet of " + playerBet); // creates a pop up box with no values found
-        }else if(player == 21){
+            updatePlayerBallance(XmlCommands.playerPosition,false); //run updatePlayerBallance method
+            JOptionPane.showMessageDialog(null, "You have lost your bet of " + playerBet); // creates a pop up box to print information
+        }else if(player == 21){ // if player is equal to 21
             //player wins
-            updatePlayerBallance(XmlCommands.playerPosition,true);
-            JOptionPane.showMessageDialog(null, "You have won " + playerBet); // creates a pop up box with no values found
-        }else {
+            updatePlayerBallance(XmlCommands.playerPosition,true); //run updatePlayerBallance method
+            JOptionPane.showMessageDialog(null, "You have won " + playerBet); // creates a pop up box to print information
+        }else { //else
             //player has won
-            updatePlayerBallance(XmlCommands.playerPosition,true);
-            JOptionPane.showMessageDialog(null, "You have won " + playerBet); // creates a pop up box with no values found
+            updatePlayerBallance(XmlCommands.playerPosition,true); //run updatePlayerBallance method
+            JOptionPane.showMessageDialog(null, "You have won " + playerBet); // creates a pop up box to print information
         }
     }
     
+    /*
+        Function: updatePlayerBallance
+        Purpose:  to update player ballance in xml file 
+        Parameters: int playerPosition to get player posion in xml
+                    boolean win to find out if there was a win for player
+        Return: n/a
+     */
     public static void updatePlayerBallance(int playerPosition, boolean win){
-        String[] allBallance = XmlCommands.printXml("player", "balance");
-        String sPlayerBallance = allBallance[playerPosition];
-        XmlCommands.findXml();
-        int newPlayerBallance = Integer.parseInt(sPlayerBallance);
-        int winings = 0, losses;
-        if (win){
-            winings = playerBet;
-            newPlayerBallance += winings; 
-            playerBalance = newPlayerBallance;
-            String newBallance = String.valueOf(newPlayerBallance);
-            XmlCommands.updateXmlElement(playerPosition, "balance", newBallance);
-        }else{
-            newPlayerBallance -= playerBet;
-            String newBallance = String.valueOf(newPlayerBallance);
-            playerBalance = newPlayerBallance;
-            XmlCommands.updateXmlElement(playerPosition, "balance", newBallance);
+        String[] allBallance = XmlCommands.printXml("player", "balance"); //creats string array and sets it to return value of printXml
+        String sPlayerBallance = allBallance[playerPosition]; //creats string and sets it to value of allBallance at position playerPosition
+        XmlCommands.findXml(); //runs findXml method
+        int newPlayerBallance = Integer.parseInt(sPlayerBallance); //creats new int and sets it to sPlayerBallance
+        int winings = 0, losses; //creats ints
+        if (win){ // if win is true
+            winings = playerBet; //winings = playerBet
+            newPlayerBallance += winings;  //add newPlayerBallance to winings
+            playerBalance = newPlayerBallance; //set playerBalance to equal newPlayerBallance
+            String newBallance = String.valueOf(newPlayerBallance); //creats string newBallance and sets it to newPlayerBallance
+            XmlCommands.updateXmlElement(playerPosition, "balance", newBallance); //runs updateXmlElement method
+        }else{ //else 
+            newPlayerBallance -= playerBet; //newPlayerBallance take away playerBet
+            String newBallance = String.valueOf(newPlayerBallance); //creats new string and sets it to newPlayerBallance
+            playerBalance = newPlayerBallance; //sets playerBalance to newPlayerBallance
+            XmlCommands.updateXmlElement(playerPosition, "balance", newBallance); //runs updateXmlElement method
         }
-        XmlCommands.updateXml();
+        XmlCommands.updateXml(); //runs updateXml method
     }
     
+    /*
+        Function: setOutput
+        Purpose:  to update GUI output Data
+        Parameters: 
+        Return: n/a
+     */
     public void setOutput(){
-        outputPlayerName.setText(playerName);
-        outputPlayerBalance.setText(Integer.toString(playerBalance));
-        outputPlayerBet.setText(Integer.toString(playerBet));
+        outputPlayerName.setText(playerName); //sets outputPlayerName to playerName
+        outputPlayerBalance.setText(Integer.toString(playerBalance)); //sets outputPlayerBalance to playerBalance
+        outputPlayerBet.setText(Integer.toString(playerBet)); //sets outputPlayerBet to playerBet
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
