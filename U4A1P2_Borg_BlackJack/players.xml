@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><class>
+<!--This is the database is for all the player data for balck jack including there name, total played games, and balance  -->
+	<player>
+		<username>Ritch</username>
+		<totalGames>0</totalGames>
+		<balance>1000000</balance>
+	</player>
+<player>
+		<username>Wise</username>
+		<totalGames>0</totalGames>
+		<balance>10000</balance>
+	</player>
+
+<player>
+		<username>Poor</username>
+		<totalGames>0</totalGames>
+		<balance>100</balance>
+	</player>
+
+</class>

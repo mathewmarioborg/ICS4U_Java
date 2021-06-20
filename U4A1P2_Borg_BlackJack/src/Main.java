@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 public class Main extends javax.swing.JFrame {
     public static String fileName = "players.xml", inputPlayerName, playerName;
     public static int playerGames, playerBalance, playerBet;
+    int playerHandValue = 0, dealerHandValue = 0;
+    public static boolean acePlayer = false, aceDealer = false;
     /**
      * Creates new form Main
      */
@@ -351,11 +353,80 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDealActionPerformed
+        String[] playerFirst, playerSecond, DealerFirst, DealerSecond;
         
+        int[] playerCards = new int[2];
+        int[] dealerCards = new int[2];
+        
+        playerFirst = CardDeck.generateCard();
+        String sPlayerFirstCardValue = playerFirst[0];
+        int playerFirstCardValue = CardDeck.cardValue(sPlayerFirstCardValue);
+        if (playerFirstCardValue == 0){
+            acePlayer = true;
+        }
+        String playerFirstCardName = CardDeck.getCardName(playerFirst);
+        
+        playerSecond = CardDeck.generateCard();
+        String sPlayerSecondCardValue = playerSecond[0];
+        int playerSecondCardValue = CardDeck.cardValue(sPlayerSecondCardValue);
+        if (playerSecondCardValue == 0){
+            acePlayer = true;
+        }
+        String playerSecondCardName = CardDeck.getCardName(playerSecond);
+        
+        DealerFirst = CardDeck.generateCard();
+        String sDealerFirstCardValue = DealerFirst[0];
+        int DealerFirstCardValue = CardDeck.cardValue(sDealerFirstCardValue);
+        if (DealerFirstCardValue == 0){
+            aceDealer = true;
+        }
+        String DealerFirstCardName = CardDeck.getCardName(DealerFirst);
+        
+        DealerSecond = CardDeck.generateCard();
+        String sDealerSecondCardValue = DealerSecond[0];
+        int DealerSecondCardValue = CardDeck.cardValue(sDealerSecondCardValue);
+        if (DealerSecondCardValue == 0){
+            aceDealer = true;
+        }
+        String DealerSecondCardName = CardDeck.getCardName(DealerSecond);
+        
+        System.out.println(playerFirstCardName);
+        System.out.println(playerSecondCardName);
+        System.out.println(DealerFirstCardName);
+        System.out.println(DealerSecondCardName + "\n");
+        
+        System.out.println(playerFirstCardValue);
+        System.out.println(playerSecondCardValue);
+        System.out.println(DealerFirstCardValue);
+        System.out.println(DealerSecondCardValue + "\n");
+        
+        playerCards[0] = playerFirstCardValue;
+        playerCards[1] = playerSecondCardValue;
+        playerHandValue =  CardDeck.handValue(playerCards, acePlayer);
+        
+        System.out.println(playerHandValue + "\n");
+        
+        dealerCards[0] = DealerFirstCardValue;
+        dealerCards[1] = DealerSecondCardValue;
+        dealerHandValue =  CardDeck.handValue(dealerCards, aceDealer);
+        
+        System.out.println(playerHandValue);
+        
+        JOptionPane.showMessageDialog(null, "You have a total valve of " + playerHandValue + "The Dealers First Card is valed at " + DealerFirstCardValue); // creates a pop up box with no values found
     }//GEN-LAST:event_btnDealActionPerformed
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        
+        if(btnHit.isSelected()){
+            
+        }else if(btnStand.isSelected()){
+            
+        }else if(btnDouble.isSelected()){
+            
+        }else if(btnSplit.isSelected()){
+            
+        }else if(btnSurrender.isSelected()){
+            
+        }
     }//GEN-LAST:event_btnEnterActionPerformed
 
     /**
@@ -393,6 +464,21 @@ public class Main extends javax.swing.JFrame {
                 new Main().setVisible(true);
             }
         });
+    }
+    
+    public static int makeCardValue(){
+        String[] card = CardDeck.generateCard();
+        String sCardValue = card[0];
+        int CardValue = CardDeck.cardValue(sCardValue);
+        if (CardValue == 0){
+            acePlayer = true;
+        }
+        return CardValue;
+    }
+    
+    public static String makeCardName(String[] card){
+        String playerFirstCardName = CardDeck.getCardName(card);
+        return playerFirstCardName;
     }
     
     public static void start(){
