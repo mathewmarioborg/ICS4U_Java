@@ -3,18 +3,18 @@
 	<player>
 		<username>Ritch</username>
 		<totalGames>0</totalGames>
-		<balance>1000044</balance>
+		<balance>1000000</balance>
 	</player>
 <player>
 		<username>Wise</username>
 		<totalGames>0</totalGames>
-		<balance>10000</balance>
+		<balance>10987</balance>
 	</player>
 
 <player>
 		<username>Poor</username>
 		<totalGames>0</totalGames>
-		<balance>100</balance>
+		<balance>98</balance>
 	</player>
 
 </class>

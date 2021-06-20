@@ -1,5 +1,8 @@
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.JTextArea;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,9 +23,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
-        outputPlayerName.setText(playerName);
-        outputPlayerBalance.setText(Integer.toString(playerBalance));
-        outputPlayerBet.setText(Integer.toString(playerBet));
+        setOutput();
     }
 
     /**
@@ -52,6 +53,7 @@ public class Main extends javax.swing.JFrame {
         outputPlayerName = new javax.swing.JTextField();
         youAreCurrentlyBetting = new javax.swing.JLabel();
         outputPlayerBet = new javax.swing.JTextField();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,6 +105,13 @@ public class Main extends javax.swing.JFrame {
 
         outputPlayerBet.setEnabled(false);
 
+        btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -148,12 +157,13 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnDeal)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnExit))
                             .addComponent(youAreCurrentlyBetting)
-                            .addComponent(outputPlayerBalance, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                            .addComponent(outputPlayerBet)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(btnDeal)))
+                            .addComponent(outputPlayerBalance)
+                            .addComponent(outputPlayerBet))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -192,7 +202,9 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(outputPlayerBet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeal)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeal)
+                    .addComponent(btnExit))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -249,13 +261,21 @@ public class Main extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "You have a total valve of " + playerHandValue + "The Dealers Has A Total Value of" + dealerHandValue); // creates a pop up box with no values found
         
         settleBets(playerHandValue, dealerHandValue);
+        
+        setOutput();
+        
+        betInfo();
     }//GEN-LAST:event_btnDealActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        start();
+        startUp();
         playerInit();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -288,9 +308,13 @@ public class Main extends javax.swing.JFrame {
         });
     }
     
-     public static void start(){
+     public static void startUp(){
         JOptionPane.showMessageDialog(null, "Welcome to Black Jack!! Please Click Ok to Continue"); // creates a pop up box with no values found
         inputPlayerName = JOptionPane.showInputDialog("Who do you want to play as. (Ritch, Wise or Poor)");
+        betInfo();
+    }
+     
+    public static void betInfo(){
         String betTemp = JOptionPane.showInputDialog("Please enter bet value");
         try{
             playerBet = Integer.parseInt(betTemp);
@@ -347,27 +371,34 @@ public class Main extends javax.swing.JFrame {
         String[] allBallance = XmlCommands.printXml("player", "balance");
         String sPlayerBallance = allBallance[playerPosition];
         XmlCommands.findXml();
-        int PlayerBallance = Integer.parseInt(sPlayerBallance);
+        int newPlayerBallance = Integer.parseInt(sPlayerBallance);
         int winings = 0, losses;
         if (win){
             winings = playerBet;
-            PlayerBallance += winings; 
-            String newBallance = String.valueOf(PlayerBallance);
+            newPlayerBallance += winings; 
+            playerBalance = newPlayerBallance;
+            String newBallance = String.valueOf(newPlayerBallance);
             XmlCommands.updateXmlElement(playerPosition, "balance", newBallance);
         }else{
-            PlayerBallance -= playerBet;
-            String newBallance = String.valueOf(PlayerBallance);
+            newPlayerBallance -= playerBet;
+            String newBallance = String.valueOf(newPlayerBallance);
+            playerBalance = newPlayerBallance;
             XmlCommands.updateXmlElement(playerPosition, "balance", newBallance);
         }
         XmlCommands.updateXml();
     }
     
-   
+    public void setOutput(){
+        outputPlayerName.setText(playerName);
+        outputPlayerBalance.setText(Integer.toString(playerBalance));
+        outputPlayerBet.setText(Integer.toString(playerBet));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel author;
     private javax.swing.JLabel balanceIs;
     private javax.swing.JButton btnDeal;
+    private javax.swing.JButton btnExit;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel dealerFirstCard;
     private javax.swing.JLabel dealerSecondCard;
